@@ -1,0 +1,631 @@
+2026-03-25 09:23:54.130 [http-nio-9998-exec-7] INFO  o.j.c.desensitization.aspect.SensitiveDataAspect:76 - 加密操作，Aspect程序耗时：1ms
+2026-03-25 09:23:54.147 [http-nio-9998-exec-7] INFO  o.jeecg.modules.system.controller.LoginController:203 -  强制  管理员退出成功！ 
+2026-03-25 09:23:54.238 [http-nio-9998-exec-8] INFO  o.j.c.desensitization.aspect.SensitiveDataAspect:76 - 加密操作，Aspect程序耗时：1ms
+2026-03-25 09:24:26.200 [http-nio-9998-exec-5] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /online/cgform/head/list ; 请求类型 >> GET . 
+2026-03-25 09:24:26.238 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:copy_type, rule:=, value:0
+2026-03-25 09:24:26.241 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 09:24:30.832 [http-nio-9998-exec-3] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/ol_form_biz_type
+2026-03-25 09:24:30.832 [http-nio-9998-exec-3] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 09:24:30.833 [http-nio-9998-exec-3] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 09:24:30.833 [http-nio-9998-exec-3] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : ol_form_biz_type
+2026-03-25 09:32:54.315 [http-nio-9998-exec-3] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/ol_form_biz_type
+2026-03-25 09:32:54.316 [http-nio-9998-exec-3] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 09:32:54.316 [http-nio-9998-exec-3] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 09:32:54.317 [http-nio-9998-exec-3] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : ol_form_biz_type
+2026-03-25 09:40:08.519 [http-nio-9998-exec-3] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/ol_form_biz_type
+2026-03-25 09:40:08.520 [http-nio-9998-exec-3] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 09:40:08.521 [http-nio-9998-exec-3] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 09:40:08.521 [http-nio-9998-exec-3] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : ol_form_biz_type
+2026-03-25 09:48:02.335 [http-nio-9998-exec-7] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 09:48:02.336 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 09:48:02.336 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 09:48:02.337 [http-nio-9998-exec-7] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 09:48:02.345 [http-nio-9998-exec-3] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:10毫秒
+2026-03-25 09:48:02.349 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 09:48:02.350 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 09:48:02.350 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 09:48:02.351 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 09:48:07.832 [http-nio-9998-exec-6] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/valid_status
+2026-03-25 09:48:07.833 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 09:48:07.834 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 09:48:07.834 [http-nio-9998-exec-10] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/global_perms_type
+2026-03-25 09:48:07.834 [http-nio-9998-exec-6] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : valid_status
+2026-03-25 09:48:07.834 [http-nio-9998-exec-10] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 09:48:07.834 [http-nio-9998-exec-10] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 09:48:07.835 [http-nio-9998-exec-10] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : global_perms_type
+2026-03-25 09:53:07.618 [http-nio-9998-exec-9] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:12毫秒
+2026-03-25 09:53:22.543 [http-nio-9998-exec-5] INFO  o.jeecg.modules.system.controller.LoginController:203 -  强制  管理员退出成功！ 
+2026-03-25 09:53:22.642 [http-nio-9998-exec-9] INFO  o.j.c.desensitization.aspect.SensitiveDataAspect:76 - 加密操作，Aspect程序耗时：1ms
+2026-03-25 09:53:28.404 [http-nio-9998-exec-6] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 09:53:28.405 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 09:53:28.405 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 09:53:28.405 [http-nio-9998-exec-5] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 09:53:28.406 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 09:53:28.406 [http-nio-9998-exec-6] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 09:53:28.406 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 09:53:28.406 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 09:53:28.418 [http-nio-9998-exec-2] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:14毫秒
+2026-03-25 09:55:58.841 [http-nio-9998-exec-2] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/global_perms_type
+2026-03-25 09:55:58.841 [http-nio-9998-exec-8] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/valid_status
+2026-03-25 09:55:58.841 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 09:55:58.841 [http-nio-9998-exec-8] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 09:55:58.841 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 09:55:58.842 [http-nio-9998-exec-8] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 09:55:58.842 [http-nio-9998-exec-2] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : global_perms_type
+2026-03-25 09:55:58.842 [http-nio-9998-exec-8] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : valid_status
+2026-03-25 09:57:18.235 [http-nio-9998-exec-9] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:12毫秒
+2026-03-25 10:07:37.057 [http-nio-9998-exec-9] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:12毫秒
+2026-03-25 10:07:40.268 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:07:40.269 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:07:40.270 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:07:40.270 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:07:40.282 [http-nio-9998-exec-6] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:13毫秒
+2026-03-25 10:07:40.283 [http-nio-9998-exec-3] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:07:40.284 [http-nio-9998-exec-3] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:07:40.284 [http-nio-9998-exec-3] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:07:40.284 [http-nio-9998-exec-3] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:07:48.298 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:07:48.298 [http-nio-9998-exec-8] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /sys/user/list ; 请求类型 >> GET . 
+2026-03-25 10:07:48.298 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:07:48.298 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:07:48.299 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:07:48.340 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:07:48.383 [http-nio-9998-exec-8] INFO  o.j.modules.system.controller.SysUserController:247 - com.baomidou.mybatisplus.extension.plugins.pagination.Page@1df4ae17
+2026-03-25 10:07:57.412 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:07:57.414 [http-nio-9998-exec-5] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:07:57.415 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:07:57.416 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:07:57.417 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:08:03.639 [http-nio-9998-exec-8] INFO  o.j.m.system.controller.SysPermissionController:576 - ======角色授权成功=====耗时:105毫秒
+2026-03-25 10:08:07.906 [http-nio-9998-exec-4] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:08:07.907 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:08:07.907 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:08:07.908 [http-nio-9998-exec-4] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:08:07.922 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:08:11.117 [http-nio-9998-exec-5] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /sys/user/list ; 请求类型 >> GET . 
+2026-03-25 10:08:11.125 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:08:11.176 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:08:11.222 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysUserController:247 - com.baomidou.mybatisplus.extension.plugins.pagination.Page@4fff7449
+2026-03-25 10:08:13.290 [http-nio-9998-exec-1] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:08:13.291 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:08:13.291 [http-nio-9998-exec-1] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:08:13.292 [http-nio-9998-exec-1] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:08:13.292 [http-nio-9998-exec-1] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:08:15.861 [http-nio-9998-exec-5] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /online/cgform/head/list ; 请求类型 >> GET . 
+2026-03-25 10:08:15.877 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:copy_type, rule:=, value:0
+2026-03-25 10:08:15.879 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:08:53.864 [http-nio-9998-exec-2] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/ol_form_biz_type
+2026-03-25 10:08:53.864 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:08:53.865 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:08:53.865 [http-nio-9998-exec-2] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : ol_form_biz_type
+2026-03-25 10:12:30.116 [http-nio-9998-exec-3] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /online/cgform/head/list ; 请求类型 >> GET . 
+2026-03-25 10:12:30.132 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:copy_type, rule:=, value:0
+2026-03-25 10:12:30.134 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:12:45.770 [http-nio-9998-exec-7] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /online/cgform/head/list ; 请求类型 >> GET . 
+2026-03-25 10:12:45.783 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:copy_type, rule:=, value:0
+2026-03-25 10:12:45.785 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:12:46.086 [http-nio-9998-exec-6] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:12:46.087 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:12:46.087 [http-nio-9998-exec-8] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:12:46.087 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:12:46.087 [http-nio-9998-exec-8] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:12:46.087 [http-nio-9998-exec-8] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:12:46.087 [http-nio-9998-exec-6] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:12:46.087 [http-nio-9998-exec-8] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:12:46.095 [http-nio-9998-exec-9] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:11毫秒
+2026-03-25 10:12:49.442 [http-nio-9998-exec-7] INFO  org.jeecg.modules.online.config.d.d:322 -  db update sql : [alter table  DAM_DEMAND  MODIFY demand_description varchar2(1000) , alter table  DAM_DEMAND RENAME COLUMN scenario_segmentation TO segmented_scenario, alter table  DAM_DEMAND  MODIFY segmented_scenario varchar2(300) , COMMENT ON COLUMN dam_demand.segmented_scenario IS '细分场景', update onl_cgform_field set DB_FIELD_NAME_OLD = 'segmented_scenario' where ID ='cf9e520f7f015178267d0166c154b70b', alter table  DAM_DEMAND  DROP COLUMN DEMAND_ID]
+2026-03-25 10:12:49.541 [http-nio-9998-exec-2] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /online/cgform/head/list ; 请求类型 >> GET . 
+2026-03-25 10:12:49.556 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:copy_type, rule:=, value:0
+2026-03-25 10:12:49.556 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:13:00.952 [http-nio-9998-exec-9] INFO  o.j.codegenerate.generate.impl.CodeGenerateOne:120 - load template data: {primaryKeyPolicy=java.lang.String, serialVersionUID=-4006538495063879458, entityPackage=demand, entityName=Demand, primaryKeyField=id, columns=[{"fieldDbName":"demand_titile","fieldName":"demandTitile","filedComment":"需求标题","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"8","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"demand_description","fieldName":"demandDescription","filedComment":"需求描述","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"9","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"demand_type","fieldName":"demandType","filedComment":"需求类型","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"10","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"demand_state","fieldName":"demandState","filedComment":"需求状态","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"11","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"application_scenario","fieldName":"applicationScenario","filedComment":"应用场景","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"12","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"segmented_scenario","fieldName":"segmentedScenario","filedComment":"细分场景","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"13","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"demand_deadline","fieldName":"demandDeadline","filedComment":"截止日期","fieldType":"java.util.Date","fieldDbType":"Datetime","classType":"datetime","classType_row":"datetime","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"datetime","fieldOrderNum":"14","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}], tableVo={"tableName":"dam_demand","ftlDescription":"需求大厅","primaryKeyPolicy":"null","sequenceCode":"null","entityPackage":"demand","entityName":"Demand","fieldRowNum":"1","searchFieldNum":"-1","fieldRequiredNum":"4"}, originalColumns=[{"fieldDbName":"id","fieldName":"id","filedComment":"主键","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"N","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"1","isKey":"Y","isShow":"N","isShowList":"N","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"Y","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"create_by","fieldName":"createBy","filedComment":"创建人","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"2","isKey":"N","isShow":"N","isShowList":"N","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"create_time","fieldName":"createTime","filedComment":"创建日期","fieldType":"java.util.Date","fieldDbType":"Datetime","classType":"datetime","classType_row":"datetime","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"datetime","fieldOrderNum":"3","isKey":"N","isShow":"N","isShowList":"N","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"update_by","fieldName":"updateBy","filedComment":"更新人","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"4","isKey":"N","isShow":"N","isShowList":"N","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"update_time","fieldName":"updateTime","filedComment":"更新日期","fieldType":"java.util.Date","fieldDbType":"Datetime","classType":"datetime","classType_row":"datetime","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"datetime","fieldOrderNum":"5","isKey":"N","isShow":"N","isShowList":"N","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"sys_org_code","fieldName":"sysOrgCode","filedComment":"所属部门","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"6","isKey":"N","isShow":"N","isShowList":"N","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"demand_titile","fieldName":"demandTitile","filedComment":"需求标题","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"8","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"demand_description","fieldName":"demandDescription","filedComment":"需求描述","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"9","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"demand_type","fieldName":"demandType","filedComment":"需求类型","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"10","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"demand_state","fieldName":"demandState","filedComment":"需求状态","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"11","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"application_scenario","fieldName":"applicationScenario","filedComment":"应用场景","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"12","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"segmented_scenario","fieldName":"segmentedScenario","filedComment":"细分场景","fieldType":"java.lang.String","fieldDbType":"string","classType":"text","classType_row":"text","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"text","fieldOrderNum":"13","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}, {"fieldDbName":"demand_deadline","fieldName":"demandDeadline","filedComment":"截止日期","fieldType":"java.util.Date","fieldDbType":"Datetime","classType":"datetime","classType_row":"datetime","optionType":"","charmaxLength":"","precision":"null","scale":"null","nullable":"Y","fieldLength":"200","fieldHref":"","fieldValidType":"","fieldDefault":"","fieldShowType":"datetime","fieldOrderNum":"14","isKey":"N","isShow":"Y","isShowList":"Y","isQuery":"N","uploadnum":"null","defaultVal":"null","sort":"N","readonly":"N","queryMode":"single","dictField":"","dictTable":"","dictText":""}], bussiPackage=org.jeecg.modules, tableName=dam_demand}
+2026-03-25 10:13:00.958 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:55 -   load template from templateRootDir = 'E:\00-IDEAProject\00-DAM\DAM-java\jeecg-module-system\jeecg-system-biz\target\classes\jeecg\code-template-online',stylePath ='default.one',  out GenerateRootDir:C:\Users\LXR\Desktop\Code
+2026-03-25 10:13:01.139 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:129 - [generate]	 template:default\one\java\${bussiPackage}\${entityPackage}\controller\${entityName}Controller.javai ==> C:\Users\LXR\Desktop\Code\src/main/java\org\jeecg\modules\demand\controller\DemandController.java
+2026-03-25 10:13:01.220 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:129 - [generate]	 template:default\one\java\${bussiPackage}\${entityPackage}\entity\${entityName}.javai ==> C:\Users\LXR\Desktop\Code\src/main/java\org\jeecg\modules\demand\entity\Demand.java
+2026-03-25 10:13:01.246 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:129 - [generate]	 template:default\one\java\${bussiPackage}\${entityPackage}\mapper\${entityName}Mapper.javai ==> C:\Users\LXR\Desktop\Code\src/main/java\org\jeecg\modules\demand\mapper\DemandMapper.java
+2026-03-25 10:13:01.249 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:129 - [generate]	 template:default\one\java\${bussiPackage}\${entityPackage}\mapper\xml\${entityName}Mapper.xml ==> C:\Users\LXR\Desktop\Code\src/main/java\org\jeecg\modules\demand\mapper\xml\DemandMapper.xml
+2026-03-25 10:13:01.253 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:129 - [generate]	 template:default\one\java\${bussiPackage}\${entityPackage}\search\PlanSearchCondition.javai ==> C:\Users\LXR\Desktop\Code\src/main/java\org\jeecg\modules\demand\search\PlanSearchCondition.java
+2026-03-25 10:13:01.256 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:129 - [generate]	 template:default\one\java\${bussiPackage}\${entityPackage}\service\I${entityName}Service.javai ==> C:\Users\LXR\Desktop\Code\src/main/java\org\jeecg\modules\demand\service\IDemandService.java
+2026-03-25 10:13:01.259 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:129 - [generate]	 template:default\one\java\${bussiPackage}\${entityPackage}\service\impl\${entityName}ServiceImpl.javai ==> C:\Users\LXR\Desktop\Code\src/main/java\org\jeecg\modules\demand\service\impl\DemandServiceImpl.java
+2026-03-25 10:13:01.275 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:129 - [generate]	 template:default\one\java\${bussiPackage}\${entityPackage}\vue\${entityName}List.vuei ==> C:\Users\LXR\Desktop\Code\src/main/java\org\jeecg\modules\demand\vue\DemandList.vue
+2026-03-25 10:13:01.311 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:129 - [generate]	 template:default\one\java\${bussiPackage}\${entityPackage}\vue\${entityName}_menu_insert.sql ==> C:\Users\LXR\Desktop\Code\src/main/java\org\jeecg\modules\demand\vue\Demand_menu_insert.sql
+2026-03-25 10:13:01.329 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:129 - [generate]	 template:default\one\java\${bussiPackage}\${entityPackage}\vue\modules\${entityName}Form.vuei ==> C:\Users\LXR\Desktop\Code\src/main/java\org\jeecg\modules\demand\vue\modules\DemandForm.vue
+2026-03-25 10:13:01.361 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:129 - [generate]	 template:default\one\java\${bussiPackage}\${entityPackage}\vue\modules\${entityName}Modal.vuei ==> C:\Users\LXR\Desktop\Code\src/main/java\org\jeecg\modules\demand\vue\modules\DemandModal.vue
+2026-03-25 10:13:01.376 [http-nio-9998-exec-9] INFO  org.jeecgframework.codegenerate.generate.impl.a.a:129 - [generate]	 template:default\one\java\${bussiPackage}\${entityPackage}\vue\modules\${entityName}Modal__Style#Drawer.vuei ==> C:\Users\LXR\Desktop\Code\src/main/java\org\jeecg\modules\demand\vue\modules\DemandModal.Style#Drawer.vue
+2026-03-25 10:13:01.390 [http-nio-9998-exec-9] INFO  o.j.codegenerate.generate.impl.CodeGenerateOne:149 -  ----- jeecg-boot ---- generate  code  success =======> 表名：dam_demand 
+2026-03-25 10:24:15.705 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-03-25 10:24:15.963 [SpringApplicationShutdownHook] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:847 - Shutting down Quartz Scheduler
+2026-03-25 10:24:15.964 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler:666 - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-03-25 10:24:15.964 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-03-25 10:24:15.965 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler:740 - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-03-25 10:24:15.989 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource:2029 - {dataSource-1} closing ...
+2026-03-25 10:24:15.994 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource:2101 - {dataSource-1} closed
+2026-03-25 10:24:23.083 [background-preinit] INFO  org.hibernate.validator.internal.util.Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2026-03-25 10:24:23.103 [main] INFO  org.jeecg.JeecgSystemApplication:55 - Starting JeecgSystemApplication using Java 1.8.0_251 on 编号89757 with PID 9512 (E:\00-IDEAProject\00-DAM\DAM-java\jeecg-module-system\jeecg-system-start\target\classes started by LXR in E:\00-IDEAProject\00-DAM\DAM-java)
+2026-03-25 10:24:23.104 [main] INFO  org.jeecg.JeecgSystemApplication:651 - The following 1 profile is active: "dm8"
+2026-03-25 10:24:24.913 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:262 - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-03-25 10:24:24.918 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-03-25 10:24:25.049 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 100 ms. Found 0 Redis repository interfaces.
+2026-03-25 10:24:25.256 [main] INFO  o.j.minidao.auto.MinidaoAutoConfiguration:23 -  ******************* init miniDao config [ begin ] *********************** 
+2026-03-25 10:24:25.257 [main] INFO  o.j.minidao.auto.MinidaoAutoConfiguration:25 -  ------ minidao.base-package ------- org.jeecg.modules.jmreport.desreport.*
+2026-03-25 10:24:25.258 [main] INFO  o.j.minidao.auto.MinidaoAutoConfiguration:42 -  *******************  init miniDao config  [ end ] *********************** 
+2026-03-25 10:24:25.295 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner:44 - No MyBatis mapper was found in '[org.jeecg.modules.hrutilization.mapper]' package. Please check your configuration.
+2026-03-25 10:24:25.327 [main] INFO  o.j.minidao.factory.MiniDaoClassPathMapperScanner:48 - register minidao name is { org.jeecg.modules.jmreport.desreport.dao.JimuReportDao }
+2026-03-25 10:24:25.328 [main] INFO  o.j.minidao.factory.MiniDaoClassPathMapperScanner:48 - register minidao name is { org.jeecg.modules.jmreport.desreport.dao.JimuReportDataSourceDao }
+2026-03-25 10:24:25.328 [main] INFO  o.j.minidao.factory.MiniDaoClassPathMapperScanner:48 - register minidao name is { org.jeecg.modules.jmreport.desreport.dao.JimuReportDbDao }
+2026-03-25 10:24:25.329 [main] INFO  o.j.minidao.factory.MiniDaoClassPathMapperScanner:48 - register minidao name is { org.jeecg.modules.jmreport.desreport.dao.JimuReportDbFieldDao }
+2026-03-25 10:24:25.329 [main] INFO  o.j.minidao.factory.MiniDaoClassPathMapperScanner:48 - register minidao name is { org.jeecg.modules.jmreport.desreport.dao.JimuReportDbParamDao }
+2026-03-25 10:24:25.329 [main] INFO  o.j.minidao.factory.MiniDaoClassPathMapperScanner:48 - register minidao name is { org.jeecg.modules.jmreport.desreport.dao.JimuReportDictDao }
+2026-03-25 10:24:25.329 [main] INFO  o.j.minidao.factory.MiniDaoClassPathMapperScanner:48 - register minidao name is { org.jeecg.modules.jmreport.desreport.dao.JimuReportDictItemDao }
+2026-03-25 10:24:25.329 [main] INFO  o.j.minidao.factory.MiniDaoClassPathMapperScanner:48 - register minidao name is { org.jeecg.modules.jmreport.desreport.dao.JimuReportLinkDao }
+2026-03-25 10:24:25.329 [main] INFO  o.j.minidao.factory.MiniDaoClassPathMapperScanner:48 - register minidao name is { org.jeecg.modules.jmreport.desreport.dao.JimuReportMapDao }
+2026-03-25 10:24:25.329 [main] INFO  o.j.minidao.factory.MiniDaoClassPathMapperScanner:48 - register minidao name is { org.jeecg.modules.jmreport.desreport.dao.JimuReportShareDao }
+2026-03-25 10:24:25.643 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean '(inner bean)#3dd2b9c1#9' of type [org.jeecgframework.minidao.aop.MiniDaoHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.648 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'jimuReportShareDao' of type [org.jeecgframework.minidao.factory.MiniDaoBeanFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.650 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean '(inner bean)#3dd2b9c1#8' of type [org.jeecgframework.minidao.aop.MiniDaoHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.651 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'jimuReportMapDao' of type [org.jeecgframework.minidao.factory.MiniDaoBeanFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.652 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean '(inner bean)#3dd2b9c1#7' of type [org.jeecgframework.minidao.aop.MiniDaoHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.653 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'jimuReportLinkDao' of type [org.jeecgframework.minidao.factory.MiniDaoBeanFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.654 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean '(inner bean)#3dd2b9c1#6' of type [org.jeecgframework.minidao.aop.MiniDaoHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.655 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'jimuReportDictItemDao' of type [org.jeecgframework.minidao.factory.MiniDaoBeanFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.655 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean '(inner bean)#3dd2b9c1#5' of type [org.jeecgframework.minidao.aop.MiniDaoHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.656 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'jimuReportDictDao' of type [org.jeecgframework.minidao.factory.MiniDaoBeanFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.657 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean '(inner bean)#3dd2b9c1#4' of type [org.jeecgframework.minidao.aop.MiniDaoHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.658 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'jimuReportDbParamDao' of type [org.jeecgframework.minidao.factory.MiniDaoBeanFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.658 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean '(inner bean)#3dd2b9c1#3' of type [org.jeecgframework.minidao.aop.MiniDaoHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.659 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'jimuReportDbFieldDao' of type [org.jeecgframework.minidao.factory.MiniDaoBeanFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.660 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean '(inner bean)#3dd2b9c1#2' of type [org.jeecgframework.minidao.aop.MiniDaoHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.661 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'jimuReportDbDao' of type [org.jeecgframework.minidao.factory.MiniDaoBeanFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.661 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean '(inner bean)#3dd2b9c1#1' of type [org.jeecgframework.minidao.aop.MiniDaoHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.662 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'jimuReportDataSourceDao' of type [org.jeecgframework.minidao.factory.MiniDaoBeanFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.662 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean '(inner bean)#3dd2b9c1' of type [org.jeecgframework.minidao.aop.MiniDaoHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.663 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'jimuReportDao' of type [org.jeecgframework.minidao.factory.MiniDaoBeanFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.682 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.685 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.702 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'org.springframework.boot.actuate.autoconfigure.metrics.redis.LettuceMetricsAutoConfiguration' of type [org.springframework.boot.actuate.autoconfigure.metrics.redis.LettuceMetricsAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.703 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusMetricsExportAutoConfiguration' of type [org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusMetricsExportAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.706 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'management.metrics.export.prometheus-org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusProperties' of type [org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.710 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'prometheusConfig' of type [org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusPropertiesConfigAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.714 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'collectorRegistry' of type [io.prometheus.client.CollectorRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.717 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'org.springframework.boot.actuate.autoconfigure.metrics.MetricsAutoConfiguration' of type [org.springframework.boot.actuate.autoconfigure.metrics.MetricsAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.718 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'micrometerClock' of type [io.micrometer.core.instrument.Clock$1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.747 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'prometheusMeterRegistry' of type [io.micrometer.prometheus.PrometheusMeterRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.750 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'micrometerOptions' of type [io.lettuce.core.metrics.MicrometerOptions] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.751 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'lettuceMetrics' of type [org.springframework.boot.actuate.autoconfigure.metrics.redis.LettuceMetricsAutoConfiguration$$Lambda$444/1021790474] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.850 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.939 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.944 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'jeecgBaseConfig' of type [org.jeecg.config.JeecgBaseConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:25.947 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'shiroConfig' of type [org.jeecg.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$7ffeb9a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:26.204 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:26.210 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$8a50e27f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:26.222 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:26.274 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'shiroRealm' of type [org.jeecg.config.shiro.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:26.722 [main] INFO  org.jeecg.config.shiro.ShiroConfig:242 - ===============(1)创建缓存管理器RedisCacheManager
+2026-03-25 10:24:26.727 [main] INFO  org.jeecg.config.shiro.ShiroConfig:260 - ===============(2)创建RedisManager,连接Redis..
+2026-03-25 10:24:26.733 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'redisManager' of type [org.crazycake.shiro.RedisManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:26.743 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:26.765 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:26.789 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$33db4f5e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:26.792 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:376 - Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-03-25 10:24:27.158 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:108 - Tomcat initialized with port(s): 9998 (http)
+2026-03-25 10:24:27.170 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-9998"]
+2026-03-25 10:24:27.171 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2026-03-25 10:24:27.171 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.69]
+2026-03-25 10:24:27.343 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring embedded WebApplicationContext
+2026-03-25 10:24:27.343 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:290 - Root WebApplicationContext: initialization completed in 4199 ms
+2026-03-25 10:24:27.516 [main] INFO  o.j.m.jmreport.config.init.JimuReportConfiguration:99 -  Init JimuReport Config [ Token Interceptor & Resource Locations ] 
+2026-03-25 10:24:27.983 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure:56 - Init DruidDataSource
+2026-03-25 10:24:28.297 [main] INFO  com.alibaba.druid.pool.DruidDataSource:994 - {dataSource-1} inited
+2026-03-25 10:24:30.454 [main] INFO  org.jeecg.common.modules.redis.config.RedisConfig:56 -  --- redis config init --- 
+2026-03-25 10:24:31.703 [main] INFO  org.quartz.impl.StdSchedulerFactory:1220 - Using default implementation for ThreadExecutor
+2026-03-25 10:24:31.718 [main] INFO  org.quartz.core.SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-03-25 10:24:31.718 [main] INFO  org.quartz.core.QuartzScheduler:229 - Quartz Scheduler v.2.3.2 created.
+2026-03-25 10:24:31.732 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:672 - Using db table-based data access locking (synchronization).
+2026-03-25 10:24:31.735 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:145 - JobStoreCMT initialized.
+2026-03-25 10:24:31.735 [main] INFO  org.quartz.core.QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2026-03-25 10:24:31.736 [main] INFO  org.quartz.impl.StdSchedulerFactory:1374 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-03-25 10:24:31.736 [main] INFO  org.quartz.impl.StdSchedulerFactory:1378 - Quartz scheduler version: 2.3.2
+2026-03-25 10:24:31.736 [main] INFO  org.quartz.core.QuartzScheduler:2293 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@757ad227
+2026-03-25 10:24:33.505 [main] INFO  o.j.modules.jmreport.config.JmReportExecutorConfig:42 -  Init JimuReport Config [ 线程池 ] 
+2026-03-25 10:24:35.331 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver:58 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-03-25 10:24:37.124 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-9998"]
+2026-03-25 10:24:37.153 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:220 - Tomcat started on port(s): 9998 (http) with context path '/jeecg-boot'
+2026-03-25 10:24:37.282 [http-nio-9998-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-25 10:24:37.282 [http-nio-9998-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2026-03-25 10:24:37.287 [http-nio-9998-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet:547 - Completed initialization in 5 ms
+2026-03-25 10:24:38.044 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:729 - Starting Quartz Scheduler now
+2026-03-25 10:24:38.066 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:866 - Freed 0 triggers from 'acquired' / 'blocked' state.
+2026-03-25 10:24:38.067 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:876 - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+2026-03-25 10:24:38.067 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:889 - Recovery complete.
+2026-03-25 10:24:38.068 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:896 - Removed 0 'complete' triggers.
+2026-03-25 10:24:38.068 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:901 - Removed 0 stale fired job entries.
+2026-03-25 10:24:38.069 [main] INFO  org.quartz.core.QuartzScheduler:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-03-25 10:24:38.085 [main] INFO  org.jeecg.JeecgSystemApplication:61 - Started JeecgSystemApplication in 15.501 seconds (JVM running for 16.333)
+2026-03-25 10:24:38.096 [main] INFO  org.jeecg.config.init.CodeTemplateInitListener:30 -  Init Code Generate Template [ 检测如果是JAR启动环境，Copy模板到config目录 ] 
+2026-03-25 10:24:38.116 [main] INFO  org.jeecg.JeecgSystemApplication:38 - 
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:9998/jeecg-boot/
+	External: 	http://10.198.88.134:9998/jeecg-boot/
+	Swagger文档: 	http://10.198.88.134:9998/jeecg-boot/doc.html
+----------------------------------------------------------
+2026-03-25 10:24:39.601 [http-nio-9998-exec-8] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /online/cgform/head/list ; 请求类型 >> GET . 
+2026-03-25 10:24:39.644 [http-nio-9998-exec-3] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:24:39.657 [http-nio-9998-exec-4] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:14毫秒
+2026-03-25 10:24:39.662 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:copy_type, rule:=, value:0
+2026-03-25 10:24:39.664 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:24:39.697 [http-nio-9998-exec-3] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:24:39.699 [http-nio-9998-exec-3] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:24:39.709 [http-nio-9998-exec-3] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:24:39.774 [http-nio-9998-exec-2] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:24:39.774 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:24:39.775 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:24:39.775 [http-nio-9998-exec-2] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:26:45.455 [http-nio-9998-exec-3] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /online/cgform/head/list ; 请求类型 >> GET . 
+2026-03-25 10:26:45.474 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:copy_type, rule:=, value:0
+2026-03-25 10:26:45.477 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:26:49.061 [http-nio-9998-exec-7] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:26:49.061 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:26:49.062 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:26:49.062 [http-nio-9998-exec-7] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:26:49.072 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:34:35.039 [http-nio-9998-exec-6] INFO  o.jeecg.modules.system.controller.LoginController:203 -  强制  管理员退出成功！ 
+2026-03-25 10:34:35.222 [http-nio-9998-exec-5] INFO  o.j.c.desensitization.aspect.SensitiveDataAspect:76 - 加密操作，Aspect程序耗时：4ms
+2026-03-25 10:34:40.944 [http-nio-9998-exec-6] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:34:40.944 [http-nio-9998-exec-2] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 10:34:40.944 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:34:40.944 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:34:40.945 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:34:40.945 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:34:40.945 [http-nio-9998-exec-2] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:34:40.945 [http-nio-9998-exec-6] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 10:34:40.954 [http-nio-9998-exec-8] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:11毫秒
+2026-03-25 10:34:44.388 [http-nio-9998-exec-5] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /online/cgform/head/list ; 请求类型 >> GET . 
+2026-03-25 10:34:44.408 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:copy_type, rule:=, value:0
+2026-03-25 10:34:44.413 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:34:47.438 [http-nio-9998-exec-6] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/ol_form_biz_type
+2026-03-25 10:34:47.439 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:34:47.439 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:34:47.439 [http-nio-9998-exec-6] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : ol_form_biz_type
+2026-03-25 10:40:32.536 [http-nio-9998-exec-4] INFO  o.jeecg.modules.system.controller.LoginController:203 -  强制  管理员退出成功！ 
+2026-03-25 10:40:32.634 [http-nio-9998-exec-7] INFO  o.j.c.desensitization.aspect.SensitiveDataAspect:76 - 加密操作，Aspect程序耗时：1ms
+2026-03-25 10:40:36.854 [http-nio-9998-exec-5] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /online/cgform/head/list ; 请求类型 >> GET . 
+2026-03-25 10:40:36.876 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:copy_type, rule:=, value:0
+2026-03-25 10:40:36.877 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 10:40:38.666 [http-nio-9998-exec-7] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/ol_form_biz_type
+2026-03-25 10:40:38.667 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 10:40:38.667 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 10:40:38.668 [http-nio-9998-exec-7] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : ol_form_biz_type
+2026-03-25 11:18:28.999 [http-nio-9998-exec-1] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /online/cgform/head/list ; 请求类型 >> GET . 
+2026-03-25 11:18:29.017 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:copy_type, rule:=, value:0
+2026-03-25 11:18:29.018 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 11:18:29.135 [http-nio-9998-exec-5] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:18:29.135 [http-nio-9998-exec-8] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:18:29.135 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:18:29.135 [http-nio-9998-exec-8] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:18:29.135 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:18:29.135 [http-nio-9998-exec-8] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:18:29.136 [http-nio-9998-exec-8] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:18:29.136 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:18:29.139 [http-nio-9998-exec-2] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:11毫秒
+2026-03-25 11:18:36.704 [http-nio-9998-exec-4] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:18:36.705 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:18:36.705 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:18:36.706 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 11:18:36.706 [http-nio-9998-exec-4] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:18:58.453 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 11:18:58.454 [http-nio-9998-exec-4] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:18:58.454 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:18:58.455 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:18:58.456 [http-nio-9998-exec-4] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:18:58.763 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:18:58.763 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:18:58.764 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:18:58.764 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:18:58.765 [http-nio-9998-exec-5] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:18:58.765 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:18:58.766 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:18:58.766 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:18:58.778 [http-nio-9998-exec-2] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:10毫秒
+2026-03-25 11:19:14.668 [http-nio-9998-exec-5] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:19:14.669 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 11:19:14.669 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:19:14.669 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:19:14.670 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:19:26.236 [http-nio-9998-exec-4] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:19:26.236 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 11:19:26.236 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:19:26.236 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:19:26.238 [http-nio-9998-exec-4] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:19:37.875 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 11:20:56.674 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 11:20:56.675 [http-nio-9998-exec-5] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:20:56.676 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:20:56.676 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:20:56.678 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:21:13.833 [http-nio-9998-exec-5] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:21:13.833 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 11:21:13.834 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:21:13.834 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:21:13.835 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:21:14.041 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:21:14.041 [http-nio-9998-exec-2] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:21:14.042 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:21:14.042 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:21:14.042 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:21:14.042 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:21:14.043 [http-nio-9998-exec-2] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:21:14.043 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:21:14.060 [http-nio-9998-exec-1] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:10毫秒
+2026-03-25 11:23:52.550 [http-nio-9998-exec-4] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:23:52.550 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 11:23:52.551 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:23:52.551 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:23:52.551 [http-nio-9998-exec-4] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:25:06.515 [http-nio-9998-exec-7] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:25:06.515 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 11:25:06.516 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:25:06.516 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:25:06.516 [http-nio-9998-exec-7] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:25:06.964 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:25:06.964 [http-nio-9998-exec-10] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 11:25:06.964 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:25:06.965 [http-nio-9998-exec-10] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 11:25:06.965 [http-nio-9998-exec-10] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:25:06.965 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 11:25:06.965 [http-nio-9998-exec-10] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:25:06.965 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 11:25:06.977 [http-nio-9998-exec-1] INFO  o.j.m.system.controller.SysPermissionController:148 - ======获取一级菜单数据=====耗时:12毫秒
+2026-03-25 13:06:30.999 [http-nio-9998-exec-10] INFO  o.jeecg.modules.system.controller.LoginController:497 -  用户名:  管理员,退出成功！ 
+2026-03-25 13:06:42.485 [http-nio-9998-exec-1] INFO  o.j.c.desensitization.aspect.SensitiveDataAspect:76 - 加密操作，Aspect程序耗时：0ms
+2026-03-25 13:32:59.693 [http-nio-9998-exec-10] INFO  o.jeecg.modules.system.controller.LoginController:203 -  强制  管理员退出成功！ 
+2026-03-25 13:32:59.831 [http-nio-9998-exec-4] INFO  o.j.c.desensitization.aspect.SensitiveDataAspect:76 - 加密操作，Aspect程序耗时：1ms
+2026-03-25 13:33:02.284 [http-nio-9998-exec-5] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 13:33:02.284 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:33:02.285 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 13:33:02.286 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 13:33:02.286 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 13:44:58.473 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:44:58.473 [http-nio-9998-exec-1] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 13:44:58.474 [http-nio-9998-exec-1] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 13:44:58.474 [http-nio-9998-exec-1] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 13:44:58.474 [http-nio-9998-exec-1] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 13:45:16.505 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:45:16.505 [http-nio-9998-exec-7] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 13:45:16.506 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 13:45:16.507 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 13:45:16.507 [http-nio-9998-exec-7] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 13:45:20.403 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 13:45:20.404 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 13:45:20.404 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 13:45:20.404 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 13:45:20.404 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:45:35.433 [http-nio-9998-exec-5] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 13:45:35.433 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:45:35.433 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 13:45:35.434 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 13:45:35.434 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 13:46:15.206 [http-nio-9998-exec-5] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 13:46:15.206 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 13:46:15.207 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 13:46:15.207 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 13:46:15.208 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:46:21.255 [http-nio-9998-exec-8] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 13:46:21.255 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:46:21.256 [http-nio-9998-exec-8] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 13:46:21.256 [http-nio-9998-exec-8] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 13:46:21.256 [http-nio-9998-exec-8] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 13:47:06.918 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 13:47:06.918 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:47:06.918 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 13:47:06.919 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 13:47:06.919 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 13:47:18.427 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:47:18.427 [http-nio-9998-exec-2] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 13:47:18.428 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 13:47:18.429 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 13:47:18.429 [http-nio-9998-exec-2] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 13:50:51.739 [http-nio-9998-exec-2] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 13:50:51.739 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:50:51.739 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 13:50:51.739 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 13:50:51.740 [http-nio-9998-exec-2] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 13:52:00.111 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:52:00.111 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 13:52:00.121 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 13:52:00.130 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 13:52:00.131 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 13:54:48.526 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:54:48.526 [http-nio-9998-exec-1] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 13:54:48.527 [http-nio-9998-exec-1] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 13:54:48.527 [http-nio-9998-exec-1] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 13:54:48.527 [http-nio-9998-exec-1] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 13:55:00.977 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 13:55:04.405 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:02:39.373 [http-nio-9998-exec-6] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:02:39.374 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:02:39.374 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:02:39.375 [http-nio-9998-exec-6] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:02:39.397 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:02:41.139 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:pid, rule:=, value:2034108045862440961
+2026-03-25 14:02:41.140 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:02:44.329 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:pid, rule:=, value:2034460635800297474
+2026-03-25 14:02:44.330 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:03:03.488 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:03:03.489 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:03:03.489 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:03:03.489 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:03:03.489 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:03:10.626 [http-nio-9998-exec-1] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:03:10.626 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:03:10.626 [http-nio-9998-exec-1] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:03:10.627 [http-nio-9998-exec-1] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:03:10.628 [http-nio-9998-exec-1] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:03:31.932 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:03:31.932 [http-nio-9998-exec-7] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:03:31.933 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:03:31.933 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:03:31.934 [http-nio-9998-exec-7] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:04:57.248 [http-nio-9998-exec-6] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:04:57.248 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:04:57.248 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:04:57.249 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:04:57.249 [http-nio-9998-exec-6] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:04:59.512 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:pid, rule:=, value:2034460832097918977
+2026-03-25 14:04:59.513 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:17:51.737 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:pid, rule:=, value:2034108045862440961
+2026-03-25 14:17:51.738 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:18:38.000 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:18:38.000 [http-nio-9998-exec-4] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:18:38.000 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:18:38.002 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:18:38.002 [http-nio-9998-exec-4] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:18:39.401 [http-nio-9998-exec-2] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/loadTreeData
+2026-03-25 14:18:39.402 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {"code":"id","condition":"","hasChildField":"has_child","pid":"0","pidField":"pid","tableName":"dam_catalog","text":"catalog_name"}
+2026-03-25 14:18:39.402 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : 201439A51A4C1F5FE54F4CB170903355
+2026-03-25 14:18:43.949 [http-nio-9998-exec-6] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/loadTreeData
+2026-03-25 14:18:43.950 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {"code":"id","condition":"","hasChildField":"has_child","pid":"0","pidField":"pid","tableName":"dam_catalog","text":"catalog_name"}
+2026-03-25 14:18:43.951 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : 201439A51A4C1F5FE54F4CB170903355
+2026-03-25 14:18:48.368 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:18:51.008 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/loadTreeData
+2026-03-25 14:18:51.010 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {"code":"id","condition":"","hasChildField":"has_child","pid":"0","pidField":"pid","tableName":"dam_catalog","text":"catalog_name"}
+2026-03-25 14:18:51.012 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : 201439A51A4C1F5FE54F4CB170903355
+2026-03-25 14:18:52.469 [http-nio-9998-exec-2] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/loadDictItem/dam_catalog,catalog_name,id
+2026-03-25 14:18:52.470 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.HttpUtils:44 -  pathVariable: dam_catalog,catalog_name,id
+2026-03-25 14:18:52.472 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.HttpUtils:46 -  pathVariable decode: dam_catalog,catalog_name,id
+2026-03-25 14:18:52.472 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {"key":"2036689235651870722","x-path-variable":"dam_catalog,catalog_name,id"}
+2026-03-25 14:18:52.473 [http-nio-9998-exec-2] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : 6A9BB8C8AF89CEC3C9E6D729FACC0EAA
+2026-03-25 14:18:52.477 [http-nio-9998-exec-2] INFO  o.j.c.util.security.AbstractQueryBlackListHandler:55 - --获取sql信息--
+2026-03-25 14:18:52.489 [http-nio-9998-exec-2] INFO  o.j.modules.system.controller.SysDictController:312 - Result(success=true, message=, code=0, result=[1], timestamp=1774419532476, onlTable=null)
+2026-03-25 14:18:54.954 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:19:03.180 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:pid, rule:=, value:2036689235651870722
+2026-03-25 14:19:03.181 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:19:07.021 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:19:10.539 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:22:33.593 [http-nio-9998-exec-7] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/loadTreeData
+2026-03-25 14:22:33.593 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {"code":"id","condition":"","hasChildField":"has_child","pid":"0","pidField":"pid","tableName":"dam_catalog","text":"catalog_name"}
+2026-03-25 14:22:33.594 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : 201439A51A4C1F5FE54F4CB170903355
+2026-03-25 14:22:40.121 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:22:42.601 [http-nio-9998-exec-10] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/loadTreeData
+2026-03-25 14:22:42.601 [http-nio-9998-exec-7] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/loadDictItem/dam_catalog,catalog_name,id
+2026-03-25 14:22:42.601 [http-nio-9998-exec-10] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {"code":"id","condition":"","hasChildField":"has_child","pid":"0","pidField":"pid","tableName":"dam_catalog","text":"catalog_name"}
+2026-03-25 14:22:42.601 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.HttpUtils:44 -  pathVariable: dam_catalog,catalog_name,id
+2026-03-25 14:22:42.601 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.HttpUtils:46 -  pathVariable decode: dam_catalog,catalog_name,id
+2026-03-25 14:22:42.601 [http-nio-9998-exec-10] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : 201439A51A4C1F5FE54F4CB170903355
+2026-03-25 14:22:42.601 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {"key":"2036690207782486018","x-path-variable":"dam_catalog,catalog_name,id"}
+2026-03-25 14:22:42.601 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : C3FB73BBE4E26E5F7783D1BA42105DA1
+2026-03-25 14:22:42.601 [http-nio-9998-exec-7] INFO  o.j.c.util.security.AbstractQueryBlackListHandler:55 - --获取sql信息--
+2026-03-25 14:22:42.605 [http-nio-9998-exec-7] INFO  o.j.modules.system.controller.SysDictController:312 - Result(success=true, message=, code=0, result=[1], timestamp=1774419762601, onlTable=null)
+2026-03-25 14:22:46.855 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:22:48.443 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:pid, rule:=, value:2036690207782486018
+2026-03-25 14:22:48.444 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:22:51.872 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:26:45.475 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:26:45.475 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:26:45.476 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:26:45.476 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:26:45.477 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:26:48.009 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:pid, rule:=, value:2034108045862440961
+2026-03-25 14:26:48.009 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:27:05.340 [http-nio-9998-exec-10] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:27:05.340 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:27:05.341 [http-nio-9998-exec-10] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:27:05.341 [http-nio-9998-exec-10] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:27:05.341 [http-nio-9998-exec-10] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:27:10.846 [http-nio-9998-exec-4] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:27:10.846 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:27:10.847 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:27:10.847 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:27:10.848 [http-nio-9998-exec-4] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:33:28.621 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:33:28.621 [http-nio-9998-exec-5] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:33:28.622 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:33:28.623 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:33:28.623 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:55:48.303 [http-nio-9998-exec-10] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:55:48.304 [http-nio-9998-exec-10] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:55:48.304 [http-nio-9998-exec-10] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:55:48.305 [http-nio-9998-exec-10] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:55:48.305 [http-nio-9998-exec-4] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:55:48.306 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:55:48.306 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:55:48.306 [http-nio-9998-exec-4] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:55:50.929 [http-nio-9998-exec-3] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:55:50.929 [http-nio-9998-exec-5] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /sys/user/list ; 请求类型 >> GET . 
+2026-03-25 14:55:50.929 [http-nio-9998-exec-3] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:55:50.929 [http-nio-9998-exec-10] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /sys/user/list ; 请求类型 >> GET . 
+2026-03-25 14:55:50.930 [http-nio-9998-exec-3] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:55:50.930 [http-nio-9998-exec-3] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:55:50.981 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:orgunit, rule:=, value:2034832736390549506
+2026-03-25 14:55:50.984 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:55:50.987 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:55:51.038 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysUserController:247 - com.baomidou.mybatisplus.extension.plugins.pagination.Page@34c768d7
+2026-03-25 14:55:51.038 [http-nio-9998-exec-10] INFO  o.j.modules.system.controller.SysUserController:247 - com.baomidou.mybatisplus.extension.plugins.pagination.Page@1e45bf
+2026-03-25 14:55:53.406 [http-nio-9998-exec-3] INFO  org.jeecg.common.aspect.PermissionDataAspect:72 - 拦截请求 >> /sys/user/list ; 请求类型 >> GET . 
+2026-03-25 14:55:53.406 [http-nio-9998-exec-6] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:55:53.406 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:55:53.407 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:55:53.407 [http-nio-9998-exec-6] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:55:53.435 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:55:53.468 [http-nio-9998-exec-3] INFO  o.j.modules.system.controller.SysUserController:247 - com.baomidou.mybatisplus.extension.plugins.pagination.Page@7ba0359b
+2026-03-25 14:55:55.714 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:55:55.715 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:55:55.717 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:55:55.718 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:55:55.726 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:55:57.608 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:55:57.608 [http-nio-9998-exec-8] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:55:57.608 [http-nio-9998-exec-8] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:55:57.609 [http-nio-9998-exec-8] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:55:57.610 [http-nio-9998-exec-8] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:55:59.003 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:pid, rule:=, value:2034108045862440961
+2026-03-25 14:55:59.004 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:56:00.085 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:pid, rule:=, value:2034460635800297474
+2026-03-25 14:56:00.085 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:56:09.008 [http-nio-9998-exec-5] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:56:09.008 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:56:09.009 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:56:09.009 [http-nio-9998-exec-5] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:56:09.010 [http-nio-9998-exec-5] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:56:09.710 [http-nio-9998-exec-6] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:56:09.711 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:56:09.711 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:56:09.713 [http-nio-9998-exec-6] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:56:09.713 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:56:11.668 [http-nio-9998-exec-1] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:56:11.669 [http-nio-9998-exec-1] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:56:11.669 [http-nio-9998-exec-1] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:56:11.669 [http-nio-9998-exec-1] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:56:11.669 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:56:11.669 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:56:11.670 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:56:11.670 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 14:56:12.447 [http-nio-9998-exec-7] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 14:56:12.448 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 14:56:12.448 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 14:56:12.448 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 14:56:12.449 [http-nio-9998-exec-7] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 15:08:29.668 [http-nio-9998-exec-7] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 15:08:29.668 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 15:08:29.669 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 15:08:29.669 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 15:08:29.669 [http-nio-9998-exec-7] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 15:16:43.203 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-03-25 15:16:43.203 [http-nio-9998-exec-7] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-03-25 15:16:43.204 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-03-25 15:16:43.204 [http-nio-9998-exec-7] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-03-25 15:16:43.204 [http-nio-9998-exec-7] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-03-25 16:45:01.565 [http-nio-9998-exec-5] INFO  o.jeecg.modules.system.controller.LoginController:497 -  用户名:  管理员,退出成功！ 
+2026-03-25 16:45:16.416 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-03-25 16:45:16.645 [SpringApplicationShutdownHook] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:847 - Shutting down Quartz Scheduler
+2026-03-25 16:45:16.646 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler:666 - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-03-25 16:45:16.646 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-03-25 16:45:16.647 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler:740 - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-03-25 16:45:16.656 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource:2029 - {dataSource-1} closing ...
+2026-03-25 16:45:16.661 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource:2101 - {dataSource-1} closed

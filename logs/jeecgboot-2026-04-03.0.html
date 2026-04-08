@@ -1,0 +1,836 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Apr 03 09:22:43 CST 2026</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Level">Level</td>
+<td class="Date">Date</td>
+<td class="Message">Message</td>
+<td class="MethodOfCaller">MethodOfCaller</td>
+<td class="FileOfCaller">FileOfCaller</td>
+<td class="LineOfCaller">LineOfCaller</td>
+</tr>
+
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:22:43,157</td>
+<td class="Message">加密操作，Aspect程序耗时：12ms</td>
+<td class="MethodOfCaller">around</td>
+<td class="FileOfCaller">SensitiveDataAspect.java</td>
+<td class="LineOfCaller">76</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:03,825</td>
+<td class="Message">Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security</td>
+<td class="MethodOfCaller">preHandle</td>
+<td class="FileOfCaller">SignAuthInterceptor.java</td>
+<td class="LineOfCaller">35</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:03,837</td>
+<td class="Message">======获取一级菜单数据=====耗时:14毫秒</td>
+<td class="MethodOfCaller">getSystemMenuList</td>
+<td class="FileOfCaller">SysPermissionController.java</td>
+<td class="LineOfCaller">148</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:03,893</td>
+<td class="Message">Param paramsJsonStr : {}</td>
+<td class="MethodOfCaller">getParamsSign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:03,894</td>
+<td class="Message">Param Sign : E19D6243CB1945AB4F7202A1B00F77D5</td>
+<td class="MethodOfCaller">verifySign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:03,929</td>
+<td class="Message"> dictCode : system_security</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">167</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:03,946</td>
+<td class="Message">Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security</td>
+<td class="MethodOfCaller">preHandle</td>
+<td class="FileOfCaller">SignAuthInterceptor.java</td>
+<td class="LineOfCaller">35</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:03,946</td>
+<td class="Message">Param paramsJsonStr : {}</td>
+<td class="MethodOfCaller">getParamsSign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:03,947</td>
+<td class="Message">Param Sign : E19D6243CB1945AB4F7202A1B00F77D5</td>
+<td class="MethodOfCaller">verifySign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:03,948</td>
+<td class="Message"> dictCode : system_security</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">167</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:06,072</td>
+<td class="Message">Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/global_perms_type</td>
+<td class="MethodOfCaller">preHandle</td>
+<td class="FileOfCaller">SignAuthInterceptor.java</td>
+<td class="LineOfCaller">35</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:06,073</td>
+<td class="Message">Param paramsJsonStr : {}</td>
+<td class="MethodOfCaller">getParamsSign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:06,073</td>
+<td class="Message">Param Sign : E19D6243CB1945AB4F7202A1B00F77D5</td>
+<td class="MethodOfCaller">verifySign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:06,073</td>
+<td class="Message">Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/valid_status</td>
+<td class="MethodOfCaller">preHandle</td>
+<td class="FileOfCaller">SignAuthInterceptor.java</td>
+<td class="LineOfCaller">35</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:06,073</td>
+<td class="Message">Param paramsJsonStr : {}</td>
+<td class="MethodOfCaller">getParamsSign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:06,073</td>
+<td class="Message"> dictCode : global_perms_type</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">167</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:06,074</td>
+<td class="Message">Param Sign : E19D6243CB1945AB4F7202A1B00F77D5</td>
+<td class="MethodOfCaller">verifySign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:23:06,074</td>
+<td class="Message"> dictCode : valid_status</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">167</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:33,403</td>
+<td class="Message">======获取一级菜单数据=====耗时:15毫秒</td>
+<td class="MethodOfCaller">getSystemMenuList</td>
+<td class="FileOfCaller">SysPermissionController.java</td>
+<td class="LineOfCaller">148</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:37,100</td>
+<td class="Message">Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security</td>
+<td class="MethodOfCaller">preHandle</td>
+<td class="FileOfCaller">SignAuthInterceptor.java</td>
+<td class="LineOfCaller">35</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:37,101</td>
+<td class="Message">Param paramsJsonStr : {}</td>
+<td class="MethodOfCaller">getParamsSign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:37,101</td>
+<td class="Message">Param Sign : E19D6243CB1945AB4F7202A1B00F77D5</td>
+<td class="MethodOfCaller">verifySign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:37,102</td>
+<td class="Message"> dictCode : system_security</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">167</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:37,112</td>
+<td class="Message">======获取一级菜单数据=====耗时:15毫秒</td>
+<td class="MethodOfCaller">getSystemMenuList</td>
+<td class="FileOfCaller">SysPermissionController.java</td>
+<td class="LineOfCaller">148</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:37,120</td>
+<td class="Message">Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security</td>
+<td class="MethodOfCaller">preHandle</td>
+<td class="FileOfCaller">SignAuthInterceptor.java</td>
+<td class="LineOfCaller">35</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:37,121</td>
+<td class="Message">Param paramsJsonStr : {}</td>
+<td class="MethodOfCaller">getParamsSign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:37,121</td>
+<td class="Message">Param Sign : E19D6243CB1945AB4F7202A1B00F77D5</td>
+<td class="MethodOfCaller">verifySign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:37,122</td>
+<td class="Message"> dictCode : system_security</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">167</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:44,961</td>
+<td class="Message">Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/global_perms_type</td>
+<td class="MethodOfCaller">preHandle</td>
+<td class="FileOfCaller">SignAuthInterceptor.java</td>
+<td class="LineOfCaller">35</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:44,961</td>
+<td class="Message">Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/valid_status</td>
+<td class="MethodOfCaller">preHandle</td>
+<td class="FileOfCaller">SignAuthInterceptor.java</td>
+<td class="LineOfCaller">35</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:44,962</td>
+<td class="Message">Param paramsJsonStr : {}</td>
+<td class="MethodOfCaller">getParamsSign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:44,962</td>
+<td class="Message">Param paramsJsonStr : {}</td>
+<td class="MethodOfCaller">getParamsSign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:44,962</td>
+<td class="Message">Param Sign : E19D6243CB1945AB4F7202A1B00F77D5</td>
+<td class="MethodOfCaller">verifySign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:44,962</td>
+<td class="Message">Param Sign : E19D6243CB1945AB4F7202A1B00F77D5</td>
+<td class="MethodOfCaller">verifySign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:44,963</td>
+<td class="Message"> dictCode : valid_status</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">167</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:44,963</td>
+<td class="Message"> dictCode : global_perms_type</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">167</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:48,068</td>
+<td class="Message">======获取一级菜单数据=====耗时:16毫秒</td>
+<td class="MethodOfCaller">getSystemMenuList</td>
+<td class="FileOfCaller">SysPermissionController.java</td>
+<td class="LineOfCaller">148</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:53,744</td>
+<td class="Message">======获取一级菜单数据=====耗时:15毫秒</td>
+<td class="MethodOfCaller">getSystemMenuList</td>
+<td class="FileOfCaller">SysPermissionController.java</td>
+<td class="LineOfCaller">148</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:27:59,744</td>
+<td class="Message">======获取一级菜单数据=====耗时:15毫秒</td>
+<td class="MethodOfCaller">getSystemMenuList</td>
+<td class="FileOfCaller">SysPermissionController.java</td>
+<td class="LineOfCaller">148</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:10,075</td>
+<td class="Message">======获取一级菜单数据=====耗时:14毫秒</td>
+<td class="MethodOfCaller">getSystemMenuList</td>
+<td class="FileOfCaller">SysPermissionController.java</td>
+<td class="LineOfCaller">148</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:17,815</td>
+<td class="Message">Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security</td>
+<td class="MethodOfCaller">preHandle</td>
+<td class="FileOfCaller">SignAuthInterceptor.java</td>
+<td class="LineOfCaller">35</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:17,816</td>
+<td class="Message">Param paramsJsonStr : {}</td>
+<td class="MethodOfCaller">getParamsSign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:17,816</td>
+<td class="Message">Param Sign : E19D6243CB1945AB4F7202A1B00F77D5</td>
+<td class="MethodOfCaller">verifySign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:17,816</td>
+<td class="Message"> dictCode : system_security</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">167</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:17,876</td>
+<td class="Message">排序规则&gt;&gt;列:createTime,排序方式:desc</td>
+<td class="MethodOfCaller">doMultiFieldsOrder</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">291</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:23,453</td>
+<td class="Message">======角色授权成功=====耗时:110毫秒</td>
+<td class="MethodOfCaller">saveRolePermission</td>
+<td class="FileOfCaller">SysPermissionController.java</td>
+<td class="LineOfCaller">576</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:25,021</td>
+<td class="Message">Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security</td>
+<td class="MethodOfCaller">preHandle</td>
+<td class="FileOfCaller">SignAuthInterceptor.java</td>
+<td class="LineOfCaller">35</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:25,021</td>
+<td class="Message">Param paramsJsonStr : {}</td>
+<td class="MethodOfCaller">getParamsSign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:25,022</td>
+<td class="Message">Param Sign : E19D6243CB1945AB4F7202A1B00F77D5</td>
+<td class="MethodOfCaller">verifySign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:25,022</td>
+<td class="Message"> dictCode : system_security</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">167</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:25,034</td>
+<td class="Message">排序规则&gt;&gt;列:createTime,排序方式:desc</td>
+<td class="MethodOfCaller">doMultiFieldsOrder</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">291</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:29,544</td>
+<td class="Message">Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security</td>
+<td class="MethodOfCaller">preHandle</td>
+<td class="FileOfCaller">SignAuthInterceptor.java</td>
+<td class="LineOfCaller">35</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:29,545</td>
+<td class="Message">Param paramsJsonStr : {}</td>
+<td class="MethodOfCaller">getParamsSign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:29,546</td>
+<td class="Message">Param Sign : E19D6243CB1945AB4F7202A1B00F77D5</td>
+<td class="MethodOfCaller">verifySign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:29,547</td>
+<td class="Message"> dictCode : system_security</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">167</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:29,550</td>
+<td class="Message">排序规则&gt;&gt;列:createTime,排序方式:desc</td>
+<td class="MethodOfCaller">doMultiFieldsOrder</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">291</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:39,691</td>
+<td class="Message">Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security</td>
+<td class="MethodOfCaller">preHandle</td>
+<td class="FileOfCaller">SignAuthInterceptor.java</td>
+<td class="LineOfCaller">35</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:39,692</td>
+<td class="Message">排序规则&gt;&gt;列:createTime,排序方式:desc</td>
+<td class="MethodOfCaller">doMultiFieldsOrder</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">291</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:39,692</td>
+<td class="Message">Param paramsJsonStr : {}</td>
+<td class="MethodOfCaller">getParamsSign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:39,693</td>
+<td class="Message">Param Sign : E19D6243CB1945AB4F7202A1B00F77D5</td>
+<td class="MethodOfCaller">verifySign</td>
+<td class="FileOfCaller">SignUtil.java</td>
+<td class="LineOfCaller">37</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 09:33:39,693</td>
+<td class="Message"> dictCode : system_security</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">167</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:15,148</td>
+<td class="Message">null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">217</td>
+</tr>
+<tr><td class="Exception" colspan="6">java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.SocketDispatcher.read0(Native Method)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:15,148</td>
+<td class="Message">null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">217</td>
+</tr>
+<tr><td class="Exception" colspan="6">java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.SocketDispatcher.read0(Native Method)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:15,148</td>
+<td class="Message">null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">217</td>
+</tr>
+<tr><td class="Exception" colspan="6">java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.SocketDispatcher.read0(Native Method)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+<br />&nbsp;&nbsp;&nbsp;&nbsp;at java.lang.Thread.run(Thread.java:748)
+</td></tr>
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:15,179</td>
+<td class="Message">Reconnecting, last destination was /127.0.0.1:6379</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">171</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:15,179</td>
+<td class="Message">Reconnecting, last destination was /127.0.0.1:6379</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">171</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:15,179</td>
+<td class="Message">Reconnecting, last destination was /127.0.0.1:6379</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">171</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Level">WARN</td>
+<td class="Date">2026-04-03 16:44:17,219</td>
+<td class="Message">Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">151</td>
+</tr>
+
+<tr class="warn even">
+<td class="Level">WARN</td>
+<td class="Date">2026-04-03 16:44:17,219</td>
+<td class="Message">Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">151</td>
+</tr>
+
+<tr class="warn even">
+<td class="Level">WARN</td>
+<td class="Date">2026-04-03 16:44:17,232</td>
+<td class="Message">Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">151</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:21,471</td>
+<td class="Message">Reconnecting, last destination was 127.0.0.1:6379</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">171</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:21,471</td>
+<td class="Message">Reconnecting, last destination was 127.0.0.1:6379</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">171</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:21,471</td>
+<td class="Message">Reconnecting, last destination was 127.0.0.1:6379</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">171</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:21,571</td>
+<td class="Message">Scheduler quartzScheduler_$_NON_CLUSTERED paused.</td>
+<td class="MethodOfCaller">standby</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">585</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:21,861</td>
+<td class="Message">Shutting down Quartz Scheduler</td>
+<td class="MethodOfCaller">destroy</td>
+<td class="FileOfCaller">SchedulerFactoryBean.java</td>
+<td class="LineOfCaller">847</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:21,862</td>
+<td class="Message">Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.</td>
+<td class="MethodOfCaller">shutdown</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">666</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:21,862</td>
+<td class="Message">Scheduler quartzScheduler_$_NON_CLUSTERED paused.</td>
+<td class="MethodOfCaller">standby</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">585</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:21,865</td>
+<td class="Message">Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.</td>
+<td class="MethodOfCaller">shutdown</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">740</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:21,873</td>
+<td class="Message">{dataSource-1} closing ...</td>
+<td class="MethodOfCaller">close</td>
+<td class="FileOfCaller">DruidDataSource.java</td>
+<td class="LineOfCaller">2029</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2026-04-03 16:44:21,878</td>
+<td class="Message">{dataSource-1} closed</td>
+<td class="MethodOfCaller">close</td>
+<td class="FileOfCaller">DruidDataSource.java</td>
+<td class="LineOfCaller">2101</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Level">WARN</td>
+<td class="Date">2026-04-03 16:44:21,883</td>
+<td class="Message">Cannot reconnect to [127.0.0.1:6379]: java.util.concurrent.CancellationException</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">151</td>
+</tr>
+
+<tr class="warn even">
+<td class="Level">WARN</td>
+<td class="Date">2026-04-03 16:44:21,885</td>
+<td class="Message">Cannot reconnect to [127.0.0.1:6379]: java.util.concurrent.CancellationException</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">151</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Level">WARN</td>
+<td class="Date">2026-04-03 16:44:21,889</td>
+<td class="Message">Cannot reconnect to [127.0.0.1:6379]: java.util.concurrent.CancellationException</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">AbstractInternalLogger.java</td>
+<td class="LineOfCaller">151</td>
+</tr>
+</table>
+</body></html>

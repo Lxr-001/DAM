@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: jeecg-system
+  profiles:
+    active: 'dm8'
+#    active: 'dev-dm'
+#server:
+#  port: 9998
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
