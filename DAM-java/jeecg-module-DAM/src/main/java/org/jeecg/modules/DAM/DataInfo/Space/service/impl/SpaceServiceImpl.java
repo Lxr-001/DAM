@@ -1,6 +1,5 @@
 package org.jeecg.modules.DAM.DataInfo.Space.service.impl;
 
-
 import org.jeecg.modules.DAM.DataInfo.Space.entity.Space;
 import org.jeecg.modules.DAM.DataInfo.Space.mapper.SpaceMapper;
 import org.jeecg.modules.DAM.DataInfo.Space.service.ISpaceService;
@@ -16,5 +15,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
  */
 @Service
 public class SpaceServiceImpl extends ServiceImpl<SpaceMapper, Space> implements ISpaceService {
+
+    @Override
+    public void updateUserCount(String spaceId, Integer userCount) {
+        this.baseMapper.updateUserCount(spaceId, userCount);
+    }
 
 }

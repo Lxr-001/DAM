@@ -47,14 +47,16 @@ public class SpaceController extends JeecgController<Space, ISpaceService> {
 	 //@AutoLog(value = "数据空间 - 分页列表查询")
 	 @ApiOperation(value="数据空间 - 分页列表查询", notes="数据空间 - 分页列表查询")
 	 @GetMapping(value = "/list")
-	 public Result<IPage<Space>> queryPageList(@RequestParam(name = "departId") String departId,
+	 public Result<IPage<Space>> queryPageList(@RequestParam(name = "departId", required=false) String departId,
 											   @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
 											   @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
 											   HttpServletRequest req) {
 		 Page<Space> page = new Page<Space>(pageNo, pageSize);
-		 IPage<Space> pageList = spaceService.page(page,
-				 new LambdaQueryWrapper<Space>().eq(Space::getDepartId, departId)
-		 );
+		 LambdaQueryWrapper<Space> queryWrapper = new LambdaQueryWrapper<Space>();
+		 if (departId != null && !departId.isEmpty()) {
+			 queryWrapper.eq(Space::getDepartId, departId);
+		 }
+		 IPage<Space> pageList = spaceService.page(page, queryWrapper);
 		 return Result.OK(pageList);
 	 }
 

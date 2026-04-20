@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.DAM.DataInfo.SpaceUser.mapper.SpaceUserMapper">
+
+    <!-- 查询数据空间用户详情（包含用户账号、姓名、部门、角色） -->
+    <select id="selectSpaceUserDetailPage" resultType="org.jeecg.modules.DAM.DataInfo.SpaceUser.vo.SpaceUserVo">
+        SELECT
+            su.id AS id,
+            su.space_id AS spaceId,
+            su.user_id AS userId,
+            u.username AS username,
+            u.realname AS realname,
+            d.id AS departId,
+            d.depart_name AS departName,
+            r.role_name AS roleNames,
+            TO_CHAR(su.create_time, 'yyyy-MM-dd HH:mm:ss') AS createTime
+        FROM dam_space_user su
+        LEFT JOIN sys_user u ON su.user_id = u.id
+        LEFT JOIN sys_depart d ON u.orgunit = d.id
+        LEFT JOIN sys_user_role ur ON u.id = ur.user_id
+        LEFT JOIN sys_role r ON ur.role_id = r.id
+        WHERE su.space_id = #{spaceId}
+        ORDER BY su.create_time DESC
+    </select>
+
+    <!-- 分页查询可邀请的用户列表（包含角色信息，通过USER_ROLE关联） -->
+    <select id="selectInvitableUserWithRolesPage" resultType="org.jeecg.modules.DAM.DataInfo.SpaceUser.vo.InvitableUserVo">
+        SELECT
+            u.id AS id,
+            u.username AS username,
+            u.realname AS realname,
+            r.role_name AS roleNames
+        FROM sys_user u
+        LEFT JOIN sys_user_role ur ON u.id = ur.user_id
+        LEFT JOIN sys_role r ON ur.role_id = r.id
+        <where>
+            u.del_flag = 0 AND u.status = '1'
+            <if test="maxDataSecurity != null">
+                AND u.security &lt;= #{maxDataSecurity}
+            </if>
+            <if test="username != null and username != ''">
+                AND u.username LIKE CONCAT('%', #{username}, '%')
+            </if>
+            <if test="realname != null and realname != ''">
+                AND u.realname LIKE CONCAT('%', #{realname}, '%')
+            </if>
+            <if test="departId != null and departId != ''">
+                AND u.orgunit = #{departId}
+            </if>
+            <if test="spaceId != null and spaceId != ''">
+                AND u.id NOT IN (
+                    SELECT su2.user_id FROM dam_space_user su2 WHERE su2.space_id = #{spaceId}
+                )
+            </if>
+            AND u.username NOT IN ('sysadmin', 'secadmin', 'secaudit', 'admin', '_reserve_user_external')
+        </where>
+        ORDER BY u.username
+    </select>
+
+</mapper>

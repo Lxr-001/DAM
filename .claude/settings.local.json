@@ -7,7 +7,9 @@
       "Bash(git -C /e/00-IDEAProject/00-DAM/DAM-java status)",
       "Bash(git ls-tree:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git remote:*)",
+      "Bash(git commit -m ':*)"
     ]
   }
 }
