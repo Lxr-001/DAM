@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.DAM.DataInfo.SpaceAsset.mapper.AssetRegistrationMapper">
+
+    <resultMap id="BaseResultMap" type="org.jeecg.modules.DAM.DataInfo.SpaceAsset.entity.AssetRegistration">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="asset_id" property="assetId" jdbcType="VARCHAR"/>
+        <result column="space_id" property="spaceId" jdbcType="VARCHAR"/>
+        <result column="registration_type" property="registrationType" jdbcType="VARCHAR"/>
+        <result column="applicant_id" property="applicantId" jdbcType="VARCHAR"/>
+        <result column="applicant_name" property="applicantName" jdbcType="VARCHAR"/>
+        <result column="approver_id" property="approverId" jdbcType="VARCHAR"/>
+        <result column="approver_name" property="approverName" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="VARCHAR"/>
+        <result column="old_owner_id" property="oldOwnerId" jdbcType="VARCHAR"/>
+        <result column="old_owner_name" property="oldOwnerName" jdbcType="VARCHAR"/>
+        <result column="new_owner_id" property="newOwnerId" jdbcType="VARCHAR"/>
+        <result column="new_owner_name" property="newOwnerName" jdbcType="VARCHAR"/>
+        <result column="cancel_reason" property="cancelReason" jdbcType="VARCHAR"/>
+        <result column="registration_data" property="registrationData" jdbcType="VARCHAR"/>
+        <result column="submit_time" property="submitTime" jdbcType="TIMESTAMP"/>
+        <result column="approve_time" property="approveTime" jdbcType="TIMESTAMP"/>
+        <result column="create_by" property="createBy" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_by" property="updateBy" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <select id="selectByAssetId" resultMap="BaseResultMap">
+        SELECT * FROM dam_asset_registration
+        WHERE asset_id = #{assetId}
+        ORDER BY create_time DESC
+    </select>
+
+    <select id="selectPendingBySpaceId" resultMap="BaseResultMap">
+        SELECT * FROM dam_asset_registration
+        WHERE space_id = #{spaceId} AND status = 'pending'
+        ORDER BY create_time DESC
+    </select>
+
+    <update id="updateStatus">
+        UPDATE dam_asset_registration
+        SET status = #{status},
+            update_time = SYSDATE,
+            <if test="status == 'approved'">
+                approve_time = SYSDATE,
+            </if>
+            update_by = 'system'
+        WHERE id = #{id}
+    </update>
+
+</mapper>

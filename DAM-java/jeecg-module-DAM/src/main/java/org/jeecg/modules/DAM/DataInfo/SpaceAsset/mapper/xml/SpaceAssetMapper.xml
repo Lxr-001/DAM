@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.DAM.DataInfo.SpaceAsset.mapper.SpaceAssetMapper">
+
+    <resultMap id="BaseResultMap" type="org.jeecg.modules.DAM.DataInfo.SpaceAsset.entity.SpaceAsset">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="space_id" property="spaceId" jdbcType="VARCHAR"/>
+        <result column="asset_type" property="assetType" jdbcType="VARCHAR"/>
+        <result column="asset_name" property="assetName" jdbcType="VARCHAR"/>
+        <result column="asset_desc" property="assetDesc" jdbcType="VARCHAR"/>
+        <result column="data_level" property="dataLevel" jdbcType="VARCHAR"/>
+        <result column="provider" property="provider" jdbcType="VARCHAR"/>
+        <result column="provider_id" property="providerId" jdbcType="VARCHAR"/>
+        <result column="owner_id" property="ownerId" jdbcType="VARCHAR"/>
+        <result column="owner_name" property="ownerName" jdbcType="VARCHAR"/>
+        <result column="belong_dept" property="belongDept" jdbcType="VARCHAR"/>
+        <result column="belong_dept_id" property="belongDeptId" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="VARCHAR"/>
+        <result column="cert_path" property="certPath" jdbcType="VARCHAR"/>
+        <result column="cert_no" property="certNo" jdbcType="VARCHAR"/>
+        <result column="create_by" property="createBy" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_by" property="updateBy" jdbcType="VARCHAR"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="data_structure" property="dataStructure" jdbcType="VARCHAR"/>
+        <result column="update_frequency" property="updateFrequency" jdbcType="VARCHAR"/>
+        <result column="time_range_start" property="timeRangeStart" jdbcType="TIMESTAMP"/>
+        <result column="time_range_end" property="timeRangeEnd" jdbcType="TIMESTAMP"/>
+        <result column="data_scale" property="dataScale" jdbcType="BIGINT"/>
+        <result column="data_volume" property="dataVolume" jdbcType="VARCHAR"/>
+        <result column="application_scenario" property="applicationScenario" jdbcType="VARCHAR"/>
+        <result column="sub_scenario" property="subScenario" jdbcType="VARCHAR"/>
+        <result column="tech_system" property="techSystem" jdbcType="VARCHAR"/>
+        <result column="open_degree" property="openDegree" jdbcType="VARCHAR"/>
+        <result column="operation_type" property="operationType" jdbcType="VARCHAR"/>
+        <result column="data_granularity" property="dataGranularity" jdbcType="VARCHAR"/>
+        <result column="api_address" property="apiAddress" jdbcType="VARCHAR"/>
+        <result column="api_method" property="apiMethod" jdbcType="VARCHAR"/>
+        <result column="api_return_type" property="apiReturnType" jdbcType="VARCHAR"/>
+        <result column="api_request_params" property="apiRequestParams" jdbcType="VARCHAR"/>
+        <result column="api_return_params" property="apiReturnParams" jdbcType="VARCHAR"/>
+        <result column="api_request_example" property="apiRequestExample" jdbcType="VARCHAR"/>
+        <result column="api_success_example" property="apiSuccessExample" jdbcType="VARCHAR"/>
+        <result column="api_error_example" property="apiErrorExample" jdbcType="VARCHAR"/>
+        <result column="data_format" property="dataFormat" jdbcType="VARCHAR"/>
+        <result column="data_modality" property="dataModality" jdbcType="VARCHAR"/>
+        <result column="annotation_type" property="annotationType" jdbcType="VARCHAR"/>
+        <result column="training_stage" property="trainingStage" jdbcType="VARCHAR"/>
+        <result column="data_source" property="dataSource" jdbcType="VARCHAR"/>
+        <result column="classification_info" property="classificationInfo" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="selectAssetListBySpaceId" resultMap="BaseResultMap">
+        SELECT
+            a.*,
+            u.realname AS owner_name
+        FROM dam_space_asset a
+        LEFT JOIN sys_user u ON a.owner_id = u.id
+        WHERE a.space_id = #{spaceId}
+        <if test="params != null">
+            <if test="params.assetType != null and params.assetType != ''">
+                AND a.asset_type = #{params.assetType}
+            </if>
+            <if test="params.dataLevel != null and params.dataLevel != ''">
+                AND a.data_level = #{params.dataLevel}
+            </if>
+            <if test="params.status != null and params.status != ''">
+                AND a.status = #{params.status}
+            </if>
+            <if test="params.assetName != null and params.assetName != ''">
+                AND a.asset_name LIKE '%' || #{params.assetName} || '%'
+            </if>
+            <if test="params.dataStructure != null and params.dataStructure != ''">
+                AND a.data_structure = #{params.dataStructure}
+            </if>
+            <if test="params.openDegree != null and params.openDegree != ''">
+                AND a.open_degree = #{params.openDegree}
+            </if>
+            <if test="params.operationType != null and params.operationType != ''">
+                AND a.operation_type = #{params.operationType}
+            </if>
+            <if test="params.dataGranularity != null and params.dataGranularity != ''">
+                AND a.data_granularity = #{params.dataGranularity}
+            </if>
+            <if test="params.dataFormat != null and params.dataFormat != ''">
+                AND a.data_format = #{params.dataFormat}
+            </if>
+            <if test="params.dataModality != null and params.dataModality != ''">
+                AND a.data_modality = #{params.dataModality}
+            </if>
+            <if test="params.annotationType != null and params.annotationType != ''">
+                AND a.annotation_type = #{params.annotationType}
+            </if>
+            <if test="params.trainingStage != null and params.trainingStage != ''">
+                AND a.training_stage = #{params.trainingStage}
+            </if>
+            <if test="params.dataSource != null and params.dataSource != ''">
+                AND a.data_source = #{params.dataSource}
+            </if>
+            <if test="params.applicationScenario != null and params.applicationScenario != ''">
+                AND a.application_scenario = #{params.applicationScenario}
+            </if>
+            <if test="params.subScenario != null and params.subScenario != ''">
+                AND a.sub_scenario = #{params.subScenario}
+            </if>
+            <if test="params.techSystem != null and params.techSystem != ''">
+                AND a.tech_system = #{params.techSystem}
+            </if>
+        </if>
+        ORDER BY a.create_time DESC
+    </select>
+
+    <select id="countByAssetNameAndSpaceId" resultType="int">
+        SELECT COUNT(1) FROM dam_space_asset
+        WHERE asset_name = #{assetName} AND space_id = #{spaceId}
+    </select>
+
+    <update id="updateAssetStatus">
+        UPDATE dam_space_asset SET status = #{status}, update_time = SYSDATE
+        WHERE id = #{id}
+    </update>
+
+</mapper>
