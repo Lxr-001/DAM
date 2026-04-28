@@ -24,9 +24,9 @@
             placeholder="请选择数据资产类型"
             @change="handleAssetTypeChange"
           >
-            <a-select-option value="dataset">数据集</a-select-option>
-            <a-select-option value="api">数据API</a-select-option>
-            <a-select-option value="training_set">高质量训练集</a-select-option>
+            <a-select-option value="数据集">数据集</a-select-option>
+            <a-select-option value="数据API">数据API</a-select-option>
+            <a-select-option value="高质量训练集">高质量训练集</a-select-option>
           </a-select>
         </a-form-item>
         <a-form-item label="已有数据资产">
@@ -233,6 +233,9 @@
           </a-row>
 
           <a-form-item label="请求参数">
+            <div class="table-header">
+              <a-button type="primary" size="small" @click="handleAddParam">新增</a-button>
+            </div>
             <a-table
               :columns="paramColumns"
               :dataSource="requestParams"
@@ -240,33 +243,82 @@
               rowKey="key"
               size="small"
             >
-              <template v-slot:paramName="{ text, record }">
-                <a-input v-model="record.paramName" placeholder="参数名称" />
-              </template>
-              <template v-slot:paramType="{ text, record }">
-                <a-input v-model="record.paramType" placeholder="类型" />
-              </template>
-              <template v-slot:required="{ text, record }">
-                <a-checkbox v-model="record.required" />
-              </template>
-              <template v-slot:description="{ text, record }">
-                <a-input v-model="record.description" placeholder="说明" />
-              </template>
-              <template v-slot:action="{ record }">
-                <a @click="handleDeleteParam(record)">删除</a>
+              <template v-for="col in paramColumns" v-if="col.scopedSlots" :slot="col.scopedSlots.customRender" slot-scope="text, record">
+                <a-input v-if="col.dataIndex === 'paramName'" :key="col.dataIndex" v-model="record.paramName" placeholder="参数名称(必填)" class="table-input" />
+                <a-input v-else-if="col.dataIndex === 'paramType'" :key="col.dataIndex" v-model="record.paramType" placeholder="类型(必填)" class="table-input" />
+                <a-select v-else-if="col.dataIndex === 'required'" :key="col.dataIndex" v-model="record.required" style="width: 100%" class="table-input">
+                  <a-select-option value="1">是</a-select-option>
+                  <a-select-option value="0">否</a-select-option>
+                </a-select>
+                <a-input v-else-if="col.dataIndex === 'description'" :key="col.dataIndex" v-model="record.description" placeholder="说明" type="textarea" class="table-input" />
+                <span v-else-if="col.key === 'action'" :key="col.key">
+                  <a @click="handleDeleteParam(record)">删除</a>
+                </span>
+                <span v-else :key="col.dataIndex">{{ text }}</span>
               </template>
             </a-table>
-            <a-button type="dashed" block @click="handleAddParam" style="margin-top: 8px">新增参数</a-button>
+          </a-form-item>
+
+          <a-form-item label="返回参数">
+            <div class="table-header">
+              <a-button type="primary" size="small" @click="handleAddReturnParam">新增</a-button>
+            </div>
+            <a-table
+              :columns="paramColumns"
+              :dataSource="returnParams"
+              :pagination="false"
+              :rowKey="record => record.key"
+              :showExpandColumn="false"
+              size="small"
+            >
+              <template v-for="col in paramColumns" v-if="col.scopedSlots" :slot="col.scopedSlots.customRender" slot-scope="text, record">
+                <a-input v-if="col.dataIndex === 'paramName'" :key="col.dataIndex" v-model="record.paramName" placeholder="参数名称(必填)" class="table-input" />
+                <a-input v-else-if="col.dataIndex === 'paramType'" :key="col.dataIndex" v-model="record.paramType" placeholder="类型(必填)" class="table-input" />
+                <a-select v-else-if="col.dataIndex === 'required'" :key="col.dataIndex" v-model="record.required" style="width: 100%" class="table-input">
+                  <a-select-option value="1">是</a-select-option>
+                  <a-select-option value="0">否</a-select-option>
+                </a-select>
+                <a-input v-else-if="col.dataIndex === 'description'" :key="col.dataIndex" v-model="record.description" placeholder="说明" type="textarea" class="table-input" />
+                <span v-else-if="col.key === 'action'" :key="col.key">
+                  <a @click="handleDeleteReturnParam(record)">删除</a>
+                </span>
+                <span v-else :key="col.dataIndex">{{ text }}</span>
+              </template>
+            </a-table>
           </a-form-item>
 
           <a-form-item label="请求示例" required>
-            <a-textarea v-decorator="['apiRequestExample', { rules: [{ required: true, message: '请输入请求示例' }] }]" :rows="4" placeholder="请输入请求示例代码" />
+            <div class="code-input-wrapper">
+              <a-textarea v-decorator="['apiRequestExample', { rules: [{ required: true, message: '请输入请求示例' }] }]" :rows="4" placeholder="请输入请求示例代码" />
+              <a-button type="link" class="copy-btn" @click="handleCopyCode('apiRequestExample')" icon="copy">复制</a-button>
+            </div>
           </a-form-item>
           <a-form-item label="成功返回示例" required>
-            <a-textarea v-decorator="['apiSuccessExample', { rules: [{ required: true, message: '请输入成功返回示例' }] }]" :rows="4" placeholder="请输入成功返回示例代码" />
+            <div class="code-input-wrapper">
+              <a-textarea v-decorator="['apiSuccessExample', { rules: [{ required: true, message: '请输入成功返回示例' }] }]" :rows="4" placeholder="请输入成功返回示例代码" />
+              <a-button type="link" class="copy-btn" @click="handleCopyCode('apiSuccessExample')" icon="copy">复制</a-button>
+            </div>
           </a-form-item>
           <a-form-item label="失败返回示例">
-            <a-textarea v-decorator="['apiErrorExample']" :rows="3" placeholder="请输入失败返回示例" />
+            <div class="table-header">
+              <a-button type="primary" size="small" @click="handleAddErrorParam">新增</a-button>
+            </div>
+            <a-table
+              :columns="errorReturnColumns"
+              :dataSource="errorReturnParams"
+              :pagination="false"
+              rowKey="key"
+              size="small"
+            >
+              <template v-for="col in errorReturnColumns" v-if="col.scopedSlots" :slot="col.scopedSlots.customRender" slot-scope="text, record">
+                <a-input v-if="col.dataIndex === 'code'" :key="col.dataIndex" v-model="record.code" placeholder="代号" />
+                <a-input v-else-if="col.dataIndex === 'description'" :key="col.dataIndex" v-model="record.description" placeholder="说明" type="textarea" />
+                <span v-else-if="col.key === 'action'" :key="col.key">
+                  <a @click="handleDeleteErrorParam(record)">删除</a>
+                </span>
+                <span v-else :key="col.dataIndex">{{ text }}</span>
+              </template>
+            </a-table>
           </a-form-item>
         </div>
 
@@ -467,12 +519,25 @@ export default {
       },
       spaceUsers: [],
       requestParams: [],
+      returnParams: [],
+      errorReturnParams: [],
       paramColumns: [
         { title: '参数名称', dataIndex: 'paramName', scopedSlots: { customRender: 'paramName' } },
         { title: '类型', dataIndex: 'paramType', scopedSlots: { customRender: 'paramType' } },
-        { title: '必填', dataIndex: 'required', width: 60, scopedSlots: { customRender: 'required' } },
+        { title: '必填', dataIndex: 'required', width: 80, scopedSlots: { customRender: 'required' } },
         { title: '说明', dataIndex: 'description', scopedSlots: { customRender: 'description' } },
-        { title: '操作', key: 'action', width: 60, scopedSlots: { customRender: 'action' } }
+        { title: '操作', key: 'action', width: 80, scopedSlots: { customRender: 'action' } }
+      ],
+      returnParamColumns: [
+        { title: '参数名称', dataIndex: 'paramName', scopedSlots: { customRender: 'paramName' } },
+        { title: '类型', dataIndex: 'paramType', scopedSlots: { customRender: 'paramType' } },
+        { title: '说明', dataIndex: 'description', scopedSlots: { customRender: 'description' } },
+        { title: '操作', key: 'action', width: 140, scopedSlots: { customRender: 'action' } }
+      ],
+      errorReturnColumns: [
+        { title: '代号', dataIndex: 'code', scopedSlots: { customRender: 'code' } },
+        { title: '说明', dataIndex: 'description', scopedSlots: { customRender: 'description' } },
+        { title: '操作', key: 'action', width: 80, scopedSlots: { customRender: 'action' } }
       ],
       certGenerating: false,
       structuredSubScenarios: {
@@ -602,6 +667,8 @@ export default {
         certPath: ''
       }
       this.requestParams = []
+      this.returnParams = []
+      this.errorReturnParams = []
       this.currentStep = 0
     },
     loadSpaceUsers() {
@@ -612,7 +679,9 @@ export default {
       })
     },
     handleAssetTypeChange(value) {
-      this.assetFormData.assetType = value
+      // 将中文选择值映射为内部值
+      const typeMap = { '数据集': 'dataset', '数据API': 'api', '高质量训练集': 'training_set' }
+      this.assetFormData.assetType = typeMap[value] || value
     },
     handleDataStructureChange(value) {
       this.assetFormData.dataStructure = value
@@ -625,10 +694,38 @@ export default {
       this.assetFormData.subScenario = ''
     },
     handleAddParam() {
-      this.requestParams.push({ key: Date.now(), paramName: '', paramType: 'string', required: false, description: '' })
+      this.requestParams.push({ key: Date.now(), paramName: '', paramType: '', required: '0', description: '' })
     },
     handleDeleteParam(record) {
       this.requestParams = this.requestParams.filter(item => item.key !== record.key)
+    },
+    handleAddReturnParam() {
+      this.returnParams.push({ key: Date.now(), paramName: '', paramType: '', required: '0', description: '' })
+    },
+    handleDeleteReturnParam(record) {
+      this.returnParams = this.returnParams.filter(item => item.key !== record.key)
+    },
+    handleAddChildParam(record) {
+      if (!record.children) {
+        this.$set(record, 'children', [])
+      }
+      record.children.push({ key: Date.now() + '_child', paramName: '', paramType: '', description: '', children: [] })
+      // 触发更新
+      this.returnParams = [...this.returnParams]
+    },
+    handleAddErrorParam() {
+      this.errorReturnParams.push({ key: Date.now(), code: '', description: '' })
+    },
+    handleDeleteErrorParam(record) {
+      this.errorReturnParams = this.errorReturnParams.filter(item => item.key !== record.key)
+    },
+    handleCopyCode(field) {
+      const value = this.step2Form.getFieldValue(field)
+      if (value) {
+        this.$copyText(value).then(() => {
+          this.$message.success('代码已复制')
+        })
+      }
     },
     handleNextStep() {
       if (this.currentStep === 0) {
@@ -682,7 +779,12 @@ export default {
           apiReturnType: step2Values.apiReturnType,
           apiRequestExample: step2Values.apiRequestExample,
           apiSuccessExample: step2Values.apiSuccessExample,
-          apiErrorExample: step2Values.apiErrorExample,
+          // 请求参数
+          apiRequestParams: JSON.stringify(this.requestParams),
+          // 返回参数
+          apiReturnParams: JSON.stringify(this.returnParams),
+          // 失败返回示例
+          apiErrorExample: JSON.stringify(this.errorReturnParams),
           dataFormat: step2Values.dataFormat,
           dataModality: step2Values.dataModality,
           annotationType: step2Values.annotationType,
@@ -775,5 +877,30 @@ export default {
 .cert-placeholder {
   padding: 40px;
   color: #999;
+}
+
+.code-input-wrapper {
+  position: relative;
+}
+
+.code-input-wrapper .copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+}
+
+.table-header {
+  margin-bottom: 8px;
+}
+
+.table-input {
+  height: 32px;
+}
+
+.table-input textarea {
+  height: 32px !important;
+  min-height: 32px !important;
+  max-height: 32px !important;
 }
 </style>
