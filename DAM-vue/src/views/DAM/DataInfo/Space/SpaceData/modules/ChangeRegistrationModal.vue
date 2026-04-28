@@ -29,12 +29,12 @@
           <a-col :span="12">
             <a-form-item label="更新频率">
               <a-select v-decorator="['updateFrequency']" placeholder="请选择更新频率">
-                <a-select-option value="daily">按天更新</a-select-option>
-                <a-select-option value="weekly">按周更新</a-select-option>
-                <a-select-option value="monthly">按月更新</a-select-option>
-                <a-select-option value="yearly">按年更新</a-select-option>
-                <a-select-option value="ondemand">按需更新</a-select-option>
-                <a-select-option value="never">不更新</a-select-option>
+                <a-select-option value="按天更新">按天更新</a-select-option>
+                <a-select-option value="按周更新">按周更新</a-select-option>
+                <a-select-option value="按月更新">按月更新</a-select-option>
+                <a-select-option value="按年更新">按年更新</a-select-option>
+                <a-select-option value="按需更新">按需更新</a-select-option>
+                <a-select-option value="不更新">不更新</a-select-option>
               </a-select>
             </a-form-item>
           </a-col>
@@ -49,11 +49,11 @@
             <a-col :span="12">
               <a-form-item label="数据密级">
                 <a-select v-decorator="['dataLevel']" placeholder="请选择数据密级">
-                  <a-select-option value="public">公开</a-select-option>
-                  <a-select-option value="internal">内部</a-select-option>
-                  <a-select-option value="secret">秘密</a-select-option>
-                  <a-select-option value="confidential">机密</a-select-option>
-                  <a-select-option value="topsecret">绝密</a-select-option>
+                  <a-select-option value="公开">公开</a-select-option>
+                  <a-select-option value="内部">内部</a-select-option>
+                  <a-select-option value="秘密">秘密</a-select-option>
+                  <a-select-option value="机密">机密</a-select-option>
+                  <a-select-option value="绝密">绝密</a-select-option>
                 </a-select>
               </a-form-item>
             </a-col>
@@ -162,7 +162,7 @@
             placeholder="请从当前空间用户中选择一个作为审批者"
           >
             <a-select-option v-for="user in spaceUsers" :key="user.userId" :value="user.userId">
-              {{ user.realName }} ({{ user.username }})
+              {{ user.realname || user.username || '未知用户' }}{{ user.roleNames ? '-' + user.roleNames : '' }}
             </a-select-option>
           </a-select>
         </a-form-item>
@@ -199,14 +199,39 @@ export default {
   created() {
     this.loadSpaceUsers()
   },
+  watch: {
+    visible(val) {
+      if (val) {
+        this.show()
+      }
+    }
+  },
   methods: {
     show() {
       this.currentStep = 0
+      // 重置表单
+      this.step1Form.resetFields()
+      this.step2Form.resetFields()
+      this.dataVolumeSlider = 0
+
       if (this.selectedAsset) {
+        // 根据数据体量设置滑块值
+        const volume = this.selectedAsset.dataVolume || '0K'
+        let sliderValue = 0
+        if (volume.endsWith('K')) {
+          sliderValue = parseInt(volume) || 0
+        } else if (volume.endsWith('G')) {
+          sliderValue = parseInt(volume) || 0
+        } else if (volume.endsWith('T')) {
+          sliderValue = 1000
+        }
+        this.dataVolumeSlider = sliderValue
+
         this.$nextTick(() => {
           this.step1Form.setFieldsValue({
             assetName: this.selectedAsset.assetName,
             assetDesc: this.selectedAsset.assetDesc,
+            updateFrequency: this.selectedAsset.updateFrequency,
             dataLevel: this.selectedAsset.dataLevel,
             dataStructure: this.selectedAsset.dataStructure,
             dataFormat: this.selectedAsset.dataFormat,
@@ -215,19 +240,16 @@ export default {
             operationType: this.selectedAsset.operationType,
             dataGranularity: this.selectedAsset.dataGranularity,
             apiAddress: this.selectedAsset.apiAddress,
-            dataScale: this.selectedAsset.dataScale
+            dataScale: this.selectedAsset.dataScale ? parseInt(this.selectedAsset.dataScale) : null
           })
         })
       }
     },
     handleClose() {
       this.$emit('close')
-      this.step1Form.resetFields()
-      this.step2Form.resetFields()
-      this.dataVolumeSlider = 0
     },
     loadSpaceUsers() {
-      getAction('/spaceUser/list', { spaceId: this.spaceInfo.id }).then(res => {
+      getAction('/spaceUser/listBySpaceId', { spaceId: this.spaceInfo.id, pageSize: 100 }).then(res => {
         if (res.success) {
           this.spaceUsers = res.result.records || res.result || []
         }

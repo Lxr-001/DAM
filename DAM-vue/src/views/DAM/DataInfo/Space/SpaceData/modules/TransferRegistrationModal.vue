@@ -29,7 +29,7 @@
             mode="multiple"
           >
             <a-select-option v-for="user in spaceUsers" :key="user.userId" :value="user.userId">
-              {{ user.realName }} ({{ user.username }})
+              {{ user.realname || user.username || '未知用户' }}{{ user.roleNames ? '-' + user.roleNames : '' }}
             </a-select-option>
           </a-select>
         </a-form-item>
@@ -48,7 +48,7 @@
             placeholder="请从当前空间用户中选择一个作为审批者"
           >
             <a-select-option v-for="user in spaceUsers" :key="user.userId" :value="user.userId">
-              {{ user.realName }} ({{ user.username }})
+              {{ user.realname || user.username || '未知用户' }}{{ user.roleNames ? '-' + user.roleNames : '' }}
             </a-select-option>
           </a-select>
         </a-form-item>
@@ -94,7 +94,7 @@ export default {
       this.step2Form.resetFields()
     },
     loadSpaceUsers() {
-      getAction('/spaceUser/list', { spaceId: this.spaceInfo.id }).then(res => {
+      getAction('/spaceUser/listBySpaceId', { spaceId: this.spaceInfo.id, pageSize: 100 }).then(res => {
         if (res.success) {
           this.spaceUsers = res.result.records || res.result || []
         }

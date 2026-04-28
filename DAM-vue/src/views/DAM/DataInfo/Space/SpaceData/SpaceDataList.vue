@@ -85,11 +85,11 @@
               <a-button
                 :type="selectedFilters.dataStructure === 'structured' ? 'primary' : 'default'"
                 @click="handleTagClick('dataStructure', 'structured')"
-              >结构化</a-button>
+              >结构化数据</a-button>
               <a-button
                 :type="selectedFilters.dataStructure === 'unstructured' ? 'primary' : 'default'"
                 @click="handleTagClick('dataStructure', 'unstructured')"
-              >非结构化</a-button>
+              >非结构化数据</a-button>
             </div>
           </div>
 
@@ -312,6 +312,11 @@
                     <span><a-icon type="user" /> {{ item.ownerName || '-' }}</span>
                     <span><a-icon type="database" /> {{ item.dataVolume || '-' }}</span>
                     <span><a-icon type="sync" /> {{ item.updateFrequency || '-' }}</span>
+                  </div>
+                  <div class="card-tags">
+                    <a-tag color="blue" v-if="item.dataStructure === 'structured'">结构化数据</a-tag>
+                    <a-tag color="blue" v-if="item.dataStructure === 'unstructured'">非结构化数据</a-tag>
+                    <a-tag color="blue" v-if="item.applicationScenario">{{ item.applicationScenario }}</a-tag>
                   </div>
                   <div class="card-footer">
                     <span class="card-update-time">{{ formatDate(item.createTime) }}</span>
@@ -1001,7 +1006,7 @@ export default {
   position: relative;
   border-radius: 14px;
   transition: all 0.3s;
-  min-height: 200px;
+  min-height: 220px;
 }
 
 .asset-card:hover {
@@ -1028,12 +1033,12 @@ export default {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .card-title {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   color: #262626;
   white-space: nowrap;
@@ -1043,9 +1048,9 @@ export default {
 }
 
 .card-desc {
-  font-size: 12px;
+  font-size: 14px;
   color: #8c8c8c;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1053,10 +1058,16 @@ export default {
 
 .card-meta {
   display: flex;
-  gap: 8px;
-  font-size: 12px;
+  gap: 16px;
+  font-size: 14px;
   color: #595959;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .card-footer {
@@ -1065,8 +1076,15 @@ export default {
   align-items: center;
 }
 
+.card-tags {
+  margin-bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
 .card-update-time {
-  font-size: 12px;
+  font-size: 14px;
   color: #8c8c8c;
 }
 

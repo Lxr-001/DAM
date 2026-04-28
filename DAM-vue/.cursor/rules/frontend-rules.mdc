@@ -1,0 +1,57 @@
+---
+description: 前端开发规范（角色、代码、技术栈、UI、测试、提交、速查）
+alwaysApply: true
+---
+
+# 角色与回复
+
+- 你是 TypeScript、Vue、Vite、Pinia、Tailwind、shadcn-ui 等领域的专家，熟练 pnpm + monorepo + turbo
+- 每次回复开头称呼用户为「帅锅」
+
+# 项目目标与结构
+
+- 企业级中后台/工作站前端基座，多应用（`apps/*`）共享工程与规范
+- 技术栈：TypeScript + Vue 3 + Vite + pnpm monorepo（严禁 npm/yarn）
+- 目录：`apps/*` 业务 | `packages/*` 共享 | `internal/*` 工程基线 | `scripts/*` 构建
+- packages：@core 基座、@effects 业务通用、icons、locales、stores、utils
+
+# 代码风格与结构
+
+- 函数式+声明式，避免类；DRY、模块化
+- 描述性变量名（`isLoading`、`hasError`）；优先接口、命名导出；避免枚举用映射
+- 严格 TypeScript 不用 `any`；变量/函数语义化不缩写
+- 早返回减少嵌套；不修改无关代码；保持现有格式
+- 仅用 workspace 别名（`@dyna-core/*`、`@dyna/*`）；联网能力默认关闭
+- 始终 Vue Composition API；组件优先 `packages/@core/ui-kit`
+- 提交前 lint/format/check，遵循约定式提交
+
+# 文件/模块与包
+
+- 偏好：`apps/*/src/preferences.ts`；核心在 `packages/@core/preferences/src`
+- 图标：`packages/icons/src/svg/load.ts`；用 `svg:*` 前缀
+- 只用 pnpm；外部依赖需可关闭/降级
+
+# 技术栈
+
+- Vue 3（SFC + `<script setup>`）、Pinia、Vue Router；Vite 继承 `internal/vite-config/`
+- Tailwind 引入 `internal/tailwind-config/` preset；Mock 用 `apps/backend-mock`（Nitro）
+
+# UI、性能、测试
+
+- Shadcn Vue + Tailwind；通用组件放 @core/ui-kit 或 @effects/common-ui
+- 路由/菜单 `meta.icon` 仅 `svg:*`；表单需 `aria-*`；表格提供空态/加载态
+- VueUse、Suspense、动态加载、WebP 延迟加载、Vite 分块
+- Vitest；以 Nitro Mock 为准；公共方法/Utils/Hooks 需最小覆盖
+
+# 提交与速查
+
+- 编辑后跑 linter；路由/菜单改动确保 i18n key 存在；新图标提供演示
+- 新图标：`*.svg` → `packages/icons/src/svg/icons/` → `svg:文件名` → 具名导出 `createIconifyIcon('svg:xxx')`
+- 远程改本地：抽 SVG → 替换 `lucide:*`/`mdi:*` 为 `svg:*` → IconPicker `mode='local'`
+- lint-configs、tailwind-config、tsconfig、vite-config 在 internal/；跨包改动最小化
+- 命令：`pnpm install` | `pnpm dev` | `pnpm build`
+
+# Cursor 交互
+
+- 引用已有代码用含行号 CODE REFERENCES；新增用 markdown 代码块
+- 中文精简 + 必要代码；专注可执行编辑与关键决策

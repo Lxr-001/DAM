@@ -1,0 +1,474 @@
+2026-04-22 09:45:57.659 [http-nio-9998-exec-4] INFO  o.j.c.desensitization.aspect.SensitiveDataAspect:76 - 加密操作，Aspect程序耗时：1ms
+2026-04-22 09:45:57.763 [http-nio-9998-exec-2] INFO  o.jeecg.modules.system.controller.LoginController:497 -  用户名:  管理员,退出成功！ 
+2026-04-22 09:45:58.350 [http-nio-9998-exec-6] INFO  org.jeecg.config.shiro.ShiroRealm:97 - ————————身份认证失败——————————IP地址:  127.0.0.1，URL:/jeecg-boot/spaceAsset/queryAssetList
+2026-04-22 09:45:58.935 [http-nio-9998-exec-1] INFO  org.jeecg.config.shiro.ShiroRealm:97 - ————————身份认证失败——————————IP地址:  127.0.0.1，URL:/jeecg-boot/spaceAsset/queryAssetList
+2026-04-22 09:47:01.763 [http-nio-9998-exec-1] INFO  o.j.c.desensitization.aspect.SensitiveDataAspect:76 - 加密操作，Aspect程序耗时：0ms
+2026-04-22 09:48:29.310 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:48:29.310 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:48:29.310 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:48:29.310 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:48:29.310 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:48:29.311 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:48:29.311 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:48:29.311 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:48:29.311 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:48:29.311 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:56:59.997 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:56:59.997 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:56:59.999 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:56:59.999 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:56:59.999 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:56:59.999 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:56:59.999 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:56:59.999 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:56:59.999 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:56:59.999 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:57:04.248 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:57:04.248 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:57:04.248 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:57:04.249 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:57:04.249 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:57:04.249 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:57:04.249 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:57:04.249 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 09:57:04.249 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 09:57:04.249 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:03:48.191 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:03:48.191 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:03:48.191 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:03:48.191 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:03:48.192 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:03:48.192 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:03:48.192 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:03:48.192 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:03:48.192 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:03:48.193 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:05:52.295 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:05:52.296 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:05:52.296 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:05:52.297 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:05:52.296 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:05:52.297 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:05:52.296 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:05:52.297 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:05:52.297 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:05:52.297 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:07:47.517 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:07:47.518 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:07:47.518 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:07:47.518 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:07:47.518 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:07:47.518 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:07:47.518 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:07:47.518 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:07:47.518 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:07:47.518 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:08:39.794 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:08:39.794 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:08:39.795 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:08:39.795 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:08:39.795 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:08:39.795 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:08:39.795 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:08:39.795 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:08:39.795 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:08:39.796 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:15:18.674 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:15:18.674 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:15:18.674 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:15:18.674 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:15:18.674 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:15:18.675 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:15:18.675 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:15:18.675 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:15:18.675 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:15:18.675 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:17:27.426 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:17:27.426 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:17:27.427 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:17:27.426 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:17:27.427 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:17:27.427 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:17:27.427 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:17:27.427 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:17:27.427 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:17:27.427 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:19:07.908 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:19:07.908 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:19:07.908 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:19:07.908 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:19:07.908 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:19:07.908 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:19:07.908 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:19:07.909 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:19:07.909 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:19:07.909 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:20:12.268 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:20:12.268 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:20:12.268 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:20:12.268 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:20:12.268 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:20:12.269 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:20:12.269 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:20:12.269 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:20:12.269 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:20:12.269 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:24:53.448 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:24:53.448 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:24:53.448 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:24:53.449 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:24:53.449 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:24:53.449 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:24:53.449 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:24:53.449 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:24:53.449 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:24:53.449 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:26:22.621 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:26:22.621 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:26:22.621 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:26:22.621 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:26:22.621 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:26:22.621 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:26:22.622 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:26:22.622 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:26:22.623 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:26:22.624 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:29:51.789 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:29:51.789 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:29:51.789 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:29:51.789 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:29:51.790 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:29:51.790 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:29:51.790 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:29:51.790 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:29:51.790 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:29:51.791 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:40:04.222 [http-nio-9998-exec-9] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-04-22 10:40:04.224 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-04-22 10:40:04.225 [http-nio-9998-exec-9] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-04-22 10:40:04.226 [http-nio-9998-exec-9] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-04-22 10:40:32.029 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:40:32.029 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:40:32.029 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:40:32.030 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:40:32.030 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:40:32.030 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 10:40:32.030 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:40:32.030 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:40:32.030 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:40:32.030 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 10:44:01.377 [http-nio-9998-exec-6] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-04-22 10:44:01.378 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-04-22 10:44:01.378 [http-nio-9998-exec-6] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-04-22 10:44:01.380 [http-nio-9998-exec-6] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-04-22 10:44:01.398 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-04-22 10:44:02.801 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:pid, rule:=, value:2039152746118946817
+2026-04-22 10:44:02.802 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-04-22 10:44:04.064 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:pid, rule:=, value:2039152964868677633
+2026-04-22 10:44:04.065 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-04-22 13:21:38.938 [http-nio-9998-exec-2] INFO  o.jeecg.modules.system.controller.LoginController:497 -  用户名:  管理员,退出成功！ 
+2026-04-22 13:23:52.597 [http-nio-9998-exec-6] INFO  o.j.c.desensitization.aspect.SensitiveDataAspect:76 - 加密操作，Aspect程序耗时：0ms
+2026-04-22 13:23:57.841 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:23:57.841 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:23:57.841 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:23:57.841 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:23:57.841 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:23:57.842 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:23:57.842 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:23:57.842 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:23:57.842 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:23:57.842 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:27:10.951 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:27:10.951 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:27:10.951 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:27:10.951 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:27:10.951 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:27:10.951 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:27:10.952 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:27:10.952 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:27:10.952 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:27:10.951 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:27:17.333 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:27:17.334 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:27:17.334 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:27:17.334 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:27:17.334 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:27:17.334 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:27:17.334 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:27:17.334 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:27:17.335 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:27:17.335 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:27:23.546 [http-nio-9998-exec-4] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-04-22 13:27:23.546 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-04-22 13:27:23.547 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-04-22 13:27:23.548 [http-nio-9998-exec-4] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-04-22 13:27:23.561 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-04-22 13:27:25.793 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:demand_type, rule:=, value:数据产品
+2026-04-22 13:27:25.797 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-04-22 13:27:26.940 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:demand_type, rule:=, value:数据资源
+2026-04-22 13:27:26.941 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-04-22 13:36:55.913 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:createTime,排序方式:desc
+2026-04-22 13:36:55.913 [http-nio-9998-exec-4] INFO  o.j.config.sign.interceptor.SignAuthInterceptor:35 - Sign Interceptor request URI = /jeecg-boot/sys/dict/getDictItems/system_security
+2026-04-22 13:36:55.914 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:50 - Param paramsJsonStr : {}
+2026-04-22 13:36:55.914 [http-nio-9998-exec-4] INFO  org.jeecg.config.sign.util.SignUtil:37 - Param Sign : E19D6243CB1945AB4F7202A1B00F77D5
+2026-04-22 13:36:55.914 [http-nio-9998-exec-4] INFO  o.j.modules.system.controller.SysDictController:167 -  dictCode : system_security
+2026-04-22 13:36:59.719 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:36:59.719 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:36:59.719 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:36:59.720 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:36:59.720 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:36:59.719 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:36:59.720 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:36:59.720 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:36:59.720 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:36:59.720 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:40:56.692 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:40:56.693 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:40:56.692 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:40:56.693 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:40:56.693 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:40:56.693 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:40:56.693 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:40:56.693 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:40:56.693 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:40:56.693 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:49:47.038 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:49:47.038 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:49:47.038 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:49:47.038 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:49:47.039 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:49:47.039 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:49:47.039 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:49:47.039 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:49:47.039 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:49:47.039 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:50:42.007 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:50:42.007 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:50:42.007 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:50:42.007 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:50:42.008 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:50:42.008 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:50:42.008 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:50:42.008 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:50:42.008 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:50:42.009 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:55:09.200 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:55:09.200 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:55:09.200 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:55:09.201 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:55:09.201 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:55:09.201 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:55:09.201 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:55:09.201 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:55:09.201 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:55:09.202 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:56:44.436 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:56:44.437 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:56:44.437 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:56:44.437 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:56:44.437 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:56:44.437 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 13:56:44.437 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:56:44.437 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:56:44.437 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 13:56:44.437 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:03:07.088 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:03:07.088 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:03:07.088 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:03:07.088 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:03:07.089 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:03:07.089 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:03:07.089 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:03:07.089 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:03:07.089 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:03:07.090 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:04:05.653 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:04:05.654 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:04:05.654 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:04:05.654 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:04:05.654 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:04:05.655 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:04:05.655 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:04:05.655 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:04:05.655 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:04:05.656 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:29:07.455 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:29:07.454 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:29:07.454 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:29:07.455 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:29:07.454 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:29:07.455 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:29:07.455 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:29:07.455 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:29:07.455 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:29:07.455 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:56:23.990 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:56:23.989 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:56:23.989 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:56:23.990 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:56:23.989 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 14:56:23.990 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:56:23.990 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:56:23.990 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:56:23.990 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 14:56:23.991 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:05:22.337 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:05:22.337 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:05:22.337 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:05:22.337 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:05:22.337 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:05:22.338 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:05:22.338 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:05:22.338 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:05:22.338 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:05:22.338 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:41:04.805 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:41:04.805 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:41:04.805 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:41:04.805 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:41:04.806 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:41:04.806 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:41:04.806 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:41:04.806 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:41:04.807 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:41:04.807 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:41:17.664 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:41:17.664 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:41:17.664 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:41:17.664 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:41:17.664 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:41:17.664 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:41:17.665 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:41:17.665 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:41:17.665 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:41:17.666 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:42:07.497 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:42:07.497 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:42:07.497 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:42:07.497 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:42:07.497 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:42:07.497 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:42:07.497 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:42:07.497 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:42:07.498 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:42:07.498 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:42:36.586 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:42:36.586 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:42:36.587 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:42:36.587 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:42:36.587 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:42:36.587 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:42:36.587 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:42:36.587 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:42:36.587 [http-nio-9998-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:42:36.587 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:59:12.628 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:59:12.629 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:59:12.629 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:59:12.629 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:59:12.629 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:59:12.630 [http-nio-9998-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:59:12.630 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:59:12.630 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 15:59:12.630 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 15:59:12.630 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 16:18:35.919 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 16:18:35.918 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 16:18:35.919 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 16:18:35.918 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 16:18:35.919 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 16:18:35.919 [http-nio-9998-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 16:18:35.919 [http-nio-9998-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 16:18:35.919 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 16:18:35.919 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 16:18:35.920 [http-nio-9998-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 16:40:01.117 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 16:40:01.117 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 16:40:01.117 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 16:40:01.117 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 16:40:01.118 [http-nio-9998-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 16:40:01.118 [http-nio-9998-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 16:40:01.118 [http-nio-9998-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 16:40:01.118 [http-nio-9998-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 16:40:01.118 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:706 - ---查询过滤器，Query规则---field:space_id, rule:=, value:2039154583022772226
+2026-04-22 16:40:01.118 [http-nio-9998-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:291 - 排序规则>>列:null,排序方式:null
+2026-04-22 16:50:41.071 [lettuce-nioEventLoop-4-1] INFO  io.lettuce.core.protocol.CommandHandler:217 - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2026-04-22 16:50:41.071 [lettuce-nioEventLoop-4-2] INFO  io.lettuce.core.protocol.CommandHandler:217 - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2026-04-22 16:50:41.071 [lettuce-nioEventLoop-4-3] INFO  io.lettuce.core.protocol.CommandHandler:217 - null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2026-04-22 16:50:41.185 [lettuce-eventExecutorLoop-1-9] INFO  io.lettuce.core.protocol.ConnectionWatchdog:171 - Reconnecting, last destination was /127.0.0.1:6379
+2026-04-22 16:50:41.185 [lettuce-eventExecutorLoop-1-10] INFO  io.lettuce.core.protocol.ConnectionWatchdog:171 - Reconnecting, last destination was /127.0.0.1:6379
+2026-04-22 16:50:41.185 [lettuce-eventExecutorLoop-1-11] INFO  io.lettuce.core.protocol.ConnectionWatchdog:171 - Reconnecting, last destination was /127.0.0.1:6379
+2026-04-22 16:50:43.246 [lettuce-nioEventLoop-4-4] WARN  io.lettuce.core.protocol.ConnectionWatchdog:151 - Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379
+2026-04-22 16:50:43.246 [lettuce-nioEventLoop-4-6] WARN  io.lettuce.core.protocol.ConnectionWatchdog:151 - Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379
+2026-04-22 16:50:43.246 [lettuce-nioEventLoop-4-5] WARN  io.lettuce.core.protocol.ConnectionWatchdog:151 - Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379
+2026-04-22 16:50:47.771 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog:171 - Reconnecting, last destination was 127.0.0.1:6379
+2026-04-22 16:50:47.878 [lettuce-eventExecutorLoop-1-5] INFO  io.lettuce.core.protocol.ConnectionWatchdog:171 - Reconnecting, last destination was 127.0.0.1:6379
+2026-04-22 16:50:47.985 [lettuce-eventExecutorLoop-1-6] INFO  io.lettuce.core.protocol.ConnectionWatchdog:171 - Reconnecting, last destination was 127.0.0.1:6379
+2026-04-22 16:50:49.813 [lettuce-nioEventLoop-4-13] WARN  io.lettuce.core.protocol.ConnectionWatchdog:151 - Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379
+2026-04-22 16:50:49.924 [lettuce-nioEventLoop-4-14] WARN  io.lettuce.core.protocol.ConnectionWatchdog:151 - Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379
+2026-04-22 16:50:50.033 [lettuce-nioEventLoop-4-1] WARN  io.lettuce.core.protocol.ConnectionWatchdog:151 - Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379
+2026-04-22 16:50:54.172 [lettuce-eventExecutorLoop-1-11] INFO  io.lettuce.core.protocol.ConnectionWatchdog:171 - Reconnecting, last destination was 127.0.0.1:6379
+2026-04-22 16:50:54.280 [lettuce-eventExecutorLoop-1-12] INFO  io.lettuce.core.protocol.ConnectionWatchdog:171 - Reconnecting, last destination was 127.0.0.1:6379
+2026-04-22 16:50:56.206 [lettuce-nioEventLoop-4-5] WARN  io.lettuce.core.protocol.ConnectionWatchdog:151 - Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379
+2026-04-22 16:50:56.316 [lettuce-nioEventLoop-4-7] WARN  io.lettuce.core.protocol.ConnectionWatchdog:151 - Cannot reconnect to [127.0.0.1:6379]: Connection refused: no further information: /127.0.0.1:6379
+2026-04-22 16:50:58.350 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-04-22 16:50:58.593 [SpringApplicationShutdownHook] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:847 - Shutting down Quartz Scheduler
+2026-04-22 16:50:58.593 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler:666 - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-04-22 16:50:58.594 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler:585 - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-04-22 16:50:58.595 [SpringApplicationShutdownHook] INFO  org.quartz.core.QuartzScheduler:740 - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-04-22 16:50:58.602 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource:2029 - {dataSource-1} closing ...
+2026-04-22 16:50:58.608 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource:2101 - {dataSource-1} closed

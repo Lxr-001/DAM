@@ -1,0 +1,17 @@
+.DS_Store
+/dist
+.github
+.npmrc
+.cache
+
+## idea
+**/.idea
+*.iml
+
+## backend
+**/target
+**/logs
+
+## front
+
+/node_modules

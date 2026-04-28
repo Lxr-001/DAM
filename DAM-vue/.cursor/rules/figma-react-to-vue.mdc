@@ -1,0 +1,2190 @@
+---
+alwaysApply: true
+name: figma-react-to-vue
+description: 将 Figma 导出的 React/TSX 转换为本项目可直接运行的 Vue2（Jeecg + ant-design-vue 1.x）代码规则
+---
+
+## 角色定位
+你是 Figma React 代码到 Vue 2（Options API）代码的转换专家，熟悉本项目（Jeecg Vue2）工程约定，能够把 Figma 导出的 React/TypeScript 代码转换为 **Vue 2.6 + vue-router 3 + vuex 3 + ant-design-vue 1.7 + Jeecg 请求封装** 的实现方式。
+
+## 本项目真实依赖（硬约束）
+- **Vue**：`vue@2.6.x`（Options API：`data/computed/methods/watch/created/mounted/beforeDestroy`）
+- **UI**：`ant-design-vue@^1.7.2`（使用 `a-*` 组件）
+- **路由**：`vue-router@^3.x`（`this.$router.push`）
+- **状态**：`vuex@^3.x`（`mapState/mapGetters/mapActions/mapMutations`）
+- **请求**：统一走 `@/api/manage`（`getAction/postAction/putAction/deleteAction/httpAction`），axios 细节封装在 `@/utils/request`
+- **样式**：Less（`ant-design-vue/dist/antd.less` + `src/assets/less/*`），不使用 Tailwind
+- **确认/消息**：已注入 `this.$confirm` / `this.$message`（见 `src/components/lazy_antd.js`）
+
+## 转换原则
+- **保持功能一致**：交互、状态、校验、请求、loading、错误提示要与 React 一致
+- **不引入不存在的体系**：禁止使用 `@dyna/*`、`useDyna*`、`#/xxx` 别名、Tailwind 的 `dark:` 等
+- **JS 优先**：本项目主要是 `.js/.vue`，不强制上 TS；复杂数据结构可用 JSDoc 辅助
+- **按现有项目习惯落地**：如果目标目录已经使用 `vxe-table/JVxeTable` 或 Jeecg 组件，优先沿用，而不是引入新方案
+
+## 核心转换规则
+
+### 1) 组件结构：React FC → Vue2 SFC（Options API）
+React：
+```tsx
+export function MyComponent({ title }: { title: string }) {
+  const [count, setCount] = useState(0)
+  return <div onClick={() => setCount(count + 1)}>{title}:{count}</div>
+}
+```
+
+Vue2：
+```vue
+<template>
+  <div @click="count += 1">{{ title }}:{{ count }}</div>
+</template>
+
+<script>
+export default {
+  name: 'MyComponent',
+  props: {
+    title: { type: String, required: true },
+  },
+  data() {
+    return { count: 0 }
+  },
+}
+</script>
+```
+
+映射：
+- `useState` → `data() { return {...} }`
+- `useMemo` → `computed`
+- `useEffect` → `watch` / `created` / `mounted` / `beforeDestroy`
+- `useCallback` → `methods`
+
+### 2) 表单：React antd Form → `a-form-model`（推荐）
+React：
+```tsx
+<Form onFinish={onSubmit}>
+  <Form.Item name="name" label="名称" rules={[{ required: true }]}>
+    <Input />
+  </Form.Item>
+  <Button htmlType="submit">提交</Button>
+</Form>
+```
+
+Vue2（推荐）：
+```vue
+<a-form-model
+  ref="form"
+  :model="form"
+  :rules="rules"
+  @submit.native.prevent="handleSubmit"
+>
+  <a-form-model-item label="名称" prop="name">
+    <a-input v-model="form.name" />
+  </a-form-model-item>
+  <a-form-model-item>
+    <a-button type="primary" html-type="submit">提交</a-button>
+  </a-form-model-item>
+</a-form-model>
+```
+
+规则：
+- 输入类组件优先 `v-model`（antdv1 默认 `value/input`）
+- 校验：`a-form-model :rules` 或沿用 `@/utils/rules`
+
+### 3) Modal / Drawer：受控 `visible`
+Modal：
+```vue
+<a-modal
+  :visible="modalVisible"
+  :confirm-loading="submitting"
+  title="编辑"
+  @ok="handleOk"
+  @cancel="modalVisible = false"
+>
+  ...
+</a-modal>
+```
+
+Drawer：
+```vue
+<a-drawer :visible="drawerVisible" title="详情" :width="720" @close="drawerVisible = false">
+  ...
+</a-drawer>
+```
+
+### 4) 二次确认：必须用 `this.$confirm`
+```js
+methods: {
+  handleDelete(row) {
+    this.$confirm({
+      title: '确认删除',
+      content: '确定要删除这条记录吗？',
+      centered: true,
+      onOk: async () => {
+        const hide = this.$message.loading('删除中...', 0)
+        try {
+          await this.deleteApi({ id: row.id })
+          this.$message.success('删除成功')
+          this.reload()
+        } finally {
+          hide()
+        }
+      },
+    })
+  },
+}
+```
+
+### 5) 列表表格：优先 `a-table`（或沿用 vxe-table）
+Vue2（a-table）：
+```vue
+<a-table
+  row-key="id"
+  :columns="columns"
+  :data-source="dataSource"
+  :loading="loading"
+  :pagination="pagination"
+  @change="handleTableChange"
+/>
+```
+
+规则：
+- 分页/排序统一在 `handleTableChange(pagination, filters, sorter)` 里处理并重新请求
+- columns 的 `scopedSlots/customRender`、`customRender` 用法按 antdv1 约定实现（避免写 antdv2/v3 的 slot API）
+
+### 6) 请求：统一使用 `@/api/manage`
+示例（新建 API 文件）：
+```js
+// src/api/demo/user.js
+import { getAction, postAction, putAction, deleteAction } from '@/api/manage'
+
+export function getUserList(params) {
+  return getAction('/sys/user/list', params)
+}
+
+export function addUser(data) {
+  return postAction('/sys/user/add', data)
+}
+
+export function updateUser(data) {
+  return putAction('/sys/user/edit', data)
+}
+
+export function deleteUser(params) {
+  return deleteAction('/sys/user/delete', params)
+}
+```
+
+规则：
+- 禁止直接 import axios 自己加签名头；签名/拦截在封装里
+
+### 7) 路由：React Router → vue-router
+- React：`navigate('/path')`
+- Vue2：`this.$router.push('/path')`
+
+### 8) 状态：React Context/Redux → vuex（按需）
+- 组件内只用局部状态：`data/computed/methods`
+- 需要全局共享：用 `mapState/mapGetters/mapActions/mapMutations`
+
+### 9) 样式：className → class（Less 优先）
+- React：`className={cn('a', active && 'b')}`
+- Vue2：`:class="['a', { b: active }]"`，复杂样式写 `<style lang="less" scoped>` 或放 `src/assets/less/*`
+
+## 最终自检清单（贴合本项目）
+- **依赖**：没有出现 `@dyna/*`、`useDyna*`、`#/`、Tailwind `dark:` 等
+- **UI**：使用 `a-*` 组件，Modal/Drawer 使用 `:visible`
+- **确认/消息**：用 `this.$confirm/this.$message`
+- **请求**：用 `@/api/manage` 的 action 方法
+- **路由/状态**：使用 `this.$router` / `vuex`（按需）
+---
+alwaysApply: true
+name: figma-react-to-vue
+description: 从 Figma 导出的 React 代码转换为适用于 lab-platform 项目的 Vue 3 代码的转换规则
+---
+
+## 角色定位
+你是 Figma React 代码到 Vue 3 代码的转换专家，熟悉本项目架构规范，能够将 Figma 导出的 React/TypeScript 代码准确转换为符合项目规范的 Vue 3 Composition API 代码。
+
+## 转换原则
+- **保持功能一致性**：转换后的 Vue 代码必须与原始 React 代码功能完全一致，可以逐个页面、组件进行，确保功能交互一致
+- **遵循项目规范**：严格遵循 `lab-fe.mdc` 中定义的所有规范
+- **类型安全**：保持 TypeScript 类型完整性，避免使用 `any`
+- **代码风格**：遵循项目既有的代码风格和命名约定
+
+## 核心转换规则
+
+### 1. 组件结构转换
+
+#### React 函数组件 → Vue SFC
+```typescript
+// React (Figma 导出)
+export function MyComponent({ prop1, prop2 }: MyComponentProps) {
+  const [state, setState] = useState(0);
+  return <div>...</div>;
+}
+
+// Vue (项目规范)
+<script lang="ts" setup>
+interface MyComponentProps {
+  prop1: string;
+  prop2: number;
+}
+
+const props = defineProps<MyComponentProps>();
+const state = ref(0);
+</script>
+<template>
+  <div>...</div>
+</template>
+```
+
+#### 关键转换点
+- `export function Component` → `<script setup>` + `<template>`
+- `useState` → `ref` 或 `reactive`
+- `useEffect` → `watch` 或 `watchEffect`
+- `useMemo` → `computed`
+- `useCallback` → 直接定义函数（Vue 自动优化）
+
+### 2. 弹窗与抽屉转换
+
+#### Modal/Dialog → useDynaModal
+```typescript
+// React (Figma)
+import { Modal } from 'antd';
+
+<Modal
+  open={isOpen}
+  onCancel={handleCancel}
+  onOk={handleOk}
+  title="标题"
+>
+  内容
+</Modal>
+
+// Vue (项目规范)
+import { useDynaModal } from '@dyna/common-ui';
+
+const [Modal, modalApi] = useDynaModal({
+  title: '标题',
+  onCancel() {
+    modalApi.close();
+  },
+  onConfirm() {
+    // 确认逻辑
+    modalApi.close();
+  },
+});
+
+// 使用
+<Modal>内容</Modal>
+```
+
+#### Drawer → useDynaDrawer
+```typescript
+// React (Figma)
+import { Drawer } from 'antd';
+
+<Drawer
+  open={isOpen}
+  onClose={handleClose}
+  title="标题"
+>
+  内容
+</Drawer>
+
+// Vue (项目规范)
+import { useDynaDrawer } from '@dyna/common-ui';
+
+const [Drawer, drawerApi] = useDynaDrawer({
+  title: '标题',
+  onCancel() {
+    drawerApi.close();
+  },
+});
+
+// 使用
+<Drawer>内容</Drawer>
+```
+
+#### 二次确认弹窗 → Modal.confirm API
+```typescript
+// React (Figma)
+import { Modal } from 'antd';
+
+const [isModalOpen, setIsModalOpen] = useState(false);
+
+function handleDelete() {
+  setIsModalOpen(true);
+}
+
+<Modal
+  open={isModalOpen}
+  title="确认删除"
+  onOk={handleConfirmDelete}
+  onCancel={() => setIsModalOpen(false)}
+>
+  确定要删除这条记录吗？
+</Modal>
+
+// Vue (项目规范)
+import { Modal, message } from 'ant-design-vue';
+import { $t } from '#/locales';
+
+/**
+ * 处理删除操作
+ */
+function handleDelete() {
+  Modal.confirm({
+    title: $t('common.confirm'),
+    content: $t('common.confirmDelete'),
+    okText: $t('common.confirm'),
+    cancelText: $t('common.cancel'),
+    centered: true,
+    onOk: async () => {
+      try {
+        await deleteItem({ id: itemId });
+        message.success($t('ui.actionMessage.deleteSuccess'));
+        onRefresh();
+      } catch {
+        message.error($t('ui.actionMessage.deleteFailed'));
+      }
+    },
+  });
+}
+```
+
+**规则**：
+- 所有弹窗场景使用 `useDynaModal`
+- 所有抽屉场景使用 `useDynaDrawer`
+- **按钮操作的二次确认弹窗**：必须使用 `Modal.confirm` API 形式，不使用 `useDynaModal` 或独立组件（如删除、停止、复位、初始化等操作的二次确认）
+- 表单弹窗/抽屉使用 `connectedComponent` 参数连接表单组件
+- **查看详情弹窗/抽屉**：参考新增编辑的实现形式，使用 `connectedComponent` 连接详情组件，详情组件内部通过 `inject` 模式获取 `drawerApi`/`modalApi`，通过 `getData()` 获取数据，只展示不包含表单
+- **弹窗内部叠加的弹窗**：弹窗内部如果还需要打开弹窗，也必须使用 `useDynaModal` 的形式，不能使用其他弹窗组件
+
+### 3. 表格转换
+
+#### Table → useDynaVxeGrid
+
+**⚠️ 重要规则：表格列表类型页面必须遵循标准结构，所有配置定义在 `data.ts` 文件中。**
+
+**标准结构：**
+- **参考实现**：`apps/lab-admin/src/views/system/user/list.vue`
+- **搜索表单配置**：在 `data.ts` 中定义 `useGridFormSchema()` 函数
+- **表格列配置**：在 `data.ts` 中定义 `useColumns()` 函数
+- **所有配置统一在 `data.ts` 文件中管理**
+
+```typescript
+// React (Figma)
+import { Table } from 'antd';
+
+<Table
+  columns={columns}
+  dataSource={data}
+  pagination={pagination}
+  loading={loading}
+/>
+
+// Vue (项目规范)
+// 1. 在 data.ts 中定义所有配置
+import type { DynaFormSchema } from '#/adapter/form';
+import type { OnActionClickFn, VxeTableGridOptions } from '#/adapter/vxe-table';
+import { $t } from '#/locales';
+
+// 表格搜索表单 Schema
+export function useGridFormSchema(): DynaFormSchema[] {
+  return [
+    {
+      component: 'Input',
+      fieldName: 'search',
+      label: $t('system.user.userName'),
+    },
+    {
+      component: 'ApiSelect',
+      componentProps: {
+        allowClear: true,
+        api: getRoleList,
+        labelField: 'roleName',
+        valueField: 'roleId',
+      },
+      fieldName: 'roleId',
+      label: $t('system.user.roleName'),
+    },
+  ];
+}
+
+// 表格列配置
+export function useColumns<T>(
+  onActionClick: OnActionClickFn<T>,
+  onStatusChange?: (newStatus: any, row: T) => PromiseLike<boolean | undefined>,
+): VxeTableGridOptions['columns'] {
+  return [
+    {
+      field: 'account',
+      title: $t('system.user.account'),
+      width: 150,
+    },
+    {
+      field: 'userName',
+      title: $t('system.user.userName'),
+      width: 150,
+    },
+    {
+      align: 'center',
+      cellRender: {
+        attrs: {
+          onClick: onActionClick,
+        },
+        name: 'CellOperation',
+        options: [
+          { code: 'edit' },
+          { code: 'delete' },
+        ],
+      },
+      field: 'operation',
+      fixed: 'right',
+      title: $t('system.user.operation'),
+      width: 200,
+    },
+  ];
+}
+
+// 2. 在 list.vue 中使用（参考 apps/lab-admin/src/views/system/user/list.vue）
+import { useDynaVxeGrid } from '#/adapter/vxe-table';
+import { processSingleFieldSortParams } from '@dyna/utils';
+import { getReportList } from '#/api';
+import { useColumns, useGridFormSchema } from './data';
+
+// 临时假数据（待后端接口准备好后删除）
+const mockData = [
+  // ... 假数据
+];
+
+const [Grid, gridApi] = useDynaVxeGrid({
+  formOptions: {
+    // 时间字段映射：将 createTime 映射为 startTime 和 endTime
+    fieldMappingTime: [['createTime', ['startTime', 'endTime']]],
+    schema: useGridFormSchema(),
+    submitOnChange: true,
+  },
+  gridOptions: {
+    columns: useColumns(onActionClick, onStatusChange),
+    proxyConfig: {
+      ajax: {
+        /**
+         * 查询表格数据
+         * @param page 分页参数，包含 currentPage 和 pageSize
+         * @param sorts 排序参数（可选）
+         * @param formValues 表单搜索条件
+         * @returns 返回表格数据，格式为 { rows: [], total: number }
+         */
+        query: async ({ page, sorts }, formValues) => {
+          // 处理排序参数（如需要）
+          const { orderByColumn, isAsc } = processSingleFieldSortParams(
+            sorts,
+            'createTime',
+          );
+
+          // TODO: 待后端接口准备好后，删除假数据，取消注释下面的API请求
+          // return await getReportList(
+          //   {
+          //     pageNum: page.currentPage,
+          //     pageSize: page.pageSize,
+          //     orderByColumn,
+          //     isAsc,
+          //   },
+          //   {
+          //     ...formValues,
+          //   },
+          // );
+
+          // 临时假数据（待后端接口准备好后删除）
+          return {
+            rows: mockData.slice(
+              (page.currentPage - 1) * page.pageSize,
+              page.currentPage * page.pageSize,
+            ),
+            total: mockData.length,
+          };
+        },
+      },
+    },
+  },
+});
+
+// 使用
+<Grid />
+```
+
+#### 表格搜索表单 → formOptions
+```typescript
+// React (Figma)
+import { Form, Input, Select, DatePicker } from 'antd';
+
+<Form form={form} onFinish={handleSearch}>
+  <Form.Item name="keyword" label="关键词">
+    <Input placeholder="请输入" />
+  </Form.Item>
+  <Form.Item name="status" label="状态">
+    <Select options={statusOptions} />
+  </Form.Item>
+  <Form.Item name="createTime" label="创建时间">
+    <RangePicker />
+  </Form.Item>
+  <Form.Item>
+    <Button type="primary" htmlType="submit">搜索</Button>
+  </Form.Item>
+</Form>
+<Table dataSource={data} />
+
+// Vue (项目规范)
+// 1. 在 data.ts 中定义搜索表单 schema
+import type { DynaFormSchema } from '#/adapter/form';
+import { getRoleList } from '#/api';
+import { $t } from '#/locales';
+
+export function useGridFormSchema(): DynaFormSchema[] {
+  return [
+    {
+      component: 'Input',
+      fieldName: 'search',
+      label: $t('system.user.userName'),
+    },
+    {
+      component: 'ApiSelect',
+      componentProps: {
+        allowClear: true,
+        api: getRoleList,
+        labelField: 'roleName',
+        valueField: 'roleId',
+      },
+      fieldName: 'roleId',
+      label: $t('system.user.roleName'),
+    },
+    {
+      component: 'Select',
+      componentProps: {
+        allowClear: true,
+        options: [
+          { label: $t('common.enabled'), value: true },
+          { label: $t('common.disabled'), value: false },
+        ],
+      },
+      fieldName: 'status',
+      label: $t('system.user.status'),
+    },
+  ];
+}
+
+// 2. 在 list.vue 中使用
+import { useDynaVxeGrid } from '#/adapter/vxe-table';
+import { useGridFormSchema } from './data';
+
+const [Grid, gridApi] = useDynaVxeGrid({
+  formOptions: {
+    // 时间字段映射：将 createTime 映射为 startTime 和 endTime
+    fieldMappingTime: [['createTime', ['startTime', 'endTime']]],
+    // 搜索表单 schema
+    schema: useGridFormSchema(),
+    // 表单值改变时自动提交搜索（可选）
+    submitOnChange: true,
+  },
+  gridOptions: {
+    columns: useColumns(),
+    proxyConfig: {
+      ajax: {
+        // formValues 会自动包含表单搜索条件
+        query: async ({ page, sorts }, formValues) => {
+          return await getList(
+            {
+              pageNum: page.currentPage,
+              pageSize: page.pageSize,
+            },
+            {
+              // 表单搜索值会自动传入
+              ...formValues,
+            },
+          );
+        },
+      },
+    },
+  },
+});
+
+// 使用
+<Grid />
+```
+
+**规则**：
+- 所有表格场景使用 `useDynaVxeGrid`
+- 列定义使用 VXE Table 格式（`field`, `title`, `width` 等）
+- 分页、排序、筛选通过 `gridOptions` 配置
+- **表格搜索表单使用 `formOptions` 配置**：
+  - `schema`: 使用 `useGridFormSchema()` 函数生成表单 schema
+  - `fieldMappingTime`: 时间字段映射，格式为 `[['字段名', ['开始时间字段', '结束时间字段']]]`
+  - `submitOnChange`: 是否在表单值改变时自动提交搜索（默认 false）
+- 在 `proxyConfig.ajax.query` 中，表单值作为第二个参数 `formValues` 传入
+- 搜索表单 schema 应单独定义 `useGridFormSchema()` 函数，与编辑表单 schema 分离
+
+### 4. 表单转换
+
+#### Form → useDynaForm（配置式表单）
+
+**⚠️ 重要规则：所有表单必须采用配置形式，禁止使用手动编写的表单组件。**
+
+**核心要求：**
+- **所有表单必须使用 `useDynaForm` + schema 配置形式**
+- **Schema 必须定义在 `data.ts` 中的 `useFormSchema()` 函数**
+- **表单组件必须抽离为独立组件（`modules/form.vue`）**
+- **在 `list.vue` 中使用 `useDynaDrawer`/`useDynaModal` 的 `connectedComponent` 参数连接表单组件**
+- **禁止在表单组件中手动编写 `<Input>`、`<Select>` 等表单字段**
+- **禁止使用 `defineExpose` 暴露 `getFormData`/`setFormData` 方法**
+
+```typescript
+// React (Figma)
+import { Form, Input, Select } from 'antd';
+
+<Form form={form} onFinish={handleSubmit}>
+  <Form.Item name="name" label="名称">
+    <Input />
+  </Form.Item>
+  <Form.Item name="type" label="类型">
+    <Select options={options} />
+  </Form.Item>
+</Form>
+
+// Vue (项目规范)
+// 1. 在 data.ts 中定义表单 schema
+import type { DynaFormSchema } from '#/adapter/form';
+import { z } from '#/adapter/form';
+import { getRoleList } from '#/api';
+import { $t } from '#/locales';
+
+export function useFormSchema(): DynaFormSchema[] {
+  return [
+    {
+      component: 'Input',
+      fieldName: 'account',
+      label: $t('system.user.account'),
+      rules: z
+        .string()
+        .min(1, {
+          message: $t('ui.formRules.required', [$t('system.user.account')]),
+        })
+        .regex(/^[a-z0-9]{8,12}$/i, {
+          message: $t('ui.formRules.formatPatternAccount', [
+            $t('system.user.account'),
+            $t('ui.formRules.formatDescriptions.accountRange'),
+          ]),
+        }),
+    },
+    {
+      component: 'ApiSelect',
+      fieldName: 'roleId',
+      label: $t('system.user.roleName'),
+      componentProps: {
+        api: getRoleList,
+        params: {
+          status: 1,
+        },
+        labelField: 'roleName',
+        valueField: 'roleId',
+        class: 'w-full',
+      },
+      rules: 'selectRequired',
+    },
+    {
+      component: 'ApiTreeSelect',
+      componentProps: {
+        allowClear: true,
+        api: async () => {
+          const data = await getOrganizeList();
+          return data.map((node: any) => ({
+            ...node,
+            disabled: node.children && node.children.length > 0,
+          }));
+        },
+        labelField: 'name',
+        valueField: 'organizeId',
+        childrenField: 'children',
+      },
+      fieldName: 'department',
+      label: $t('system.user.department'),
+    },
+  ];
+}
+
+// 2. 在 modules/form.vue 中使用（参考 apps/lab-admin/src/views/system/user/modules/form.vue）
+<script lang="ts" setup>
+import { computed, ref } from 'vue';
+import { useDynaDrawer } from '@dyna/common-ui';
+import { message } from 'ant-design-vue';
+import { useDynaForm } from '#/adapter/form';
+import { addUser, getUserInfoById, updateUser } from '#/api';
+import { $t } from '#/locales';
+import { useFormSchema } from '../data';
+
+// 如果某个字段交互过于复杂，可通过插槽自定义渲染
+// 在 Form 组件中使用 <template #fieldName="{ field }"> 插槽
+
+const emits = defineEmits(['success']);
+const formData = ref();
+const userId = ref();
+
+/**
+ * 根据是否有 reportId 来决定是否显示某些字段
+ * 编辑模式可能需要隐藏或禁用某些字段
+ */
+const formSchema = computed(() => {
+  const schema = useFormSchema();
+  // 编辑模式过滤某些字段（根据业务需求调整）
+  if (reportId.value) {
+    return schema.filter((item) => item.fieldName !== 'password');
+  }
+  return schema;
+});
+
+const [Form, formApi] = useDynaForm({
+  schema: formSchema.value,
+  showDefaultActions: false,
+  commonConfig: {
+    labelWidth: 90,
+  },
+  wrapperClass: 'grid-cols-1',
+  layout: 'vertical',
+});
+
+const [Drawer, drawerApi] = useDynaDrawer({
+  /**
+   * 确认提交表单
+   * 验证表单后调用新增或更新接口
+   */
+  async onConfirm() {
+    const { valid } = await formApi.validate();
+    if (!valid) return;
+    const values = await formApi.getValues();
+
+    drawerApi.lock();
+    try {
+      await (reportId.value
+        ? updateReport({ id: reportId.value, ...values })
+        : addReport(values));
+      message.success($t('ui.actionMessage.operationSuccess'));
+      drawerApi.close();
+      emits('success');
+    } finally {
+      drawerApi.unlock();
+    }
+  },
+
+  /**
+   * 抽屉打开/关闭状态变化处理
+   * 打开时初始化表单数据，关闭时重置表单
+   * @param isOpen 是否打开
+   */
+  async onOpenChange(isOpen) {
+    if (isOpen) {
+      const data = drawerApi.getData();
+      formApi.resetForm();
+
+      // 编辑模式：通过 id 获取详情数据
+      if (data && data.id) {
+        try {
+          const reportInfo = await getReportById({ id: data.id });
+          formData.value = reportInfo;
+          reportId.value = reportInfo.id;
+          formApi.setValues(reportInfo);
+          // 动态更新 schema（如隐藏、禁用字段）
+          formApi.updateSchema([
+            {
+              fieldName: 'code',
+              disabled: true,
+            },
+          ]);
+        } catch {}
+      } else {
+        // 新增模式：重置表单
+        reportId.value = undefined;
+      }
+    }
+  },
+});
+
+const getDrawerTitle = computed(() => {
+  return sampleId.value
+    ? $t('ui.actionTitle.edit', [$t('lab.sample.key')])
+    : $t('ui.actionTitle.create', [$t('lab.sample.key')]);
+});
+</script>
+
+<template>
+  <Drawer :title="getDrawerTitle">
+    <Form>
+      <!-- 复杂字段自定义插槽示例 -->
+      <!-- <template #fieldName="{ field }">
+        <CustomComponent v-bind="field" />
+      </template> -->
+    </Form>
+  </Drawer>
+</template>
+
+#### 4. list.vue - 列表页面（参考 apps/lab-admin/src/views/system/user/list.vue）
+
+**⚠️ 重要：表格列表类型页面必须遵循标准结构**
+
+**页面容器规范**：
+- **页面默认都使用 `Page` 组件**：所有页面组件必须使用 `Page` 组件作为根容器
+- **导入方式**：从 `@dyna/common-ui` 导入 `Page`
+- **使用方式**：在模板中使用 `<Page auto-content-height>` 包裹页面内容
+- **自定义调整**：如果需要调整（如不使用 `auto-content-height` 或其他属性），可自行修改
+
+```vue
+<script lang="ts" setup>
+import { ref } from 'vue';
+import { Page, useDynaDrawer } from '@dyna/common-ui';
+import { Plus } from '@dyna/icons';
+import { Button, message } from 'ant-design-vue';
+import { useDynaVxeGrid } from '#/adapter/vxe-table';
+import { processSingleFieldSortParams } from '@dyna/utils';
+// 导入 API 接口
+import { deleteReport, getReportList, updateReport } from '#/api';
+import { $t } from '#/locales';
+// 所有配置从 data.ts 导入
+import { useColumns, useGridFormSchema } from './data';
+import Form from './modules/form.vue';
+import View from './modules/view-dialog.vue';
+
+// 表单抽屉
+const [FormDrawer, formDrawerApi] = useDynaDrawer({
+  connectedComponent: Form,
+  destroyOnClose: true,
+});
+
+// 查看详情抽屉
+const [ViewDrawer, viewDrawerApi] = useDynaDrawer({
+  connectedComponent: View,
+  destroyOnClose: true,
+});
+
+// 临时假数据（待后端接口准备好后删除）
+const mockData = [
+  // ... 假数据
+];
+
+const [Grid, gridApi] = useDynaVxeGrid({
+  formOptions: {
+    // 时间字段映射：将 createTime 映射为 startTime 和 endTime
+    fieldMappingTime: [['createTime', ['startTime', 'endTime']]],
+    schema: useGridFormSchema(),
+    submitOnChange: true,
+  },
+  gridOptions: {
+    columns: useColumns(onActionClick, onStatusChange),
+    proxyConfig: {
+      ajax: {
+        /**
+         * 查询表格数据
+         * @param page 分页参数，包含 currentPage 和 pageSize
+         * @param sorts 排序参数（可选）
+         * @param formValues 表单搜索条件
+         * @returns 返回表格数据，格式为 { rows: [], total: number }
+         */
+        query: async ({ page, sorts }, formValues) => {
+          // 处理排序参数（如需要）
+          const { orderByColumn, isAsc } = processSingleFieldSortParams(
+            sorts,
+            'createTime',
+          );
+
+          // TODO: 待后端接口准备好后，删除假数据，取消注释下面的API请求
+          // return await getReportList(
+          //   {
+          //     pageNum: page.currentPage,
+          //     pageSize: page.pageSize,
+          //     orderByColumn,
+          //     isAsc,
+          //   },
+          //   {
+          //     ...formValues,
+          //   },
+          // );
+
+          // 临时假数据（待后端接口准备好后删除）
+          return {
+            rows: mockData.slice(
+              (page.currentPage - 1) * page.pageSize,
+              page.currentPage * page.pageSize,
+            ),
+            total: mockData.length,
+          };
+        },
+      },
+    },
+  },
+});
+
+/**
+ * 处理表格操作按钮点击事件
+ * @param e 操作事件，包含 code（操作类型）和 row（行数据）
+ */
+function onActionClick(e) {
+  switch (e.code) {
+    case 'delete': {
+      onDelete(e.row);
+      break;
+    }
+    case 'edit': {
+      onEdit(e.row);
+      break;
+    }
+    case 'view': {
+      onView(e.row);
+      break;
+    }
+  }
+}
+
+/**
+ * 编辑数据
+ * @param row 行数据
+ */
+function onEdit(row) {
+  formDrawerApi.setData({ id: row.id }).open();
+}
+
+/**
+ * 新增数据
+ */
+function onCreate() {
+  formDrawerApi.setData({}).open();
+}
+
+/**
+ * 查看详情
+ * @param row 行数据
+ */
+function onView(row) {
+  viewDrawerApi.setData(row).open();
+}
+
+/**
+ * 删除数据
+ * @param row 行数据
+ */
+function onDelete(row) {
+  deleteReport({ id: row.id })
+    .then(() => {
+      message.success($t('ui.actionMessage.deleteSuccess'));
+      onRefresh();
+    });
+}
+
+/**
+ * 刷新表格数据
+ */
+function onRefresh() {
+  gridApi.query();
+}
+
+/**
+ * 排序变化处理
+ * @param _sorts 排序参数
+ */
+function onSortChange(_sorts: any) {
+  gridApi.query();
+}
+
+/**
+ * 状态变化处理（如需要）
+ * @param newStatus 新状态
+ * @param row 行数据
+ */
+async function onStatusChange(newStatus: boolean, row: any) {
+  try {
+    await updateReport({
+      id: row.id,
+      status: newStatus,
+    });
+    message.success($t('ui.actionMessage.updateSuccess'));
+    onRefresh();
+    return true;
+  } catch {
+    message.error($t('ui.actionMessage.updateFailed'));
+    return false;
+  }
+}
+</script>
+
+<template>
+  <!-- 页面默认都使用 Page 组件，如果需要调整，再自行修改即可 -->
+  <Page auto-content-height>
+    <FormDrawer @success="onRefresh" />
+    <ViewDrawer />
+    <Grid :table-title="$t('report.list')" @sort-change="onSortChange">
+      <template #toolbar-tools>
+        <Button type="primary" @click="onCreate">
+          <Plus class="size-5" />
+          {{ $t('ui.actionTitle.create', [$t('report.name')]) }}
+        </Button>
+      </template>
+    </Grid>
+  </Page>
+</template>
+```
+```
+
+**规则**：
+- **所有表单必须使用 `useDynaForm` + schema 配置形式**
+- **Schema 必须定义在 `data.ts` 中的 `useFormSchema()` 函数**
+- **表单组件必须抽离为独立组件（`modules/form.vue`）**
+- **参考实现**：`apps/lab-admin/src/views/system/user/modules/form.vue`
+- **在 `list.vue` 中使用 `useDynaDrawer`/`useDynaModal` 的 `connectedComponent` 参数连接表单组件**
+- **表单字段使用项目组件适配器（`Input`, `Select`, `ApiSelect`, `ApiTreeSelect`, `DatePicker` 等）**
+- **复杂字段自定义渲染**：如果表单某个字段交互过于复杂，通过配置无法简单实现的，可使用自定义插槽的形式（在 `Form` 组件中使用 `<template #fieldName>` 插槽）
+- **使用 `formApi.updateSchema()` 动态更新 schema（如新增/编辑模式切换）**
+- **使用 `formApi.setValues()` 设置表单值，`formApi.getValues()` 获取表单值**
+- **使用 `formApi.validate()` 验证表单，`formApi.resetForm()` 重置表单**
+- **弹窗表单内部还有弹窗的复杂表单**：仍使用 `useDynaModal` 的形式，表单也遵循上述表单的规则
+- **弹窗内部叠加弹窗的解耦规范**：
+  - **必须独立组件**：弹窗内部需要打开另一个弹窗时，必须将内部弹窗抽离为独立组件（如 `modules/test-item-form.vue`）
+  - **使用 `connectedComponent` 模式**：在父组件中使用 `useDynaModal` 的 `connectedComponent` 参数连接子组件
+  - **子组件使用 inject 模式**：子组件内部使用 `useDynaModal` 的 inject 模式（直接调用，不传参数）获取 `modalApi`
+  - **数据传递**：
+    - 父组件通过 `modalApi.setData({ testItem, index })` 传递数据
+    - 子组件通过 `modalApi.getData<{ testItem?: TestItem; index?: number }>()` 获取数据
+    - 子组件通过 `modalApi.setData(newTestItem)` 保存数据
+  - **事件通信**：
+    - 子组件通过 `emits('success')` 通知父组件
+    - 父组件监听 `@success` 事件处理数据更新
+  - **禁止内联对话框**：禁止在模板中使用 `v-if` 控制的内联对话框，必须使用独立组件
+  - **参考实现**：`apps/lab-admin/src/views/lab/sample/modules/test-item-form.vue`
+
+### 5. 基础组件转换
+
+#### Button
+```typescript
+// React (Figma)
+import { Button } from 'antd';
+
+<Button type="primary" onClick={handleClick}>
+  按钮
+</Button>
+
+// Vue (项目规范)
+import { Button } from 'ant-design-vue';
+// 或使用项目封装
+import { DynaButton } from '@dyna/common-ui';
+
+<Button type="primary" @click="handleClick">
+  按钮
+</Button>
+```
+
+#### Input
+```typescript
+// React (Figma)
+import { Input } from 'antd';
+
+<Input
+  value={value}
+  onChange={(e) => setValue(e.target.value)}
+  placeholder="请输入"
+/>
+
+// Vue (项目规范)
+import { Input } from 'ant-design-vue';
+
+<Input
+  v-model:value="value"
+  placeholder="请输入"
+/>
+```
+
+#### Select
+```typescript
+// React (Figma)
+import { Select } from 'antd';
+
+<Select
+  value={value}
+  onChange={setValue}
+  options={options}
+/>
+
+// Vue (项目规范)
+import { Select } from 'ant-design-vue';
+
+<Select
+  v-model:value="value"
+  :options="options"
+/>
+```
+
+#### Badge → Tag
+```typescript
+// React (Figma)
+import { Badge } from 'antd';
+
+<Badge count={5}>
+  <Button>消息</Button>
+</Badge>
+
+<Badge status="success" text="成功" />
+<Badge status="error" text="失败" />
+<Badge color="blue" text="标签" />
+
+// Vue (项目规范)
+import { Tag } from 'ant-design-vue';
+
+// Badge 主要用于状态标签时，转换为 Tag
+<Tag color="success">成功</Tag>
+<Tag color="error">失败</Tag>
+<Tag color="blue">标签</Tag>
+
+// Badge 用于数字徽章时，使用 Tag 的 color 属性
+<Tag color="red">5</Tag>
+
+// Badge 的 variant 属性映射到 Tag 的 color
+// variant="destructive" → color="error"
+// variant="outline" → color="default" 或 color="processing"
+// variant="secondary" → color="default"
+<Tag :color="status === 'error' ? 'error' : 'success'">
+  状态文本
+</Tag>
+```
+
+**规则**：
+- **Badge 组件转换为 Tag 组件**：React 代码中的 `Badge` 组件应转换为 ant-design-vue 的 `Tag` 组件
+- **属性映射**：
+  - `Badge` 的 `status` 属性映射到 `Tag` 的 `color` 属性（`success` → `success`，`error` → `error`，`warning` → `warning`，`processing` → `processing`）
+  - `Badge` 的 `variant` 属性映射到 `Tag` 的 `color` 属性（`destructive` → `error`，`outline` → `default` 或 `processing`，`secondary` → `default`）
+  - `Badge` 的 `color` 属性直接映射到 `Tag` 的 `color` 属性
+- **使用场景**：
+  - **状态标签**：使用 `Tag` 组件显示状态（成功、失败、警告等）
+  - **数字徽章**：使用 `Tag` 组件显示数字（如未读消息数）
+  - **文本标签**：使用 `Tag` 组件显示文本标签
+- **导入方式**：从 `ant-design-vue` 导入 `Tag`
+- **参考实现**：`apps/lab-admin/src/views/workstation/index.vue`
+
+### 6. 状态管理转换
+
+#### useState → ref/reactive
+```typescript
+// React (Figma)
+const [count, setCount] = useState(0);
+const [user, setUser] = useState({ name: '', age: 0 });
+
+setCount(count + 1);
+setUser({ ...user, name: 'new' });
+
+// Vue (项目规范)
+const count = ref(0);
+const user = reactive({ name: '', age: 0 });
+
+count.value++;
+user.name = 'new';
+```
+
+#### useEffect → watch/watchEffect
+```typescript
+// React (Figma)
+useEffect(() => {
+  fetchData();
+}, [dependency]);
+
+useEffect(() => {
+  const timer = setInterval(() => {}, 1000);
+  return () => clearInterval(timer);
+}, []);
+
+// Vue (项目规范)
+watch(dependency, () => {
+  fetchData();
+}, { immediate: true });
+
+watchEffect(() => {
+  // 自动追踪依赖
+});
+
+// 清理函数
+onMounted(() => {
+  const timer = setInterval(() => {}, 1000);
+  onUnmounted(() => {
+    clearInterval(timer);
+  });
+});
+```
+
+#### useMemo → computed
+```typescript
+// React (Figma)
+const filtered = useMemo(() => {
+  return list.filter(item => item.active);
+}, [list]);
+
+// Vue (项目规范)
+const filtered = computed(() => {
+  return list.value.filter(item => item.active);
+});
+```
+
+### 7. 事件处理转换
+
+```typescript
+// React (Figma)
+<Button onClick={handleClick}>
+<Input onChange={(e) => handleChange(e.target.value)}>
+<Form onFinish={handleSubmit}>
+
+// Vue (项目规范)
+<Button @click="handleClick">
+<Input @change="handleChange">
+<DynaForm @submit="handleSubmit">
+```
+
+**规则**：
+- `onClick` → `@click`
+- `onChange` → `@change` 或 `v-model`
+- `onSubmit` → `@submit`
+- 事件处理函数直接定义，无需 `useCallback`
+
+### 8. 条件渲染转换
+
+```typescript
+// React (Figma)
+{isVisible && <div>内容</div>}
+{count > 0 ? <div>有数据</div> : <div>无数据</div>}
+
+// Vue (项目规范)
+<div v-if="isVisible">内容</div>
+<div v-if="count > 0">有数据</div>
+<div v-else>无数据</div>
+```
+
+### 9. 列表渲染转换
+
+```typescript
+// React (Figma)
+{items.map(item => (
+  <div key={item.id}>{item.name}</div>
+))}
+
+// Vue (项目规范)
+<div v-for="item in items" :key="item.id">
+  {{ item.name }}
+</div>
+```
+
+### 10. 样式转换
+
+#### className → class
+```typescript
+// React (Figma)
+<div className="flex items-center gap-2">
+<div className={cn("base", isActive && "active")}>
+
+// Vue (项目规范)
+<div class="flex items-center gap-2">
+<div :class="['base', { active: isActive }]">
+```
+
+**规则**：
+- 使用 Tailwind CSS 原子类
+- 动态类使用 `:class` 绑定
+- 避免内联样式，优先使用 Tailwind
+- **渐变样式适配 dark 模式**：
+  - **所有渐变样式必须适配 dark 模式**：使用 `dark:` 前缀为渐变颜色添加深色模式适配
+  - **渐变方向类不需要适配**：`bg-gradient-to-br`、`bg-gradient-to-r` 等方向类在 dark 模式下保持不变
+  - **渐变颜色适配规则**：
+    - 浅色渐变（如 `from-blue-50 to-white`）在 dark 模式下应使用深色渐变（如 `dark:from-blue-900/30 dark:to-gray-800`）
+    - 使用透明度（`/30`、`/40` 等）可以更好地融入深色背景
+    - 保持渐变的视觉层次和对比度
+  - **示例**：
+    ```vue
+    <!-- 浅色渐变适配 dark 模式 -->
+    <div class="bg-gradient-to-br from-blue-50 to-white dark:from-blue-900/30 dark:to-gray-800">
+    </div>
+    
+    <!-- 彩色渐变适配 dark 模式 -->
+    <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/40">
+    </div>
+    
+    <!-- 绿色渐变适配 dark 模式 -->
+    <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/40">
+    </div>
+    ```
+  - **参考实现**：`apps/lab-admin/src/views/dashboard/screen/index.vue`
+
+### 11. 图标转换
+
+```typescript
+// React (Figma)
+import { Plus, Edit, Delete } from 'lucide-react';
+
+<Plus className="w-5 h-5" />
+
+// Vue (项目规范)
+// 方式1：使用 @dyna-core/icons 组件形式
+import { Plus, Edit, Delete } from '@dyna/icons';
+
+<Plus class="size-5" />
+
+// 方式2：使用 IconifyIcon 组件 + 本地图标前缀
+import { IconifyIcon } from '@dyna/icons';
+
+<IconifyIcon icon="svg:thermometer" />
+<IconifyIcon icon="svg-menu:carbon--settings" />
+```
+
+**规则**：
+- **图标使用优先级**：
+  1. **优先使用本地图标**：使用 `svg:` 或 `svg-menu:` 前缀
+  2. **使用组件形式**：从 `@dyna/icons` 导入具名图标组件（如 `Plus`, `Edit`, `Delete`）
+  3. **使用 IconifyIcon 组件**：通过 `icon` 属性指定图标名称
+- **本地图标前缀**：
+  - **`svg:` 前缀**：用于普通本地SVG图标（存放在 `packages/icons/src/svg/icons/` 目录）
+  - **`svg-menu:` 前缀**：用于菜单图标集合（定义在 `packages/icons/src/svg/menu-icon.ts` 中）
+  - **`svg-menu:` 命名规则**：图标名称格式为 `svg-menu:carbon--icon-name`（将原始图标名称中的 `:` 替换为 `--`）
+- **路由/菜单图标**：必须使用 `svg:*` 或 `svg-menu:*` 前缀
+- **图标类名**：使用 `size-5` 而非 `w-5 h-5`
+- **新增本地图标**：
+  - **普通图标**：将 `*.svg` 文件放入 `packages/icons/src/svg/icons/` 目录，使用 `svg:文件名` 引用
+  - **菜单图标**：在 `packages/icons/src/svg/menu-icon.ts` 中增加 SVG 配置，格式为：
+    ```typescript
+    {
+      name: 'carbon:icon-name',  // 原始图标名称
+      svg: '<svg>...</svg>',      // SVG 字符串
+    }
+    ```
+    使用 `svg-menu:carbon--icon-name` 引用（注意 `:` 替换为 `--`）
+- **参考实现**：
+  - 路由图标：`apps/lab-admin/src/router/routes/modules/lab.ts`
+  - 组件图标：`apps/lab-admin/src/views/system/user/list.vue`
+
+### 12. 类型定义转换
+
+```typescript
+// React (Figma)
+interface Props {
+  title: string;
+  count?: number;
+}
+
+type Status = 'active' | 'inactive';
+
+// Vue (项目规范)
+// 保持相同的接口和类型定义
+interface Props {
+  title: string;
+  count?: number;
+}
+
+// 避免枚举，使用映射
+const STATUS_MAP = {
+  active: 'active',
+  inactive: 'inactive',
+} as const;
+
+type Status = typeof STATUS_MAP[keyof typeof STATUS_MAP];
+```
+
+### 13. 导入路径转换
+
+```typescript
+// React (Figma)
+import { Button } from 'antd';
+import { useState } from 'react';
+import { MyComponent } from './components/MyComponent';
+
+// Vue (项目规范)
+import { Button } from 'ant-design-vue';
+import { ref } from 'vue';
+import MyComponent from './components/my-component.vue';
+```
+
+**规则**：
+- 使用 workspace 内部别名（`@dyna-core/*`, `@dyna/*`）
+- 组件文件使用 kebab-case
+- Vue 组件导入无需扩展名（构建工具处理）
+
+### 14. 生命周期转换
+
+```typescript
+// React (Figma)
+useEffect(() => {
+  // 组件挂载
+  return () => {
+    // 组件卸载
+  };
+}, []);
+
+// Vue (项目规范)
+onMounted(() => {
+  // 组件挂载
+});
+
+onUnmounted(() => {
+  // 组件卸载
+});
+```
+
+### 15. 路由转换
+
+```typescript
+// React (Figma)
+import { useNavigate } from 'react-router-dom';
+
+const navigate = useNavigate();
+navigate('/path');
+
+// Vue (项目规范)
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+router.push('/path');
+```
+
+### 16. 大屏页面与首页转换
+
+#### 路由规范
+- **`/home` 路由**：作为首页（需要登录），显示工作台内容
+- **`/dashboard` 路由**：作为大屏展示页面（不需要登录），用于数据可视化大屏
+
+#### 路由配置
+```typescript
+// 首页路由（需要登录，在 modules/home.ts）
+{
+  name: 'Home',
+  path: '/home',
+  children: [
+    {
+      name: 'HomeIndex',
+      path: '/home',
+      component: () => import('#/views/dashboard/home/index.vue'),
+      meta: {
+        affixTab: true,
+        title: '首页',
+        ignoreAccess: true, // 忽略权限检查，始终显示
+      },
+    },
+  ],
+}
+
+// 大屏路由（不需要登录，在 external/dashboard-screen.ts）
+{
+  name: 'DashboardScreen',
+  path: '/dashboard',
+  component: () => import('#/views/dashboard/screen/index.vue'),
+  meta: {
+    hideInBreadcrumb: true,
+    hideInMenu: true,
+    hideInTab: true,
+    title: '大屏展示',
+    ignoreAccess: true, // 忽略权限检查，无需登录即可访问
+  },
+}
+```
+
+**规则**：
+- **大屏页面的卡片使用 `AnalysisChartCard` 组件**，接受 `title` 属性
+- `/home` 路由作为首页（需要登录），使用 `WorkbenchHeader`、`WorkbenchTrends`、`WorkbenchTodo` 等组件
+- `/dashboard` 路由作为大屏展示页面（不需要登录），使用 `AnalysisOverview`、`AnalysisChartsTabs`、`AnalysisChartCard` 等组件
+- 首页路由定义在 `router/routes/modules/home.ts`，大屏路由定义在 `router/routes/external/dashboard-screen.ts`
+- 大屏路由需要设置 `meta.ignoreAccess: true` 以实现无需登录访问
+- 大屏路由需要设置 `hideInMenu: true` 和 `hideInTab: true` 以隐藏菜单和标签页
+
+## 完整转换示例
+
+### React (Figma 导出)
+```typescript
+import { useState } from 'react';
+import { Modal, Table, Button, Form, Input } from 'antd';
+
+export function UserList() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [form] = Form.useForm();
+  
+  const columns = [
+    { title: '姓名', dataIndex: 'name', key: 'name' },
+    { title: '年龄', dataIndex: 'age', key: 'age' },
+  ];
+  
+  const handleSubmit = (values: any) => {
+    console.log(values);
+    setIsModalOpen(false);
+  };
+  
+  return (
+    <div>
+      <Button type="primary" onClick={() => setIsModalOpen(true)}>
+        新增
+      </Button>
+      <Table columns={columns} dataSource={[]} />
+      <Modal
+        open={isModalOpen}
+        onCancel={() => setIsModalOpen(false)}
+        onOk={() => form.submit()}
+        title="新增用户"
+      >
+        <Form form={form} onFinish={handleSubmit}>
+          <Form.Item name="name" label="姓名">
+            <Input />
+          </Form.Item>
+        </Form>
+      </Modal>
+    </div>
+  );
+}
+```
+
+### Vue (项目规范)
+
+#### 1. api/*.ts - 定义 API 接口和数据类型（参考 apps/lab-admin/src/api/system/user.ts）
+
+**⚠️ 重要：表格列表、新增、编辑、删除接口，必须增加对应的 API 文件**
+
+```typescript
+import type { PaginationQuery, Recordable } from '@dyna/types';
+
+import { apiPath } from '#/api/constants';
+import { requestClient } from '#/api/request';
+
+/**
+ * 数据类型定义（参考 SQL 数据结构）
+ * 使用 namespace 导出，便于类型管理和命名空间隔离
+ */
+export namespace LabReportApi {
+  /**
+   * 检测报告数据接口
+   * 字段定义参考数据库表结构
+   */
+  export interface ReportData {
+    [key: string]: any;
+    /** 报告ID */
+    id: number;
+    /** 样品名称 */
+    sampleName: string;
+    /** 样品编号 */
+    sampleCode: string;
+    /** 采样点编号 */
+    samplingPoint: string;
+    /** 采样时间 */
+    samplingTime: string;
+    /** 装置 */
+    device: string;
+    /** 检测项列表 */
+    testItems: TestItem[];
+    /** 创建时间 */
+    createTime?: string;
+    /** 更新时间 */
+    updateTime?: string;
+  }
+
+  /**
+   * 检测项数据接口
+   */
+  export interface TestItem {
+    /** 检测项编号 */
+    code: string;
+    /** 检测项名称 */
+    name: string;
+    /** 状态 */
+    status: string;
+    /** 分析项列表 */
+    analysisItems: AnalysisItem[];
+  }
+
+  /**
+   * 分析项数据接口
+   */
+  export interface AnalysisItem {
+    /** 分析项名称 */
+    name: string;
+    /** 检测值 */
+    testValue: string;
+    /** 单位 */
+    unit: string;
+    /** 标准值 */
+    standardValue: string;
+    /** 检测人员 */
+    testPerson?: string;
+  }
+
+  /**
+   * 列表查询参数接口
+   */
+  export interface ReportListParams {
+    /** 样品名称 */
+    sampleName?: string;
+    /** 样品编号 */
+    sampleCode?: string;
+    /** 采样点编号 */
+    samplingPoint?: string;
+    /** 开始时间 */
+    startTime?: string;
+    /** 结束时间 */
+    endTime?: string;
+    /** 装置 */
+    device?: string;
+  }
+}
+
+/**
+ * 获取检测报告列表数据
+ * @param params 分页排序参数
+ * @param data 查询参数（表单搜索条件）
+ * @returns 返回分页数据，格式为 { rows: ReportData[], total: number }
+ */
+function getReportList(params: PaginationQuery, data: LabReportApi.ReportListParams) {
+  return requestClient.post<{ rows: LabReportApi.ReportData[]; total: number }>(
+    apiPath.system('lab/report/list'),
+    data,
+    {
+      params,
+    },
+  );
+}
+
+/**
+ * 根据ID获取检测报告详情
+ * @param params 查询参数，包含 id
+ * @returns 返回报告详情数据
+ */
+function getReportById(params: { id: number }) {
+  return requestClient.get<LabReportApi.ReportData>(
+    apiPath.system('lab/report/get'),
+    { params },
+  );
+}
+
+/**
+ * 新增检测报告
+ * @param data 报告数据
+ * @returns 返回操作结果
+ */
+async function addReport(data: Omit<LabReportApi.ReportData, 'id' | 'createTime' | 'updateTime'>) {
+  return requestClient.post(apiPath.system('lab/report/save'), data);
+}
+
+/**
+ * 更新检测报告
+ * @param data 报告数据（必须包含 id）
+ * @returns 返回操作结果
+ */
+async function updateReport(data: LabReportApi.ReportData) {
+  return requestClient.post(apiPath.system('lab/report/update'), data);
+}
+
+/**
+ * 删除检测报告
+ * @param params 删除参数，包含 id
+ * @returns 返回操作结果
+ */
+async function deleteReport(params: { id: number }) {
+  return requestClient.delete(apiPath.system('lab/report/delete'), { params });
+}
+
+export {
+  addReport,
+  deleteReport,
+  getReportById,
+  getReportList,
+  updateReport,
+};
+```
+
+**规则**：
+- **API 文件位置**：`apps/lab-admin/src/api/{module}/{entity}.ts`（如 `api/lab/report.ts`）
+- **数据类型定义**：使用 `namespace` 导出，参考 SQL 数据结构定义接口
+- **接口命名**：列表接口使用 `get{Entity}List`，详情接口使用 `get{Entity}ById`，新增接口使用 `add{Entity}`，更新接口使用 `update{Entity}`，删除接口使用 `delete{Entity}`
+- **函数注释**：所有函数必须有完整的 JSDoc 注释，包括方法描述、参数类型和返回值说明
+- **类型导出**：在 `api/index.ts` 中统一导出，便于使用
+
+#### 2. data.ts - 定义所有配置（参考 apps/lab-admin/src/views/system/user/data.ts）
+
+**⚠️ 重要：所有配置必须统一在 `data.ts` 文件中定义**
+
+```typescript
+import type { DynaFormSchema } from '#/adapter/form';
+import type { OnActionClickFn, VxeTableGridOptions } from '#/adapter/vxe-table';
+import { z } from '#/adapter/form';
+import { $t } from '#/locales';
+
+// 表单 Schema（用于新增/编辑）
+export function useFormSchema(): DynaFormSchema[] {
+  return [
+    {
+      component: 'Input',
+      fieldName: 'name',
+      label: $t('user.name'),
+      rules: z.string().min(1, {
+        message: $t('ui.formRules.required', [$t('user.name')]),
+      }),
+    },
+    // 复杂字段使用 Custom 组件，通过插槽自定义渲染
+    {
+      component: 'Custom',
+      fieldName: 'complexField',
+      label: $t('user.complexField'),
+    },
+  ];
+}
+
+// 表格搜索表单 Schema
+export function useGridFormSchema(): DynaFormSchema[] {
+  return [
+    {
+      component: 'Input',
+      fieldName: 'search',
+      label: $t('user.name'),
+    },
+  ];
+}
+
+// 表格列配置
+export function useColumns<T>(
+  onActionClick: OnActionClickFn<T>,
+  onStatusChange?: (newStatus: any, row: T) => PromiseLike<boolean | undefined>,
+): VxeTableGridOptions['columns'] {
+  return [
+    {
+      field: 'name',
+      title: $t('user.name'),
+    },
+    {
+      field: 'age',
+      title: $t('user.age'),
+    },
+    {
+      align: 'center',
+      cellRender: {
+        attrs: {
+          onClick: onActionClick,
+        },
+        name: 'CellOperation',
+        options: [
+          {
+            code: 'edit',
+          },
+          {
+            code: 'delete',
+          },
+        ],
+      },
+      field: 'operation',
+      fixed: 'right',
+      title: $t('common.operation'),
+      width: 200,
+    },
+  ];
+}
+```
+
+#### 2. modules/form.vue - 表单组件（参考 apps/lab-admin/src/views/system/user/modules/form.vue）
+
+```vue
+<script lang="ts" setup>
+import { computed, ref } from 'vue';
+import { useDynaDrawer } from '@dyna/common-ui';
+import { message } from 'ant-design-vue';
+import { useDynaForm } from '#/adapter/form';
+import { addUser, getUserInfoById, updateUser } from '#/api';
+import { $t } from '#/locales';
+import { useFormSchema } from '../data';
+
+const emits = defineEmits(['success']);
+const formData = ref();
+const userId = ref();
+
+// 根据业务逻辑动态调整 schema（如新增/编辑模式）
+const formSchema = computed(() => {
+  const schema = useFormSchema();
+  // 编辑模式过滤某些字段
+  if (userId.value) {
+    return schema.filter((item) => item.fieldName !== 'password');
+  }
+  return schema;
+});
+
+const [Form, formApi] = useDynaForm({
+  schema: formSchema.value,
+  showDefaultActions: false,
+  commonConfig: {
+    labelWidth: 90,
+  },
+  wrapperClass: 'grid-cols-1',
+  layout: 'vertical',
+});
+
+// 使用 inject 模式获取 drawerApi（通过 connectedComponent 传递）
+const [Drawer, drawerApi] = useDynaDrawer({
+  async onConfirm() {
+    const { valid } = await formApi.validate();
+    if (!valid) return;
+    const values = await formApi.getValues();
+
+    drawerApi.lock();
+    try {
+      await (userId.value
+        ? updateUser({ userId: userId.value, ...values })
+        : addUser(values));
+      message.success($t('ui.actionMessage.operationSuccess'));
+      drawerApi.close();
+      emits('success');
+    } finally {
+      drawerApi.unlock();
+    }
+  },
+
+  async onOpenChange(isOpen) {
+    if (isOpen) {
+      const data = drawerApi.getData();
+      formApi.resetForm();
+
+      if (data && data.userId) {
+        try {
+          const userInfo = await getUserInfoById({ userId: data.userId });
+          formData.value = userInfo;
+          userId.value = userInfo.userId;
+          formApi.setValues(userInfo);
+        } catch {}
+      }
+    }
+  },
+});
+</script>
+
+<template>
+  <Drawer :title="getDrawerTitle">
+    <Form>
+      <!-- 复杂字段自定义插槽示例 -->
+      <!-- <template #fieldName="{ field }">
+        <CustomComponent v-bind="field" />
+      </template> -->
+    </Form>
+  </Drawer>
+</template>
+```
+
+#### 2-1. modules/view-dialog.vue - 查看详情组件（参考 apps/lab-admin/src/views/lab/report/modules/view-dialog.vue）
+
+**⚠️ 重要：查看详情弹窗/抽屉参考新增编辑的实现形式，只是弹窗内部是展示的详情不是表单**
+
+```vue
+<script lang="ts" setup>
+import type { ReportData } from '../data';
+
+import { computed } from 'vue';
+
+import { useDynaDrawer } from '@dyna/common-ui';
+
+import { Badge } from 'ant-design-vue';
+
+import { $t } from '#/locales';
+
+
+const formData = ref<ReportData>();
+// 使用 inject 模式获取 drawerApi（通过 connectedComponent 传递）
+const [Drawer, drawerApi] = useDynaDrawer({
+    async onOpenChange(isOpen) {
+    if (isOpen) {
+      const data = drawerApi.getData();
+
+      if (data && data.id) {
+        try {
+          formData.value = await getReportById({ id: data.id });
+        } catch {}
+      }
+    }
+  },
+});
+ 
+// 详情组件只展示数据，不包含表单，不需要 onConfirm
+</script>
+
+<template>
+  <Drawer 
+    :title="getDrawerTitle"     
+    :show-confirm-button="false"
+    :cancel-text="$t('ui.widgets.search.close')"
+  >
+    <div class="grid grid-cols-2 gap-4 rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
+      <div>
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          {{ $t('lab.report.sampleName') }}
+        </p>
+        <p class="text-gray-900 dark:text-gray-100">
+          {{ formData.sampleName }}
+        </p>
+      </div>
+      <!-- 更多详情字段... -->
+    </div>
+  </Drawer>
+</template>
+```
+
+
+## 转换检查清单
+
+转换完成后，确保：
+
+### API 文件
+- [ ] **创建对应的 API 目录和文件**：`apps/lab-admin/src/api/{module}/{entity}.ts`
+- [ ] **创建模块导出文件**：`apps/lab-admin/src/api/{module}/index.ts`（如果不存在）
+- [ ] **在根 API 文件中导出模块**：在 `apps/lab-admin/src/api/index.ts` 中添加 `export * from './{module}'`
+- [ ] **定义数据类型**：使用 `namespace` 导出，参考 SQL 数据结构
+- [ ] **定义接口函数**：列表、详情、新增、更新、删除接口
+- [ ] **函数注释完整**：所有函数必须有完整的 JSDoc 注释（方法描述、参数类型、返回值说明）
+- [ ] **类型导出**：在 `api/index.ts` 中统一导出
+
+### 表格列表类型页面
+- [ ] **参考 `apps/lab-admin/src/views/system/user/list.vue` 的标准结构**
+- [ ] **搜索表单配置在 `data.ts` 中定义 `useGridFormSchema()` 函数**
+- [ ] **表格列配置在 `data.ts` 中定义 `useColumns()` 函数**
+- [ ] **所有配置统一在 `data.ts` 文件中管理**
+- [ ] 所有表格使用 `useDynaVxeGrid`
+- [ ] **表格搜索表单使用 `formOptions` 配置，包含 `schema`、`fieldMappingTime`（如需要）**
+- [ ] **表格数据请求在 `proxyConfig.ajax.query` 中调用 API 接口**
+- [ ] **假数据使用规范**：假数据可在 `proxyConfig.ajax.query` 中临时使用，但原有的 API 请求数据必须注释，并添加 `TODO` 注释
+
+### 表单相关
+- [ ] **参考 `apps/lab-admin/src/views/system/user/modules/form.vue` 的标准结构**
+- [ ] **所有表单必须使用 `useDynaForm` + schema 配置形式**
+- [ ] **表单 schema 必须定义在 `data.ts` 中的 `useFormSchema()` 函数**
+- [ ] **表单组件必须抽离为独立组件（`modules/form.vue`）**
+- [ ] **在 `list.vue` 中使用 `connectedComponent` 连接表单组件**
+- [ ] **表单配置包含 `commonConfig.componentProps.class: 'w-full'`**
+- [ ] **复杂字段使用自定义插槽（`<template #fieldName>`）**
+- [ ] **弹窗表单内部还有弹窗的复杂表单，仍使用 `useDynaModal` 的形式（弹窗内部叠加的弹窗也必须使用 `useDynaModal`）**
+- [ ] **弹窗内部叠加弹窗必须独立组件**：弹窗内部需要打开另一个弹窗时，必须将内部弹窗抽离为独立组件
+- [ ] **使用 `connectedComponent` 模式**：在父组件中使用 `useDynaModal` 的 `connectedComponent` 参数连接子组件
+- [ ] **子组件使用 inject 模式**：子组件内部使用 `useDynaModal` 的 inject 模式获取 `modalApi`
+- [ ] **禁止内联对话框**：禁止在模板中使用 `v-if` 控制的内联对话框，必须使用独立组件
+- [ ] **禁止使用 `Label` 组件**：Ant Design Vue 中没有 `Label` 组件，应使用 `<div>`、`<span>` 或文本标签
+
+### 查看详情相关
+- [ ] **参考 `apps/lab-admin/src/views/lab/report/modules/view-dialog.vue` 的标准结构**
+- [ ] **在 `list.vue` 中使用 `connectedComponent` 连接详情组件**
+- [ ] **详情组件使用 `inject` 模式获取 `drawerApi`/`modalApi`**
+- [ ] **通过 `drawerApi.getData()` 获取传递的数据**
+- [ ] **详情组件只展示数据，不包含表单，不需要 `onConfirm`**
+
+### 代码注释
+- [ ] **所有函数方法必须有完整的 JSDoc 注释**（方法描述、参数类型、返回值说明）
+- [ ] **关键步骤代码必须添加注释说明**
+- [ ] **临时代码、假数据必须添加 `TODO` 注释**
+
+### 删除操作
+- [ ] **使用 `message.loading()` 显示删除中的加载状态**
+- [ ] **使用固定的 `key: 'action_process_msg'` 确保消息正确替换**
+- [ ] **删除成功后使用 `message.success()` 显示成功消息，并使用相同的 `key`**
+- [ ] **删除失败时调用 `hideLoading()` 关闭加载状态**
+- [ ] **参考实现**：`apps/lab-admin/src/views/system/user/list.vue` 的 `onDelete` 函数
+
+### 页面容器
+- [ ] **页面默认都使用 `Page` 组件**：所有页面组件必须使用 `Page` 组件作为根容器
+- [ ] **导入方式**：从 `@dyna/common-ui` 导入 `Page`
+- [ ] **使用方式**：在模板中使用 `<Page auto-content-height>` 包裹页面内容
+- [ ] **自定义调整**：如果需要调整（如不使用 `auto-content-height` 或其他属性），可自行修改
+- [ ] **参考实现**：`apps/lab-admin/src/views/system/user/list.vue`、`apps/lab-admin/src/views/lab/report/list.vue`
+
+### 其他
+- [ ] **按钮操作的二次确认弹窗使用 `Modal.confirm` API**：删除、停止、复位、初始化等操作的二次确认弹窗必须使用 `Modal.confirm` API，不使用 `useDynaModal` 或独立组件
+- [ ] 所有弹窗使用 `useDynaModal`（包括弹窗内部叠加的弹窗）
+- [ ] 所有抽屉使用 `useDynaDrawer`
+- [ ] **大屏页面的卡片使用 `AnalysisChartCard` 组件**
+- [ ] **大屏页面（/dashboard）使用 `AnalysisOverview`、`AnalysisChartsTabs`、`AnalysisChartCard` 等组件**
+- [ ] **路由配置正确：首页在 `modules/home.ts`，大屏在 `external/dashboard-screen.ts`**
+- [ ] **大屏路由设置 `meta.ignoreAccess: true` 以实现无需登录访问**
+- [ ] **图标使用优先级**：
+  - [ ] **优先使用本地图标**：使用 `svg:` 或 `svg-menu:` 前缀
+  - [ ] **使用组件形式**：从 `@dyna/icons` 导入具名图标组件（如 `Plus`, `Edit`, `Delete`）
+  - [ ] **使用 IconifyIcon 组件**：通过 `icon` 属性指定图标名称
+- [ ] **路由/菜单图标**：必须使用 `svg:*` 或 `svg-menu:*` 前缀
+- [ ] **新增本地图标**：
+  - [ ] **普通图标**：将 `*.svg` 文件放入 `packages/icons/src/svg/icons/` 目录
+  - [ ] **菜单图标**：在 `packages/icons/src/svg/menu-icon.ts` 中增加 SVG 配置
+- [ ] **Badge 组件转换为 Tag 组件**：React 代码中的 `Badge` 组件应转换为 ant-design-vue 的 `Tag` 组件
+- [ ] **Badge 属性映射**：
+  - [ ] `Badge` 的 `status` 属性映射到 `Tag` 的 `color` 属性
+  - [ ] `Badge` 的 `variant` 属性映射到 `Tag` 的 `color` 属性（`destructive` → `error`，`outline` → `default` 或 `processing`，`secondary` → `default`）
+  - [ ] `Badge` 的 `color` 属性直接映射到 `Tag` 的 `color` 属性
+- [ ] 样式使用 Tailwind CSS 原子类
+- [ ] 事件处理使用 `@` 前缀（`@click`, `@change` 等）
+- [ ] 状态管理使用 `ref`/`reactive`/`computed`
+- [ ] 导入路径使用 workspace 别名
+- [ ] 类型定义完整，无 `any`
+- [ ] 代码通过 lint/format/check
+
+## 注意事项
+
+1. **API 文件规范（必须严格遵守）**：
+   - **文件位置**：`apps/lab-admin/src/api/{module}/{entity}.ts`（如 `api/lab/report.ts`）
+   - **目录和文件创建**：
+     - **每个模块必须先创建对应的 API 目录和文件**
+     - 如果模块目录不存在，先创建目录（如 `apps/lab-admin/src/api/lab/`）
+     - 创建对应的 API 文件（如 `apps/lab-admin/src/api/lab/sample.ts`）
+     - 在 `apps/lab-admin/src/api/{module}/index.ts` 中导出该模块的所有 API（如果不存在则创建）
+     - 在 `apps/lab-admin/src/api/index.ts` 中导出模块（如 `export * from './lab'`）
+   - **数据类型定义**：使用 `namespace` 导出，参考 SQL 数据结构定义接口
+   - **接口命名**：
+     - 列表接口：`get{Entity}List(params, data)`
+     - 详情接口：`get{Entity}ById(params)`
+     - 新增接口：`add{Entity}(data)`
+     - 更新接口：`update{Entity}(data)`
+     - 删除接口：`delete{Entity}(params)`
+   - **函数注释**：所有函数必须有完整的 JSDoc 注释，包括方法描述、参数类型和返回值说明
+   - **类型导出**：在 `api/index.ts` 中统一导出，便于使用
+   - **参考实现**：`apps/lab-admin/src/api/system/user.ts`
+
+2. **表格列表类型页面规范（必须严格遵守）**：
+   - **参考实现**：`apps/lab-admin/src/views/system/user/list.vue`
+   - **搜索表单配置**：在 `data.ts` 中定义 `useGridFormSchema()` 函数
+   - **表格列配置**：在 `data.ts` 中定义 `useColumns()` 函数
+   - **所有配置统一在 `data.ts` 文件中管理**
+   - **表格数据请求**：
+     - 在 `proxyConfig.ajax.query` 中调用 API 接口
+     - 假数据可在 `proxyConfig.ajax.query` 中临时使用，但原有的 API 请求数据必须注释
+     - 待后端接口准备好后，删除假数据，取消注释 API 请求
+     - 假数据前必须添加 `TODO` 注释说明
+   - **删除操作规范**：
+     - 必须使用 `message.loading()` 显示删除中的加载状态
+     - 使用固定的 `key: 'action_process_msg'` 确保消息正确替换
+     - 删除成功后使用 `message.success()` 显示成功消息，并使用相同的 `key`
+     - 删除失败时调用 `hideLoading()` 关闭加载状态
+     - 参考实现：`apps/lab-admin/src/views/system/user/list.vue` 的 `onDelete` 函数
+
+3. **二次确认弹窗规范（必须严格遵守）**：
+   - **使用 `Modal.confirm` API**：按钮操作的二次确认弹窗（如删除、停止、复位、初始化等）必须使用 ant-design-vue 的 `Modal.confirm` API
+   - **不使用 `useDynaModal`**：二次确认弹窗不使用 `useDynaModal` 或独立组件，直接在事件处理函数中调用 `Modal.confirm`
+   - **标准格式**：
+     ```typescript
+     import { Modal, message } from 'ant-design-vue';
+     import { $t } from '#/locales';
+
+     function handleDelete() {
+       Modal.confirm({
+         title: $t('common.confirm'),
+         content: $t('common.confirmDelete'),
+         okText: $t('common.confirm'),
+         cancelText: $t('common.cancel'),
+         centered: true,
+         onOk: async () => {
+           try {
+             await deleteItem({ id: itemId });
+             message.success($t('ui.actionMessage.deleteSuccess'));
+             onRefresh();
+           } catch {
+             message.error($t('ui.actionMessage.deleteFailed'));
+           }
+         },
+       });
+     }
+     ```
+   - **参考实现**：`apps/lab-admin/src/views/lab/site-management/index.vue` 的 `handleStop`、`handleReset`、`handleInit` 函数
+   - **与表单弹窗的区别**：表单弹窗/抽屉使用 `useDynaModal`/`useDynaDrawer` + `connectedComponent`，二次确认弹窗使用 `Modal.confirm` API
+
+3. **查看详情弹窗/抽屉规范（必须严格遵守）**：
+   - **参考实现**：`apps/lab-admin/src/views/lab/report/modules/view-dialog.vue`
+   - **实现方式**：参考新增编辑的弹窗/抽屉实现形式，使用 `connectedComponent` 连接详情组件
+   - **在 `list.vue` 中**：使用 `useDynaDrawer`/`useDynaModal` 的 `connectedComponent` 参数连接详情组件，通过 `drawerApi.setData(data).open()` 传递数据并打开
+   - **在详情组件中**：使用 `useDynaDrawer`/`useDynaModal` 的 `inject` 模式（直接调用，不传参数）获取 `drawerApi`/`modalApi`，通过 `drawerApi.getData()` 获取传递的数据
+   - **详情组件特点**：只展示数据，不包含表单，不需要 `onConfirm` 处理
+   - **与表单组件的区别**：表单组件有 `onConfirm` 处理表单提交，详情组件没有 `onConfirm`，只是展示数据
+
+4. **表单配置规范（必须严格遵守）**：
+   - **所有表单必须使用 `useDynaForm` + schema 配置形式，禁止手动编写表单字段**
+   - **参考实现**：`apps/lab-admin/src/views/system/user/modules/form.vue`
+   - **所有表单 Schema 必须定义在 `data.ts` 中**
+   - **编辑表单使用 `useFormSchema()` 函数，表格搜索表单使用 `useGridFormSchema()` 函数**
+   - **表单组件必须抽离为独立组件（`modules/form.vue`）**
+   - **在 `list.vue` 中使用 `useDynaDrawer`/`useDynaModal` 的 `connectedComponent` 参数连接表单组件**
+   - **禁止在表单组件中手动编写 `<Input>`、`<Select>` 等表单字段**
+   - **表单配置**：必须配置 `commonConfig.componentProps.class: 'w-full'` 确保表单字段宽度为100%
+   - **复杂字段自定义渲染**：如果表单某个字段交互过于复杂，通过配置无法简单实现的，可使用自定义插槽的形式（在 `Form` 组件中使用 `<template #fieldName="{ field }">` 插槽）
+   - **弹窗表单内部还有弹窗的复杂表单**：
+     - 弹窗内部叠加的弹窗也必须使用 `useDynaModal` 的形式
+     - 表单也遵循上述表单的规则
+   - **弹窗内部叠加弹窗的解耦规范（必须严格遵守）**：
+     - **必须独立组件**：弹窗内部需要打开另一个弹窗时，必须将内部弹窗抽离为独立组件（如 `modules/test-item-form.vue`）
+     - **使用 `connectedComponent` 模式**：在父组件中使用 `useDynaModal` 的 `connectedComponent` 参数连接子组件
+     - **子组件使用 inject 模式**：子组件内部使用 `useDynaModal` 的 inject 模式（直接调用，不传参数）获取 `modalApi`
+     - **数据传递**：
+       - 父组件通过 `modalApi.setData({ testItem, index })` 传递数据
+       - 子组件通过 `modalApi.getData<{ testItem?: TestItem; index?: number }>()` 获取数据
+       - 子组件通过 `modalApi.setData(newTestItem)` 保存数据
+     - **事件通信**：
+       - 子组件通过 `emits('success')` 通知父组件
+       - 父组件监听 `@success` 事件处理数据更新
+     - **禁止内联对话框**：禁止在模板中使用 `v-if` 控制的内联对话框，必须使用独立组件
+     - **参考实现**：`apps/lab-admin/src/views/lab/sample/modules/test-item-form.vue`
+   - **弹窗内部叠加弹窗的解耦规范（必须严格遵守）**：
+     - **必须独立组件**：弹窗内部需要打开另一个弹窗时，必须将内部弹窗抽离为独立组件（如 `modules/test-item-form.vue`）
+     - **使用 `connectedComponent` 模式**：在父组件中使用 `useDynaModal` 的 `connectedComponent` 参数连接子组件
+     - **子组件使用 inject 模式**：子组件内部使用 `useDynaModal` 的 inject 模式（直接调用，不传参数）获取 `modalApi`
+     - **数据传递**：
+       - 父组件通过 `modalApi.setData({ testItem, index })` 传递数据
+       - 子组件通过 `modalApi.getData<{ testItem?: TestItem; index?: number }>()` 获取数据
+       - 子组件通过 `modalApi.setData(newTestItem)` 保存数据
+     - **事件通信**：
+       - 子组件通过 `emits('success')` 通知父组件
+       - 父组件监听 `@success` 事件处理数据更新
+     - **禁止内联对话框**：禁止在模板中使用 `v-if` 控制的内联对话框，必须使用独立组件
+     - **参考实现**：`apps/lab-admin/src/views/lab/sample/modules/test-item-form.vue`
+   - **UI 组件使用**：
+     - **禁止使用 `Label` 组件**：Ant Design Vue 中没有 `Label` 组件，应使用 `<div>`、`<span>` 或文本标签
+     - 表单标签通过 schema 的 `label` 字段配置，无需手动编写标签
+   - **参考标准实现**：`apps/lab-admin/src/views/system/user/`
+
+3. **查看详情弹窗/抽屉规范（必须严格遵守）**：
+   - **参考实现**：`apps/lab-admin/src/views/lab/report/modules/view-dialog.vue`
+   - **实现方式**：参考新增编辑的弹窗/抽屉实现形式，使用 `connectedComponent` 连接详情组件
+   - **在 `list.vue` 中**：使用 `useDynaDrawer`/`useDynaModal` 的 `connectedComponent` 参数连接详情组件，通过 `drawerApi.setData(data).open()` 传递数据并打开
+   - **在详情组件中**：使用 `useDynaDrawer`/`useDynaModal` 的 `inject` 模式（直接调用，不传参数）获取 `drawerApi`/`modalApi`，通过 `drawerApi.getData()` 获取传递的数据
+   - **详情组件特点**：只展示数据，不包含表单，不需要 `onConfirm` 处理
+   - **与表单组件的区别**：表单组件有 `onConfirm` 处理表单提交，详情组件没有 `onConfirm`，只是展示数据
+
+4. **代码注释规范（必须严格遵守）**：
+   - **函数方法注释**：所有函数方法必须有完整的 JSDoc 注释
+     - 方法描述：说明函数的作用和功能
+     - 参数类型：使用 `@param` 标注参数名称、类型和说明
+     - 返回值说明：使用 `@returns` 标注返回值类型和说明
+   - **关键步骤注释**：关键业务逻辑、复杂算法、特殊处理等必须添加注释说明
+   - **TODO 注释**：临时代码、假数据、待实现功能等必须添加 `TODO` 注释
+   - **参考示例**：
+     ```typescript
+     /**
+      * 查询表格数据
+      * @param page 分页参数，包含 currentPage 和 pageSize
+      * @param sorts 排序参数（可选）
+      * @param formValues 表单搜索条件
+      * @returns 返回表格数据，格式为 { rows: [], total: number }
+      */
+     function queryData(page, sorts, formValues) {
+       // 处理排序参数
+       // ...
+     }
+     ```
+
+6. **组件抽离**：复杂弹窗/抽屉内容应抽离为独立组件，使用 `connectedComponent` 连接
+7. **数据共享**：弹窗/抽屉内外数据共享使用 `modalApi.setData()` 和 `modalApi.getData()`
+8. **表单 API 使用**：
+   - `formApi.setValues()` 设置表单值
+   - `formApi.getValues()` 获取表单值
+   - `formApi.validate()` 验证表单
+   - `formApi.resetForm()` 重置表单
+   - `formApi.updateSchema()` 动态更新 schema
+9. **国际化**：文本内容使用 `$t()` 函数，不要硬编码
+10. **权限控制**：按钮/操作使用 `v-access:code` 指令
+11. **响应式**：确保所有响应式数据使用 `ref`/`reactive`，访问时使用 `.value`
+12. **类型安全**：保持 TypeScript 严格模式，避免类型断言
+13. **Badge 组件转换**：
+   - **Badge 组件转换为 Tag 组件**：React 代码中的 `Badge` 组件应转换为 ant-design-vue 的 `Tag` 组件
+   - **属性映射**：
+     - `Badge` 的 `status` 属性映射到 `Tag` 的 `color` 属性（`success` → `success`，`error` → `error`，`warning` → `warning`，`processing` → `processing`）
+     - `Badge` 的 `variant` 属性映射到 `Tag` 的 `color` 属性（`destructive` → `error`，`outline` → `default` 或 `processing`，`secondary` → `default`）
+     - `Badge` 的 `color` 属性直接映射到 `Tag` 的 `color` 属性
+   - **使用场景**：
+     - **状态标签**：使用 `Tag` 组件显示状态（成功、失败、警告等）
+     - **数字徽章**：使用 `Tag` 组件显示数字（如未读消息数）
+     - **文本标签**：使用 `Tag` 组件显示文本标签
+   - **导入方式**：从 `ant-design-vue` 导入 `Tag`
+   - **参考实现**：`apps/lab-admin/src/views/workstation/index.vue`

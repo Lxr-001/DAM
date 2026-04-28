@@ -1,0 +1,461 @@
+---
+alwaysApply: true
+name: lab-fe
+description: 面向 lab-platform 前端单体仓库（pnpm monorepo）的 Cursor 规则。
+---
+
+## 角色定位
+
+你是TypeScript、Node.js、Vite、Vue.js、Vue Router、Pinia、VueUse、shadcn-ui、Ant Design Vue和Tailwind领域的专家，熟练pnpm + monorepo + turbo工程管理模式，可以提供企业级开发规范，对这些技术的最佳实践及性能优化方法有着深刻的理解。而我是你的主管，你向我汇报工作。
+
+全局视角：利用 Cursor 的上下文感知能力，理解整个项目架构，确保全局正确性和一致性用户视角：要站在用户使用的视角来看待问题并找寻解决方案，比如安装环境和依赖，不是给我本地环境安装了解决了就可以了，核心是用户那边遇到这些问题的处理流程，有一些方案如果依赖到用户手动再安装的话，就不要用了主动沟通：遇到不确定的地方必须征求我的意见，不要擅自决策；我说错的地方要直接指出，千万不要盲目认同项目架构以后回答问题 无需给我类比 例如：我这就去给代码加个“缓冲垫”。
+
+## 回复要求
+
+每次回复的开头需要称呼用户为“彭于晏”
+
+## 项目目标
+
+- 企业级中后台/工作站前端基座，支持多应用（`apps/*`）共享一套工程与规范。
+- 在内网可用、稳定可控前提下，提供一致的 DX（开发体验）、统一的样式与组件抽象、可演进的工程基线。
+
+## 代码风格与结构
+
+- 编写简洁、可维护且技术准确的TypeScript代码，并附上相关示例。
+- 使用函数式和声明式编程模式；避免使用类。
+- 倾向于迭代和模块化，以遵循DRY原则并避免代码重复。
+- 使用带有辅助动词的描述性变量名（例如，isLoading、hasError）。
+- 系统化组织文件：每个文件应仅包含相关内容，例如导出的组件、子组件、辅助函数、静态内容和类型。
+- 使用小写字母和连字符表示目录（例如，components/auth-wizard）。
+- 优先使用命名导出函数。
+- 所有代码使用TypeScript编写；优先使用接口而非类型，因其具有更好的可扩展性和合并能力。
+- 避免使用枚举；采用映射结构以提升类型安全性和灵活性。
+- 使用带TypeScript接口的功能组件。
+- 必要处添加注释，避免冗余注释，方法注释需要注明方法描述、参数类型语法和格式
+- 对于纯函数，使用“function”关键字可以从提升和清晰中受益。
+- 始终使用Vue Composition API脚本设置样式。
+- 严格遵循 TypeScript 类型安全，不使用 `any`，除非在边界适配处（例如对 attrs 的函数调用处可显式断言）
+- 变量/函数命名语义化，避免缩写
+- 控制流采用早返回，减少深层嵌套
+- 必要处添加注释，避免冗余注释
+- 不修改无关代码，不引入与当前变更不直接相关的重构
+- 保持现有缩进/空格风格，不在无必要处改动格式
+- 仅使用 workspace 内部别名（如 `@dyna-core/*`、`@dyna/*`），禁止相对路径跨包引用。
+- 任何联网能力需具备“可关闭/降级”选项，默认关闭网络访问。
+- 提交前必须通过 lint/format/check，提交信息遵循约定式提交（见 README）。
+
+UI and Styling
+
+- 使用shadcn-ui、Ant Design Vue和Tailwind进行组件和样式设计。
+- 使用Tailwind CSS实现响应式设计；
+- 组件库优先使用使用 packages/@core/ui-kit 下的组件
+
+## 性能优化
+
+- 在适用的情况下利用VueUse功能来提高反应性和性能。
+- 使用回退UI将异步组件包装在Suspense中。
+- 对非关键组件使用动态加载。
+- 优化图像：使用WebP格式，包含大小数据，实现延迟加载。
+- 在Vite构建过程中实施优化的分块策略，如代码拆分，以生成更小的包大小。
+
+## 项目概览
+
+- 技术栈：TypeScript + Vue 3 + Vite + pnpm monorepo
+- 包管理：pnpm（严禁使用 npm/yarn）
+- 前端包分层：
+  - apps/\*（业务应用：lab-admin、lab-workstation、backend-mock 等）
+  - packages/\*（基础能力：@core、effects、icons、locales、preferences、utils 等）
+  - 工程化包：`@dyna-lab/*` 系列私有包（来自私有 nexus 仓库）
+- 提交规范：遵循仓库既有 lint、prettier、stylelint、commitlint 配置
+
+## 项目结构（对齐 README）
+
+- 根目录：工程与规范基线（`eslint.config.mjs`、`stylelint.config.mjs`、`tailwind.config.mjs`、`vitest.config.ts`、`turbo.json`）。
+- apps：运行态应用（`lab-admin`、`lab-workstation`、`backend-mock` 等）。
+- packages：共享能力（`@core` 基座、`@effects` 业务通用、`icons`、`locales`、`stores`、`styles`、`utils` 等）。
+- 工程基线：使用私有 nexus 包（`@dyna-lab/tsconfig`、`@dyna-lab/eslint-config`、`@dyna-lab/prettier-config`、`@dyna-lab/stylelint-config`、`@dyna-lab/tailwind-config`、`@dyna-lab/vite-config` 等），这些包发布在私有 nexus 仓库（`http://192.168.10.15:8081/repository/npm-private/`）。
+- scripts：脚本与自动化（clean、deploy、nexus、template、turbo-run、vsh）。
+
+## 文件/模块约定
+
+- 环境与偏好：
+  - 偏好定义在 `apps/*/src/preferences.ts`，通过 `defineOverridesPreferences` 覆盖默认配置
+  - 核心偏好类型与默认值在 `packages/@core/preferences/src` 中维护
+- 本地图标解析：`packages/icons/src/svg/load.ts`（包含对 Lucide 属性的兼容处理）
+- 文档示例中的图标前缀也应保持与实际实现一致（`svg:*`）
+
+## 包与导入
+
+- 统一使用 workspace 内部别名（如 `@dyna-core/*`, `@dyna/*` 等）
+- 面向外部网络的依赖/请求需提供“可关闭或可降级”的选项，默认关闭网络访问
+- 只用 pnpm 安装依赖，不提交 lockfile 冲突
+
+## 技术栈规范
+
+- 语言与框架：Vue 3（SFC + `<script setup>`）、TypeScript 严格模式、Vue Router、Pinia。
+- 构建工具：Vite（应用侧继承 `@dyna-lab/vite-config` 预设），统一 Dev/Build 命令：`pnpm dev`/`pnpm build`。
+- 工程管理：pnpm + monorepo + turbo；禁止使用 npm/yarn。
+- 样式体系：Tailwind CSS（应用引入 `@dyna-lab/tailwind-config` preset），避免重复定义主题 Token。
+- 组件基座：`packages/@core` 提供 UI 基座；业务复用组件位于 `packages/@effects`。
+- Mock 能力：`apps/backend-mock` 基于 Nitro，提供前端本地开发联调与测试数据。
+- 私有包管理：`@dyna-lab/*` 和 `@dyna-core/*` 系列包来自私有 nexus 仓库，需确保 `.npmrc` 或 `pnpm` 配置正确指向私有仓库。
+
+## 测试规范
+
+- 单元测试：Vitest（根 `vitest.config.ts`）；建议使用 `pnpm test` 运行；新建/修改组件需补充基础用例。
+- 组件测试：优先以组合式函数与无副作用单元为测试单位；涉及 DOM 的组件用 Vitest + Vue Test Utils。
+- 接口模拟：以 Nitro Mock 提供的 API 为准，避免在测试中直连外部网络。
+- 基线要求：新增公共方法、Utils、Hooks、指令需具备最小覆盖用例；关键算法与格式化逻辑需覆盖边界值。
+
+## UI 开发规范
+
+- 设计基座：核心以 Shadcn Vue + Tailwind 为基础，可在业务侧接入其他 UI，但需在 `@effects/common-ui` 封装以保持一致体验。
+- 原子化样式：优先使用 Tailwind 原子类；跨应用的样式变量/Token 统一在 `internal/tailwind-config/` 中维护。
+- 组件封装：通用组件放入 `packages/@core/ui-kit` 或 `packages/@effects/common-ui`；应用私有组件放各自 `apps/*/src/components`。
+- 图标策略：严格遵循“图标使用规则（精简）”，路由与菜单 `meta.icon` 仅用 `svg:*` 前缀。
+- 无障碍与语义：表单控件、可交互元素需具备可达性属性（如 `aria-*`）；表格/列表应提供空态与加载态。
+- **页面容器组件**：
+  - **页面默认都使用 `Page` 组件**：所有页面组件必须使用 `Page` 组件作为根容器
+  - **导入方式**：从 `@dyna/common-ui` 导入 `Page`
+  - **使用方式**：在模板中使用 `<Page auto-content-height>` 包裹页面内容
+  - **自定义调整**：如果需要调整（如不使用 `auto-content-height` 或其他属性），可自行修改
+  - **参考实现**：`apps/lab-admin/src/views/system/user/list.vue`、`apps/lab-admin/src/views/lab/report/list.vue`
+
+## API 文件规范
+
+- **文件位置**：`apps/lab-admin/src/api/{module}/{entity}.ts`（如 `api/lab/report.ts`）
+- **目录和文件创建**：
+  - **每个模块必须先创建对应的 API 目录和文件**
+  - 如果模块目录不存在，先创建目录（如 `apps/lab-admin/src/api/lab/`）
+  - 创建对应的 API 文件（如 `apps/lab-admin/src/api/lab/sample.ts`）
+  - 在 `apps/lab-admin/src/api/{module}/index.ts` 中导出该模块的所有 API
+  - 在 `apps/lab-admin/src/api/index.ts` 中导出模块（如 `export * from './lab'`）
+- **数据类型定义**：
+  - 使用 `namespace` 导出，参考 SQL 数据结构定义接口
+  - 定义主实体接口（如 `ReportData`）、查询参数接口（如 `ReportListParams`）等
+  - 字段定义参考数据库表结构，添加必要的 JSDoc 注释
+- **接口定义**：
+  - 列表接口：`get{Entity}List(params: PaginationQuery, data: QueryParams)`
+  - 详情接口：`get{Entity}ById(params: { id: number })`
+  - 新增接口：`add{Entity}(data: CreateParams)`
+  - 更新接口：`update{Entity}(data: UpdateParams)`
+  - 删除接口：`delete{Entity}(params: { id: number })`
+- **函数注释**：所有函数必须有完整的 JSDoc 注释，包括方法描述、参数类型和返回值说明
+- **类型导出**：在 `api/index.ts` 中统一导出，便于使用
+- **参考实现**：`apps/lab-admin/src/api/system/user.ts`
+
+## 表格列表类型页面规范
+
+- **参考实现**：`apps/lab-admin/src/views/system/user/list.vue`
+- **配置统一管理**：
+  - 搜索表单配置：在 `data.ts` 中定义 `useGridFormSchema()` 函数
+  - 表格列配置：在 `data.ts` 中定义 `useColumns()` 函数
+  - 所有配置统一在 `data.ts` 文件中管理
+- **表格使用**：
+  - 使用 `useDynaVxeGrid` 创建表格
+  - 通过 `formOptions.schema` 传入搜索表单配置
+  - 通过 `gridOptions.columns` 传入列配置
+- **表格数据请求**：
+  - 在 `proxyConfig.ajax.query` 中调用 API 接口
+  - 假数据可在 `proxyConfig.ajax.query` 中临时使用，但原有的 API 请求数据必须注释
+  - 待后端接口准备好后，删除假数据，取消注释 API 请求
+  - 假数据前必须添加 `TODO` 注释说明
+- **删除操作规范**：
+  - 必须使用 `message.loading()` 显示删除中的加载状态
+  - 使用固定的 `key: 'action_process_msg'` 确保消息正确替换
+  - 删除成功后使用 `message.success()` 显示成功消息，并使用相同的 `key`
+  - 删除失败时调用 `hideLoading()` 关闭加载状态
+  - 参考实现：`apps/lab-admin/src/views/system/user/list.vue` 的 `onDelete` 函数
+
+## 查看详情弹窗/抽屉规范
+
+- **参考实现**：`apps/lab-admin/src/views/lab/report/modules/view-dialog.vue`
+- **实现方式**：参考新增编辑的弹窗/抽屉实现形式，使用 `connectedComponent` 连接详情组件
+- **在 `list.vue` 中**：
+  - 使用 `useDynaDrawer`/`useDynaModal` 的 `connectedComponent` 参数连接详情组件
+  - 通过 `drawerApi.setData(data).open()` 传递数据并打开
+- **在详情组件中**：
+  - 使用 `useDynaDrawer`/`useDynaModal` 的 `inject` 模式（直接调用，不传参数）获取 `drawerApi`/`modalApi`
+  - 通过 `drawerApi.getData()` 获取传递的数据
+  - 只展示数据，不包含表单，不需要 `onConfirm` 处理
+- **与表单组件的区别**：表单组件有 `onConfirm` 处理表单提交，详情组件没有 `onConfirm`，只是展示数据
+
+## 表单开发规范
+
+- **所有表单必须采用配置形式，禁止手动编写表单字段**
+- **参考实现**：`apps/lab-admin/src/views/system/user/modules/form.vue`
+- **表单 Schema 定义**：
+  - 编辑表单 Schema 必须定义在 `data.ts` 中的 `useFormSchema()` 函数
+  - 表格搜索表单 Schema 必须定义在 `data.ts` 中的 `useGridFormSchema()` 函数
+  - Schema 使用 `DynaFormSchema[]` 类型，字段配置包括 `component`、`fieldName`、`label`、`rules`、`componentProps` 等
+- **表单组件实现**：
+  - 表单组件必须抽离为独立组件（`modules/form.vue`）
+  - 使用 `useDynaForm` 创建表单，禁止使用 `DynaForm` 组件
+  - 禁止在表单组件中手动编写 `<Input>`、`<Select>` 等表单字段
+  - **表单配置**：必须配置 `commonConfig.componentProps.class: 'w-full'` 确保表单字段宽度为100%
+  - **复杂字段自定义渲染**：如果表单某个字段交互过于复杂，通过配置无法简单实现的，可使用自定义插槽的形式（在 `Form` 组件中使用 `<template #fieldName="{ field }">` 插槽）
+- **表单与弹窗/抽屉集成**：
+  - 在 `list.vue` 中使用 `useDynaDrawer`/`useDynaModal` 的 `connectedComponent` 参数连接表单组件
+  - 通过 `drawerApi.setData()` 传递数据，通过 `drawerApi.getData()` 获取数据
+  - 在 `onConfirm` 中调用 `formApi.validate()` 验证表单，`formApi.getValues()` 获取表单值
+- **弹窗表单内部还有弹窗的复杂表单**：
+  - 仍使用 `useDynaModal` 的形式（弹窗内部叠加的弹窗也必须使用 `useDynaModal`）
+  - 表单也遵循上述表单的规则
+- **表单 API 使用**：
+  - `formApi.setValues()` 设置表单值
+  - `formApi.getValues()` 获取表单值
+  - `formApi.validate()` 验证表单
+  - `formApi.resetForm()` 重置表单
+  - `formApi.updateSchema()` 动态更新 schema（如隐藏、禁用字段）
+- **表单验证**：
+  - 使用 `z` (zod) 进行表单验证
+  - 规则定义在 schema 的 `rules` 字段中
+  - 支持 `required`、`selectRequired` 等快捷规则
+- **UI 组件使用**：
+  - **禁止使用 `Label` 组件**：Ant Design Vue 中没有 `Label` 组件，应使用 `<div>`、`<span>` 或文本标签
+  - 表单标签通过 schema 的 `label` 字段配置，无需手动编写标签
+- **参考实现**：`apps/lab-admin/src/views/system/user/` 为标准实现示例
+
+## 文件上传规范
+
+### 上传组件配置复用（useUploadConfig）
+
+**⚠️ 重要规则：所有文件上传场景必须使用 `useUploadConfig` 工具函数，禁止手动编写上传配置**
+
+**核心要求**：
+
+- **所有上传场景必须使用 `useUploadConfig`**：统一的上传配置工具，实现前后端代码复用
+- **文件位置**：`apps/*/src/utils/use-upload-config.ts`
+- **支持场景**：头像、文档、视频、音频等多种上传场景
+- **前后端统一**：前后端统一处理文件类型验证、大小限制、错误处理
+
+**使用方式**：
+
+**方式1：在表单组件中单独使用（适用于需要自定义回调的场景）**
+
+```typescript
+// 1. 导入上传配置工具
+import { useAvatarUploadConfig, useDocumentUploadConfig } from '#/utils/use-upload-config';
+
+// 2. 在表单组件中使用
+const uploadConfig = useAvatarUploadConfig({
+  onSuccess: (url) => {
+    formApi.setValue('avatar', url);
+  },
+});
+
+// 3. 在组件中使用
+<Upload v-bind="uploadConfig" />
+```
+
+**方式2：在 Schema 的 componentProps 中直接配置（推荐，更简洁）**
+
+```typescript
+// 1. 导入上传配置工具
+import {
+  useAvatarUploadConfig,
+  useDocumentUploadConfig,
+} from '#/utils/use-upload-config';
+
+// 2. 在 data.ts 的 Schema 中直接配置
+export function useFormSchema(): DynaFormSchema[] {
+  return [
+    {
+      component: 'Upload',
+      fieldName: 'avatar',
+      label: $t('system.user.picture'),
+      // 直接在 componentProps 中使用上传配置
+      componentProps: useAvatarUploadConfig({
+        onSuccess: (url) => {
+          // 上传成功后，表单会自动更新 fieldName 对应的值
+          // 如果需要额外处理，可以在这里添加逻辑
+        },
+      }),
+    },
+    {
+      component: 'Upload',
+      fieldName: 'document',
+      label: $t('system.document'),
+      // 文档上传配置
+      componentProps: useDocumentUploadConfig({
+        maxCount: 5, // 最多上传5个文件
+      }),
+    },
+  ];
+}
+```
+
+**方式2的优势**：
+
+- ✅ **更简洁**：无需在表单组件中单独定义配置
+- ✅ **配置集中**：所有表单配置统一在 Schema 中管理
+- ✅ **自动绑定**：上传成功后自动更新表单字段值（通过 fieldName）
+- ✅ **符合规范**：遵循配置式表单的开发规范
+
+**预设配置**：
+
+- **头像上传**：`useAvatarUploadConfig()` - 图片格式，10MB限制，picture-card样式
+- **文档上传**：`useDocumentUploadConfig()` - PDF、Word、Excel、PPT格式，20MB限制
+- **视频上传**：`useVideoUploadConfig()` - MP4、AVI、MOV等格式，100MB限制
+- **音频上传**：`useAudioUploadConfig()` - MP3、WAV、OGG等格式，50MB限制
+- **通用文件**：`useFileUploadConfig()` - 所有格式，50MB限制
+
+**核心功能**：
+
+- ✅ **文件类型验证**：自动验证文件MIME类型和扩展名
+- ✅ **文件大小验证**：自动验证文件大小限制
+- ✅ **错误处理**：统一的错误处理和提示
+- ✅ **请求拦截器复用**：复用请求拦截器和错误处理逻辑
+- ✅ **响应数据处理**：自动提取文件URL，支持自定义转换函数
+
+**配置选项**：
+
+```typescript
+interface UploadConfigOptions {
+  /** 上传 API 函数（默认使用 uploadFileApi） */
+  uploadApi?: (file: Blob | File) => Promise<UploadResponse>;
+  /** 文件类型配置 */
+  fileType?: FileTypeConfig;
+  /** 最大上传数量 */
+  maxCount?: number;
+  /** 列表类型 */
+  listType?: 'picture' | 'picture-card' | 'text';
+  /** 自定义响应数据处理 */
+  transformResponse?: (response: UploadResponse) => null | string;
+  /** 上传前的额外验证 */
+  beforeUploadExtra?: (file: File) => boolean | Promise<boolean>;
+  /** 上传成功回调 */
+  onSuccess?: (url: string, file: UploadFile) => void;
+  /** 上传失败回调 */
+  onError?: (error: Error, file: UploadFile) => void;
+}
+```
+
+**最佳实践**：
+
+- ✅ **使用预设配置**：优先使用 `useAvatarUploadConfig`、`useDocumentUploadConfig` 等预设配置
+- ✅ **自定义配置**：如需自定义，通过 `fileType` 参数覆盖默认配置
+- ✅ **错误处理**：统一的错误处理，无需手动处理错误
+- ✅ **前后端复用**：配置在前后端复用，减少重复开发
+
+**参考实现**：
+
+- **工具函数**：`apps/lab-admin/src/utils/use-upload-config.ts`
+- **使用示例**：在表单组件中使用 `useAvatarUploadConfig` 等快捷方法
+
+**量化收益**：
+
+- **代码减少**：每个上传场景减少约100行代码（配置 + 验证逻辑）
+- **开发效率**：上传功能开发时间从0.5天缩短至0.1天（**80%↓**）
+- **前后端复用**：Upload组件配置在前后端复用，减少重复开发
+
+## 代码注释规范
+
+- **函数方法注释**：所有函数方法必须有完整的 JSDoc 注释
+  - 方法描述：说明函数的作用和功能
+  - 参数类型：使用 `@param` 标注参数名称、类型和说明
+  - 返回值说明：使用 `@returns` 标注返回值类型和说明
+- **关键步骤注释**：关键业务逻辑、复杂算法、特殊处理等必须添加注释说明
+- **TODO 注释**：临时代码、假数据、待实现功能等必须添加 `TODO` 注释
+- **参考示例**：
+  ```typescript
+  /**
+   * 查询表格数据
+   * @param page 分页参数，包含 currentPage 和 pageSize
+   * @param sorts 排序参数（可选）
+   * @param formValues 表单搜索条件
+   * @returns 返回表格数据，格式为 { rows: [], total: number }
+   */
+  function queryData(page, sorts, formValues) {
+    // 处理排序参数
+    // ...
+  }
+  ```
+
+## 国际化文件规范
+
+- **生成国际化文件时的字段规则**：
+  - **默认规则**：对于已有字段（如 `description`、`name`、`code` 等），**不要自动生成对应的 Placeholder 字段**（如 `descriptionPlaceholder`、`namePlaceholder`、`codePlaceholder`）
+  - **特殊要求**：仅在表单字段确实需要占位符提示时，可以生成对应的 Placeholder 字段（如输入框需要提示用户输入格式、示例等）
+  - **Key 唯一性**：国际化文件的 key 必须唯一，不能重复。当发现 key 重复时，需要适当调整：
+    - 可以通过添加前缀/后缀区分（如 `typeDescription` 和 `listDescription`）
+    - 可以通过嵌套结构组织（如 `type.description` 和 `list.description`）
+    - 优先使用语义化的命名，避免简单的数字后缀
+  - **示例**：
+    - ❌ 错误：已有 `"description": "类型描述"`，不要自动生成 `"descriptionPlaceholder": "请输入类型描述"`
+    - ✅ 正确：表单输入框需要提示时，可以生成 `"codePlaceholder": "请输入类型编码（如：excellent_design）"`（因为需要格式说明）
+
+## 提交与验证
+
+- 在编辑后运行对应 linter（Cursor 会自动展示）并修复错误
+- 对路由/菜单/权限等配置性的改动，确保 i18n key 存在且无拼写错误
+- 新增图标时，优先提供同名演示或在文档中给出使用示例
+
+## Cursor 交互约定
+
+- 回显代码时：
+  - 引用已有代码片段请使用 含行号的 CODE REFERENCES 块
+  - 提议新增代码/命令时使用标准 markdown 代码块
+- 输出内容分层清晰，优先中文精简说明 + 必要代码片段
+- 勿输出长篇解释，专注于可执行的编辑与关键决策
+
+## 常见操作清单（速查）
+
+- **图标使用优先级**：
+  1. **优先使用本地图标**：使用 `svg:` 或 `svg-menu:` 前缀
+  2. **使用组件形式**：从 `@dyna/icons` 导入具名图标组件（如 `Plus`, `Edit`, `Delete`）
+  3. **使用 IconifyIcon 组件**：通过 `icon` 属性指定图标名称
+- **新增本地图标**：
+  - **普通图标**：
+    1. 把 `*.svg` 放入 `packages/icons/src/svg/icons/`
+    2. 业务处使用 `svg:文件名`
+    3. 若需要具名导出，在 `packages/icons/src/svg/index.ts` 增加 `createIconifyIcon('svg:xxx')`
+  - **菜单图标**：
+    1. 在 `packages/icons/src/svg/menu-icon.ts` 中增加 SVG 配置
+    2. 格式：`{ name: 'carbon:icon-name', svg: '<svg>...</svg>' }`
+    3. 使用 `svg-menu:carbon--icon-name` 引用（注意 `:` 替换为 `--`）
+- **将远程图标改为本地**：
+  1. 抽出 SVG → 放入本地图标目录或 `menu-icon.ts`
+  2. 替换所有 `lucide:*`/`mdi:*` → `svg:*` 或 `svg-menu:*`
+  3. 如涉及 IconPicker，确保 `mode='local'` 或 preferences 为 `local`
+
+## 规范与工具集成
+
+- lint-configs（私有 nexus 包）：
+  - 使用：`@dyna-lab/eslint-config`、`@dyna-lab/prettier-config`、`@dyna-lab/stylelint-config`
+  - 来源：私有 nexus 仓库（`http://192.168.10.15:8081/repository/npm-private/`）
+  - 要求：按既有规则修复 Lint 报错；提交前通过 commitlint
+- Tailwind 共享配置：
+  - 使用：`@dyna-lab/tailwind-config`
+  - 来源：私有 nexus 仓库
+  - 应用侧通过 `tailwind.config.mjs` 引入 preset；不要在应用内重复定义相同的主题 Token
+- TypeScript/构建共享：
+  - TS 基线：`@dyna-lab/tsconfig`（私有 nexus 包）
+  - Vite 基线：`@dyna-lab/vite-config`（私有 nexus 包）
+  - 所有 `tsconfig.json` 文件通过 `extends` 引用 `@dyna-lab/tsconfig` 的预设配置（如 `web.json`、`node.json`、`library.json`、`web-app.json`）
+
+## packages 层约定
+
+- 命名：统一使用 `@dyna-core/*`、`@dyna/*` 别名
+- 职责边界：
+  - `@core`：基础能力、类型与 UI 基座
+  - `effects`：业务可复用的组件/布局/插件
+  - `icons`：本地图标与注册逻辑
+  - 其他包（`locales`、`stores`、`styles`、`utils` 等）各司其职，避免交叉依赖
+- 变更原则：跨包改动需最小化，先补类型与测试，再应用到 apps
+
+## README 与本地开发速记
+
+- 根 `README.md` 的关键命令：
+  - 安装依赖：`pnpm install`（需确保私有 nexus 仓库配置正确）
+  - 开发：`pnpm dev`
+  - 构建：`pnpm build`
+- 目录认知：
+  - `apps/*` 运行态应用
+  - `packages/*` 共享能力
+  - `@dyna-lab/*` 私有工程化包（tsconfig、eslint-config、vite-config 等）
+  - `scripts/*` 构建/部署/发布辅助
+- 私有包说明：
+  - `@dyna-lab/*`：工程化配置包（tsconfig、eslint-config、prettier-config、stylelint-config、tailwind-config、vite-config 等）
+  - `@dyna-core/*`：核心能力包（shared、typings、icons、design、composables、preferences 等）
+  - 所有私有包发布在 nexus 仓库：`http://192.168.10.15:8081/repository/npm-private/`
