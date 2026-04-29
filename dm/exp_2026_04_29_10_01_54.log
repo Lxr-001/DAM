@@ -35,7 +35,7 @@
 导出模式下的对象权限...
 
 
------ [2026-04-27 09:41:08]导出表：DEMO -----
+----- [2026-04-29 10:03:11]导出表：DEMO -----
 
 导入/出 DEMO 注释
 导出约束：SYS_C0025271 
@@ -45,7 +45,7 @@
 表DEMO导出结束，共导出 96 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JEECG_MONTHLY_GROWTH_ANALYSIS -----
+----- [2026-04-29 10:03:12]导出表：JEECG_MONTHLY_GROWTH_ANALYSIS -----
 
 导出约束：SYS_C0025274 
 
@@ -54,7 +54,7 @@
 表JEECG_MONTHLY_GROWTH_ANALYSIS导出结束，共导出 168 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JEECG_ORDER_CUSTOMER -----
+----- [2026-04-29 10:03:12]导出表：JEECG_ORDER_CUSTOMER -----
 
 导出约束：SYS_C0025275 
 
@@ -67,7 +67,7 @@
 表JEECG_ORDER_CUSTOMER导出结束，共导出 434 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JEECG_ORDER_MAIN -----
+----- [2026-04-29 10:03:12]导出表：JEECG_ORDER_MAIN -----
 
 导出约束：SYS_C0025278 
 
@@ -76,7 +76,7 @@
 表JEECG_ORDER_MAIN导出结束，共导出 98 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JEECG_ORDER_TICKET -----
+----- [2026-04-29 10:03:12]导出表：JEECG_ORDER_TICKET -----
 
 导出约束：SYS_C0025279 
 
@@ -89,7 +89,7 @@
 表JEECG_ORDER_TICKET导出结束，共导出 322 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JEECG_PROJECT_NATURE_INCOME -----
+----- [2026-04-29 10:03:12]导出表：JEECG_PROJECT_NATURE_INCOME -----
 
 导出约束：SYS_C0025282 
 
@@ -100,7 +100,7 @@
 表JEECG_PROJECT_NATURE_INCOME导出结束，共导出 56 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JIMU_DICT -----
+----- [2026-04-29 10:03:12]导出表：JIMU_DICT -----
 
 导出索引：UK_SD_DICT_CODE 
 
@@ -115,7 +115,7 @@
 表JIMU_DICT导出结束，共导出 41 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JIMU_DICT_ITEM -----
+----- [2026-04-29 10:03:12]导出表：JIMU_DICT_ITEM -----
 
 导出索引：IDX_SDI_STATUS 
 
@@ -136,7 +136,7 @@
 表JIMU_DICT_ITEM导出结束，共导出 854 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JIMU_REPORT -----
+----- [2026-04-29 10:03:12]导出表：JIMU_REPORT -----
 
 导出索引：UNIQ_JMREPORT_DELFLAG 
 
@@ -151,7 +151,7 @@
 表JIMU_REPORT导出结束，共导出 40 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JIMU_REPORT_DATA_SOURCE -----
+----- [2026-04-29 10:03:12]导出表：JIMU_REPORT_DATA_SOURCE -----
 
 导出索引：IDX_JMDATASOURCE_REPORT_ID 
 
@@ -164,7 +164,7 @@
 表JIMU_REPORT_DATA_SOURCE导出结束，共导出 27 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JIMU_REPORT_DB -----
+----- [2026-04-29 10:03:12]导出表：JIMU_REPORT_DB -----
 
 导出索引：IDX_JMREPORTDB_DB_KEY 
 
@@ -179,7 +179,7 @@
 表JIMU_REPORT_DB导出结束，共导出 452 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JIMU_REPORT_DB_FIELD -----
+----- [2026-04-29 10:03:12]导出表：JIMU_REPORT_DB_FIELD -----
 
 导出索引：IDX_JRDF_JIMU_REPORT_DB_ID 
 
@@ -192,7 +192,7 @@
 表JIMU_REPORT_DB_FIELD导出结束，共导出 3994 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JIMU_REPORT_DB_PARAM -----
+----- [2026-04-29 10:03:12]导出表：JIMU_REPORT_DB_PARAM -----
 
 导出索引：IDX_JRDP_JIMU_REPORT_HEAD_ID 
 
@@ -207,7 +207,7 @@
 表JIMU_REPORT_DB_PARAM导出结束，共导出 175 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JIMU_REPORT_LINK -----
+----- [2026-04-29 10:03:12]导出表：JIMU_REPORT_LINK -----
 
 导出索引：UNIQ_LINK_REPORTID 
 
@@ -218,7 +218,7 @@
 表JIMU_REPORT_LINK导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JIMU_REPORT_MAP -----
+----- [2026-04-29 10:03:12]导出表：JIMU_REPORT_MAP -----
 
 导出索引：UNIQ_JMREPORT_MAP_NAME 
 
@@ -229,7 +229,7 @@
 表JIMU_REPORT_MAP导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JIMU_REPORT_SHARE -----
+----- [2026-04-29 10:03:12]导出表：JIMU_REPORT_SHARE -----
 
 导出约束：SYS_C0025299 
 
@@ -238,14 +238,14 @@
 表JIMU_REPORT_SHARE导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:08]导出表：JOA_DEMO -----
+----- [2026-04-29 10:03:12]导出表：JOA_DEMO -----
 
 导出模式下的对象权限...
 
 表JOA_DEMO导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:08]导出表：ONL_AUTH_DATA -----
+----- [2026-04-29 10:03:12]导出表：ONL_AUTH_DATA -----
 
 导出约束：SYS_C0025300 
 
@@ -254,7 +254,7 @@
 表ONL_AUTH_DATA导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：ONL_AUTH_PAGE -----
+----- [2026-04-29 10:03:12]导出表：ONL_AUTH_PAGE -----
 
 导出约束：SYS_C0025301 
 
@@ -263,7 +263,7 @@
 表ONL_AUTH_PAGE导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：ONL_AUTH_RELATION -----
+----- [2026-04-29 10:03:12]导出表：ONL_AUTH_RELATION -----
 
 导出约束：SYS_C0025302 
 
@@ -272,7 +272,7 @@
 表ONL_AUTH_RELATION导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：ONL_CGFORM_BUTTON -----
+----- [2026-04-29 10:03:12]导出表：ONL_CGFORM_BUTTON -----
 
 导出索引：IDX_OCB_ORDER_NUM 
 
@@ -289,7 +289,7 @@
 表ONL_CGFORM_BUTTON导出结束，共导出 48 行数据
 
 
------ [2026-04-27 09:41:09]导出表：ONL_CGFORM_ENHANCE_JAVA -----
+----- [2026-04-29 10:03:12]导出表：ONL_CGFORM_ENHANCE_JAVA -----
 
 导出索引：IDX_OCEJ_BUTTON_CODE 
 
@@ -312,7 +312,7 @@
 表ONL_CGFORM_ENHANCE_JAVA导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：ONL_CGFORM_ENHANCE_JS -----
+----- [2026-04-29 10:03:12]导出表：ONL_CGFORM_ENHANCE_JS -----
 
 导出索引：IDX_EJS_CGFORM_HEAD_ID 
 
@@ -325,7 +325,7 @@
 表ONL_CGFORM_ENHANCE_JS导出结束，共导出 147 行数据
 
 
------ [2026-04-27 09:41:09]导出表：ONL_CGFORM_ENHANCE_SQL -----
+----- [2026-04-29 10:03:12]导出表：ONL_CGFORM_ENHANCE_SQL -----
 
 导出索引：IDX_OCES_CGFORM_HEAD_ID 
 
@@ -336,7 +336,7 @@
 表ONL_CGFORM_ENHANCE_SQL导出结束，共导出 35 行数据
 
 
------ [2026-04-27 09:41:09]导出表：ONL_CGFORM_FIELD -----
+----- [2026-04-29 10:03:12]导出表：ONL_CGFORM_FIELD -----
 
 导出索引：IDX_OCF_CGFORM_HEAD_ID 
 
@@ -355,7 +355,7 @@
 表ONL_CGFORM_FIELD导出结束，共导出 3366 行数据
 
 
------ [2026-04-27 09:41:09]导出表：ONL_CGFORM_HEAD -----
+----- [2026-04-29 10:03:12]导出表：ONL_CGFORM_HEAD -----
 
 导出索引：IDX_OCH_TABLE_VERSION 
 
@@ -388,7 +388,7 @@
 表ONL_CGFORM_HEAD导出结束，共导出 3 行数据
 
 
------ [2026-04-27 09:41:09]导出表：ONL_CGFORM_INDEX -----
+----- [2026-04-29 10:03:12]导出表：ONL_CGFORM_INDEX -----
 
 导出索引：IDX_OCI_CGFORM_HEAD_ID 
 
@@ -399,7 +399,7 @@
 表ONL_CGFORM_INDEX导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：ONL_CGREPORT_HEAD -----
+----- [2026-04-29 10:03:12]导出表：ONL_CGREPORT_HEAD -----
 
 导出索引：INDEX_ONLINEREPORT_CODE 
 
@@ -416,7 +416,7 @@
 表ONL_CGREPORT_HEAD导出结束，共导出 5 行数据
 
 
------ [2026-04-27 09:41:09]导出表：ONL_CGREPORT_ITEM -----
+----- [2026-04-29 10:03:12]导出表：ONL_CGREPORT_ITEM -----
 
 导出索引：IDX_OCI_ORDER_NUM 
 
@@ -435,7 +435,7 @@
 表ONL_CGREPORT_ITEM导出结束，共导出 168 行数据
 
 
------ [2026-04-27 09:41:09]导出表：ONL_CGREPORT_PARAM -----
+----- [2026-04-29 10:03:13]导出表：ONL_CGREPORT_PARAM -----
 
 导出索引：IDX_OCP_CGRHEAD_ID 
 
@@ -450,7 +450,7 @@
 表ONL_CGREPORT_PARAM导出结束，共导出 6 行数据
 
 
------ [2026-04-27 09:41:09]导出表：OSS_FILE -----
+----- [2026-04-29 10:03:13]导出表：OSS_FILE -----
 
 导出约束：SYS_C0025336 
 
@@ -459,7 +459,7 @@
 表OSS_FILE导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：QRTZ_BLOB_TRIGGERS -----
+----- [2026-04-29 10:03:13]导出表：QRTZ_BLOB_TRIGGERS -----
 
 导出约束：QRTZ_BLOB_TRIG_TO_TRIG_FK 
 
@@ -474,7 +474,7 @@
 表QRTZ_BLOB_TRIGGERS导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：QRTZ_CALENDARS -----
+----- [2026-04-29 10:03:13]导出表：QRTZ_CALENDARS -----
 
 导出约束：SYS_C0025613 
 
@@ -487,7 +487,7 @@
 表QRTZ_CALENDARS导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：QRTZ_CRON_TRIGGERS -----
+----- [2026-04-29 10:03:13]导出表：QRTZ_CRON_TRIGGERS -----
 
 导出约束：QRTZ_CRON_TRIG_TO_TRIG_FK 
 
@@ -504,7 +504,7 @@
 表QRTZ_CRON_TRIGGERS导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：QRTZ_FIRED_TRIGGERS -----
+----- [2026-04-29 10:03:13]导出表：QRTZ_FIRED_TRIGGERS -----
 
 导出索引：IDX_QRTZ_FT_INST_JOB_REQ_RCVRY 
 
@@ -541,7 +541,7 @@
 表QRTZ_FIRED_TRIGGERS导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：QRTZ_JOB_DETAILS -----
+----- [2026-04-29 10:03:13]导出表：QRTZ_JOB_DETAILS -----
 
 导出索引：IDX_QRTZ_J_REQ_RECOVERY 
 
@@ -568,7 +568,7 @@
 表QRTZ_JOB_DETAILS导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：QRTZ_LOCKS -----
+----- [2026-04-29 10:03:13]导出表：QRTZ_LOCKS -----
 
 导出约束：SYS_C0025635 
 
@@ -579,7 +579,7 @@
 表QRTZ_LOCKS导出结束，共导出 1 行数据
 
 
------ [2026-04-27 09:41:09]导出表：QRTZ_PAUSED_TRIGGER_GRPS -----
+----- [2026-04-29 10:03:13]导出表：QRTZ_PAUSED_TRIGGER_GRPS -----
 
 导出约束：SYS_C0025617 
 
@@ -590,7 +590,7 @@
 表QRTZ_PAUSED_TRIGGER_GRPS导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：QRTZ_SCHEDULER_STATE -----
+----- [2026-04-29 10:03:13]导出表：QRTZ_SCHEDULER_STATE -----
 
 导出约束：SYS_C0025630 
 
@@ -605,7 +605,7 @@
 表QRTZ_SCHEDULER_STATE导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：QRTZ_SIMPLE_TRIGGERS -----
+----- [2026-04-29 10:03:13]导出表：QRTZ_SIMPLE_TRIGGERS -----
 
 导出约束：QRTZ_SIMPLE_TRIG_TO_TRIG_FK 
 
@@ -626,7 +626,7 @@
 表QRTZ_SIMPLE_TRIGGERS导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：QRTZ_SIMPROP_TRIGGERS -----
+----- [2026-04-29 10:03:13]导出表：QRTZ_SIMPROP_TRIGGERS -----
 
 导出约束：QRTZ_SIMPROP_TRIG_TO_TRIG_FK 
 
@@ -641,7 +641,7 @@
 表QRTZ_SIMPROP_TRIGGERS导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：QRTZ_TRIGGERS -----
+----- [2026-04-29 10:03:13]导出表：QRTZ_TRIGGERS -----
 
 导出索引：IDX_QRTZ_T_STATE 
 
@@ -688,7 +688,7 @@
 表QRTZ_TRIGGERS导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:09]导出表：REP_DEMO_DXTJ -----
+----- [2026-04-29 10:03:13]导出表：REP_DEMO_DXTJ -----
 
 导出约束：SYS_C0025389 
 
@@ -697,7 +697,7 @@
 表REP_DEMO_DXTJ导出结束，共导出 168 行数据
 
 
------ [2026-04-27 09:41:09]导出表：REP_DEMO_EMPLOYEE -----
+----- [2026-04-29 10:03:13]导出表：REP_DEMO_EMPLOYEE -----
 
 导出约束：SYS_C0025390 
 
@@ -706,7 +706,7 @@
 表REP_DEMO_EMPLOYEE导出结束，共导出 14 行数据
 
 
------ [2026-04-27 09:41:09]导出表：REP_DEMO_GONGSI -----
+----- [2026-04-29 10:03:13]导出表：REP_DEMO_GONGSI -----
 
 导出约束：SYS_C0025391 
 
@@ -727,7 +727,7 @@
 表REP_DEMO_GONGSI导出结束，共导出 14 行数据
 
 
------ [2026-04-27 09:41:09]导出表：REP_DEMO_JIANPIAO -----
+----- [2026-04-29 10:03:13]导出表：REP_DEMO_JIANPIAO -----
 
 导出约束：SYS_C0025398 
 
@@ -754,7 +754,7 @@
 表REP_DEMO_JIANPIAO导出结束，共导出 602 行数据
 
 
------ [2026-04-27 09:41:09]导出表：SYS_ANNOUNCEMENT -----
+----- [2026-04-29 10:03:13]导出表：SYS_ANNOUNCEMENT -----
 
 导出约束：SYS_C0025408 
 
@@ -765,14 +765,14 @@
 表SYS_ANNOUNCEMENT导出结束，共导出 11 行数据
 
 
------ [2026-04-27 09:41:09]导出表：SYS_ANNOUNCEMENT_SEND -----
+----- [2026-04-29 10:03:13]导出表：SYS_ANNOUNCEMENT_SEND -----
 
 导出模式下的对象权限...
 
 表SYS_ANNOUNCEMENT_SEND导出结束，共导出 63 行数据
 
 
------ [2026-04-27 09:41:09]导出表：SYS_CATEGORY -----
+----- [2026-04-29 10:03:13]导出表：SYS_CATEGORY -----
 
 导出索引：INDEX_CODE 
 
@@ -783,7 +783,7 @@
 表SYS_CATEGORY导出结束，共导出 25 行数据
 
 
------ [2026-04-27 09:41:09]导出表：SYS_CHECK_RULE -----
+----- [2026-04-29 10:03:13]导出表：SYS_CHECK_RULE -----
 
 导出索引：UK_SCR_RULE_CODE 
 
@@ -794,7 +794,7 @@
 表SYS_CHECK_RULE导出结束，共导出 2 行数据
 
 
------ [2026-04-27 09:41:09]导出表：SYS_COMMENT -----
+----- [2026-04-29 10:03:13]导出表：SYS_COMMENT -----
 
 导出索引：IDX_TABLE_DATA_ID 
 
@@ -811,7 +811,7 @@
 表SYS_COMMENT导出结束，共导出 28 行数据
 
 
------ [2026-04-27 09:41:09]导出表：SYS_DATA_LOG -----
+----- [2026-04-29 10:03:13]导出表：SYS_DATA_LOG -----
 
 导出索引：IDX_SDL_DATA_TABLE_ID 
 
@@ -822,7 +822,7 @@
 表SYS_DATA_LOG导出结束，共导出 467 行数据
 
 
------ [2026-04-27 09:41:09]导出表：SYS_DATA_SOURCE -----
+----- [2026-04-29 10:03:13]导出表：SYS_DATA_SOURCE -----
 
 导出索引：UK_SDC_RULE_CODE 
 
@@ -833,7 +833,7 @@
 表SYS_DATA_SOURCE导出结束，共导出 1 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_DEPART -----
+----- [2026-04-29 10:03:13]导出表：SYS_DEPART -----
 
 导出索引：UNIQ_DEPART_ORG_CODE 
 
@@ -854,7 +854,7 @@
 表SYS_DEPART导出结束，共导出 34 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_DEPART_PERMISSION -----
+----- [2026-04-29 10:03:13]导出表：SYS_DEPART_PERMISSION -----
 
 导出约束：SYS_C0025422 
 
@@ -863,7 +863,7 @@
 表SYS_DEPART_PERMISSION导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_DEPART_ROLE -----
+----- [2026-04-29 10:03:13]导出表：SYS_DEPART_ROLE -----
 
 导出约束：SYS_C0025423 
 
@@ -872,7 +872,7 @@
 表SYS_DEPART_ROLE导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_DEPART_ROLE_PERMISSION -----
+----- [2026-04-29 10:03:13]导出表：SYS_DEPART_ROLE_PERMISSION -----
 
 导出索引：IDX_SDRP_ROLE_PER_ID 
 
@@ -887,7 +887,7 @@
 表SYS_DEPART_ROLE_PERMISSION导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_DEPART_ROLE_USER -----
+----- [2026-04-29 10:03:13]导出表：SYS_DEPART_ROLE_USER -----
 
 导出约束：SYS_C0025425 
 
@@ -896,7 +896,7 @@
 表SYS_DEPART_ROLE_USER导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_DICT -----
+----- [2026-04-29 10:03:13]导出表：SYS_DICT -----
 
 导出约束：SYS_C0025426 
 
@@ -909,7 +909,7 @@
 表SYS_DICT导出结束，共导出 42 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_DICT_ITEM -----
+----- [2026-04-29 10:03:13]导出表：SYS_DICT_ITEM -----
 
 导出约束：SYS_C0025429 
 
@@ -922,7 +922,7 @@
 表SYS_DICT_ITEM导出结束，共导出 1808 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_FILES -----
+----- [2026-04-29 10:03:13]导出表：SYS_FILES -----
 
 导出索引：INDEX_TENANT_ID 
 
@@ -935,7 +935,7 @@
 表SYS_FILES导出结束，共导出 7 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_FILL_RULE -----
+----- [2026-04-29 10:03:13]导出表：SYS_FILL_RULE -----
 
 导出索引：UK_SFR_RULE_CODE 
 
@@ -946,7 +946,7 @@
 表SYS_FILL_RULE导出结束，共导出 3 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_FORM_FILE -----
+----- [2026-04-29 10:03:13]导出表：SYS_FORM_FILE -----
 
 导出索引：INDEX_FILE_ID 
 
@@ -963,7 +963,7 @@
 表SYS_FORM_FILE导出结束，共导出 7 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_GATEWAY_ROUTE -----
+----- [2026-04-29 10:03:14]导出表：SYS_GATEWAY_ROUTE -----
 
 导出约束：SYS_C0025437 
 
@@ -972,7 +972,7 @@
 表SYS_GATEWAY_ROUTE导出结束，共导出 28 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_LOG -----
+----- [2026-04-29 10:03:14]导出表：SYS_LOG -----
 
 导出索引：IDX_SL_USERID 
 
@@ -986,10 +986,10 @@
 
 导出模式下的对象权限...
 
-表SYS_LOG导出结束，共导出 28188 行数据
+表SYS_LOG导出结束，共导出 28200 行数据
 
 
------ [2026-04-27 09:41:10]导出表：sys_permission -----
+----- [2026-04-29 10:03:14]导出表：sys_permission -----
 
 导出索引：IDX_SP_STATUS 
 
@@ -1014,7 +1014,7 @@
 表sys_permission导出结束，共导出 44 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_PERMISSION_DATA_RULE -----
+----- [2026-04-29 10:03:14]导出表：SYS_PERMISSION_DATA_RULE -----
 
 导出索引：IDX_SPDR_PERMISSION_ID 
 
@@ -1025,7 +1025,7 @@
 表SYS_PERMISSION_DATA_RULE导出结束，共导出 151 行数据
 
 
------ [2026-04-27 09:41:10]导出表：sys_permission_v3 -----
+----- [2026-04-29 10:03:14]导出表：sys_permission_v3 -----
 
 导出索引：INDEX_MENU_TYPE 
 
@@ -1040,7 +1040,7 @@
 表sys_permission_v3导出结束，共导出 1380 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_POSITION -----
+----- [2026-04-29 10:03:14]导出表：SYS_POSITION -----
 
 导出索引：UNIQ_CODE 
 
@@ -1051,7 +1051,7 @@
 表SYS_POSITION导出结束，共导出 2 行数据
 
 
------ [2026-04-27 09:41:10]导出表：SYS_QUARTZ_JOB -----
+----- [2026-04-29 10:03:14]导出表：SYS_QUARTZ_JOB -----
 
 导出约束：SYS_C0025443 
 
@@ -1060,7 +1060,7 @@
 表SYS_QUARTZ_JOB导出结束，共导出 21 行数据
 
 
------ [2026-04-27 09:41:11]导出表：SYS_ROLE -----
+----- [2026-04-29 10:03:14]导出表：SYS_ROLE -----
 
 导出索引：UNIQ_SYS_ROLE_ROLE_CODE 
 
@@ -1073,7 +1073,7 @@
 表SYS_ROLE导出结束，共导出 6 行数据
 
 
------ [2026-04-27 09:41:11]导出表：SYS_ROLE_INDEX -----
+----- [2026-04-29 10:03:14]导出表：SYS_ROLE_INDEX -----
 
 导出约束：SYS_C0025446 
 
@@ -1082,7 +1082,7 @@
 表SYS_ROLE_INDEX导出结束，共导出 7 行数据
 
 
------ [2026-04-27 09:41:11]导出表：SYS_ROLE_PERMISSION -----
+----- [2026-04-29 10:03:14]导出表：SYS_ROLE_PERMISSION -----
 
 导出索引：IDX_SRP_ROLE_PER_ID 
 
@@ -1097,7 +1097,7 @@
 表SYS_ROLE_PERMISSION导出结束，共导出 2121 行数据
 
 
------ [2026-04-27 09:41:11]导出表：SYS_SMS -----
+----- [2026-04-29 10:03:14]导出表：SYS_SMS -----
 
 导出索引：IDX_SS_ES_TYPE 
 
@@ -1114,7 +1114,7 @@
 表SYS_SMS导出结束，共导出 49 行数据
 
 
------ [2026-04-27 09:41:11]导出表：SYS_SMS_TEMPLATE -----
+----- [2026-04-29 10:03:14]导出表：SYS_SMS_TEMPLATE -----
 
 导出索引：UK_SST_TEMPLATE_CODE 
 
@@ -1131,7 +1131,7 @@
 表SYS_SMS_TEMPLATE导出结束，共导出 4 行数据
 
 
------ [2026-04-27 09:41:11]导出表：SYS_TENANT -----
+----- [2026-04-29 10:03:14]导出表：SYS_TENANT -----
 
 导出约束：SYS_C0025453 
 
@@ -1140,7 +1140,7 @@
 表SYS_TENANT导出结束，共导出 1 行数据
 
 
------ [2026-04-27 09:41:11]导出表：SYS_THIRD_ACCOUNT -----
+----- [2026-04-29 10:03:14]导出表：SYS_THIRD_ACCOUNT -----
 
 导出约束：SYS_C0025454 
 
@@ -1149,7 +1149,7 @@
 表SYS_THIRD_ACCOUNT导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:11]导出表：SYS_USER -----
+----- [2026-04-29 10:03:14]导出表：SYS_USER -----
 
 导入/出 SYS_USER 注释
 导入/出 SYS_USER 注释
@@ -1174,7 +1174,7 @@
 表SYS_USER导出结束，共导出 8 行数据
 
 
------ [2026-04-27 09:41:11]导出表：SYS_USER_AGENT -----
+----- [2026-04-29 10:03:14]导出表：SYS_USER_AGENT -----
 
 导出索引：UK_SUG_USER_NAME 
 
@@ -1191,7 +1191,7 @@
 表SYS_USER_AGENT导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:11]导出表：SYS_USER_DEPART -----
+----- [2026-04-29 10:03:14]导出表：SYS_USER_DEPART -----
 
 导出索引：IDX_SUD_USER_ID 
 
@@ -1206,7 +1206,7 @@
 表SYS_USER_DEPART导出结束，共导出 0 行数据
 
 
------ [2026-04-27 09:41:11]导出表：SYS_USER_ROLE -----
+----- [2026-04-29 10:03:14]导出表：SYS_USER_ROLE -----
 
 导出索引：IDX_SUR_USER_ROLE_ID 
 
@@ -1221,7 +1221,7 @@
 表SYS_USER_ROLE导出结束，共导出 31 行数据
 
 
------ [2026-04-27 09:41:11]导出表：TEST_ONLINE_LINK -----
+----- [2026-04-29 10:03:14]导出表：TEST_ONLINE_LINK -----
 
 导出约束：SYS_C0025462 
 
@@ -1230,7 +1230,7 @@
 表TEST_ONLINE_LINK导出结束，共导出 77 行数据
 
 
------ [2026-04-27 09:41:11]导出表：TEST_PERSON -----
+----- [2026-04-29 10:03:14]导出表：TEST_PERSON -----
 
 导出约束：SYS_C0025466 
 
@@ -1239,35 +1239,35 @@
 表TEST_PERSON导出结束，共导出 7 行数据
 
 
------ [2026-04-27 09:41:11]导出表：TMP_REPORT_DATA_1 -----
+----- [2026-04-29 10:03:15]导出表：TMP_REPORT_DATA_1 -----
 
 导出模式下的对象权限...
 
 表TMP_REPORT_DATA_1导出结束，共导出 84 行数据
 
 
------ [2026-04-27 09:41:11]导出表：TMP_REPORT_DATA_INCOME -----
+----- [2026-04-29 10:03:15]导出表：TMP_REPORT_DATA_INCOME -----
 
 导出模式下的对象权限...
 
 表TMP_REPORT_DATA_INCOME导出结束，共导出 35 行数据
 
 
------ [2026-04-27 09:41:11]导出表：sys_permission_v2 -----
+----- [2026-04-29 10:03:15]导出表：sys_permission_v2 -----
 
 导出模式下的对象权限...
 
 表sys_permission_v2导出结束，共导出 135 行数据
 
 
------ [2026-04-27 09:41:11]导出表：ak_sys_data -----
+----- [2026-04-29 10:03:15]导出表：ak_sys_data -----
 
 导出模式下的对象权限...
 
 表ak_sys_data导出结束，共导出 1 行数据
 
 
------ [2026-04-27 09:41:11]导出表：sys_todo -----
+----- [2026-04-29 10:03:15]导出表：sys_todo -----
 
 导入/出 sys_todo 注释
 导入/出 sys_todo 注释
@@ -1276,28 +1276,28 @@
 表sys_todo导出结束，共导出 29 行数据
 
 
------ [2026-04-27 09:41:11]导出表：dam_catalog -----
+----- [2026-04-29 10:03:15]导出表：dam_catalog -----
 
 导出模式下的对象权限...
 
 表dam_catalog导出结束，共导出 32 行数据
 
 
------ [2026-04-27 09:41:11]导出表：dam_space -----
+----- [2026-04-29 10:03:15]导出表：dam_space -----
 
 导出模式下的对象权限...
 
 表dam_space导出结束，共导出 3 行数据
 
 
------ [2026-04-27 09:41:11]导出表：dam_demand -----
+----- [2026-04-29 10:03:15]导出表：dam_demand -----
 
 导出模式下的对象权限...
 
 表dam_demand导出结束，共导出 5 行数据
 
 
------ [2026-04-27 09:41:11]导出表：dam_space_user -----
+----- [2026-04-29 10:03:15]导出表：dam_space_user -----
 
 导入/出 dam_space_user 注释
 导入/出 dam_space_user 注释
@@ -1312,7 +1312,7 @@
 表dam_space_user导出结束，共导出 5 行数据
 
 
------ [2026-04-27 09:41:11]导出表：dam_space_asset -----
+----- [2026-04-29 10:03:15]导出表：dam_space_asset -----
 
 导入/出 dam_space_asset 注释
 导入/出 dam_space_asset 注释
@@ -1362,10 +1362,10 @@
 导入/出 dam_space_asset 注释
 导出模式下的对象权限...
 
-表dam_space_asset导出结束，共导出 1 行数据
+表dam_space_asset导出结束，共导出 2 行数据
 
 
------ [2026-04-27 09:41:11]导出表：dam_asset_registration -----
+----- [2026-04-29 10:03:15]导出表：dam_asset_registration -----
 
 导入/出 dam_asset_registration 注释
 导入/出 dam_asset_registration 注释
@@ -1391,7 +1391,7 @@
 导入/出 dam_asset_registration 注释
 导出模式下的对象权限...
 
-表dam_asset_registration导出结束，共导出 1 行数据
+表dam_asset_registration导出结束，共导出 2 行数据
 
 模式[DAM]导出结束.....
 成功导出 第1 个SCHEMA ：DAM
@@ -1400,7 +1400,7 @@
 共导出 1 个SCHEMA
 
 
-整个导出过程共花费    3.742 s
+整个导出过程共花费    3.619 s
 
 
 成功终止导出, 没有出现警告
